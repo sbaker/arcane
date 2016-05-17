@@ -5,23 +5,28 @@ namespace Arcane.DocumentDB
 {
     // This project can output the Class library as a NuGet Package.
     // To enable this option, right-click on the project and select the Properties menu item. In the Build tab select "Produce outputs on build".
-    public class DocumentDbQueryContext : IQueryContext
+    public class DocumentDbQueryContext : QueryContext
     {
         public DocumentDbQueryContext()
         {
         }
 
-        public IQuery<T> Query<T>() where T : class, new()
+        public override IQuery<T> Query<T>()
         {
             throw new NotImplementedException();
         }
 
-        public void SaveChanges()
+        public override void SaveChanges()
         {
             throw new NotImplementedException();
         }
 
-        public Task<int> SaveChangesAsync()
+        public override Task<int> SaveChangesAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override void DisposeCore(bool disposing)
         {
             throw new NotImplementedException();
         }

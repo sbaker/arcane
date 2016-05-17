@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 
 namespace Arcane
 {
-    public interface IQuery<T> : IQueryable<T>, IOrderedQueryable<T>
+    public interface IQuery<T> : IOrderedQueryable<T>
     {
     }
 
@@ -17,7 +17,7 @@ namespace Arcane
             InnerQuery = innerQuery;
         }
 
-        protected IQueryable<T> InnerQuery { get; }
+        public IQueryable<T> InnerQuery { get; }
 
         Type IQueryable.ElementType
         {

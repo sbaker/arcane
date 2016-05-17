@@ -3,40 +3,54 @@
   "version": 2,
   "targets": {
     "DNX,Version=v4.5.1": {
-      "Arcane/1.0.0": {
+      "Arcane/0.0.1": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1"
       },
-      "Arcane.DocumentDB/1.0.0": {
+      "Arcane.DocumentDB/0.0.1": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Arcane": "1.0.0",
+          "Arcane": "0.0.1",
           "Microsoft.Azure.DocumentDB": "1.7.1"
         }
       },
-      "Arcane.EntityFramework/1.0.0": {
+      "Arcane.EntityFramework/0.0.1": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Arcane": "1.0.0",
+          "Arcane": "0.0.1",
           "EntityFramework.Core": "7.0.0-rc1-final"
         }
       },
-      "Arcane.LiteDb/1.0.0": {
+      "Arcane.LiteDb/0.0.1": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Arcane": "1.0.0",
+          "Arcane": "0.0.1",
           "LiteDB": "2.0.0-rc"
         }
       },
-      "Arcane.MongoDB/1.0.0": {
+      "Arcane.MongoDB/0.0.1": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Arcane": "1.0.0",
+          "Arcane": "0.0.1",
           "MongoDB.Driver": "2.2.3"
+        }
+      },
+      "EntityFramework/6.0.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations"
+        ],
+        "compile": {
+          "lib/net45/EntityFramework.dll": {},
+          "lib/net45/EntityFramework.SqlServer.dll": {}
+        },
+        "runtime": {
+          "lib/net45/EntityFramework.dll": {},
+          "lib/net45/EntityFramework.SqlServer.dll": {}
         }
       },
       "EntityFramework.Core/7.0.0-rc1-final": {
@@ -81,6 +95,46 @@
           "lib/dnx451/EntityFramework.Core.dll": {}
         }
       },
+      "EntityFramework.Relational/7.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework.Core": "7.0.0-rc1-final",
+          "System.Diagnostics.DiagnosticSource": "4.0.0-beta-23516"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core",
+          "System.Data",
+          "System.Transactions"
+        ],
+        "compile": {
+          "lib/net451/EntityFramework.Relational.dll": {}
+        },
+        "runtime": {
+          "lib/net451/EntityFramework.Relational.dll": {}
+        }
+      },
+      "EntityFramework.Sqlite/7.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework.Relational": "7.0.0-rc1-final",
+          "Microsoft.Data.Sqlite": "1.0.0-rc1-final"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/EntityFramework.Sqlite.dll": {}
+        },
+        "runtime": {
+          "lib/net451/EntityFramework.Sqlite.dll": {}
+        }
+      },
       "Ix-Async/1.2.5": {
         "type": "package",
         "frameworkAssemblies": [
@@ -113,6 +167,25 @@
         },
         "runtime": {
           "lib/net45/Microsoft.Azure.Documents.Client.dll": {}
+        }
+      },
+      "Microsoft.Data.Sqlite/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.PlatformAbstractions": "1.0.0-rc1-final"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core",
+          "System.Data"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Data.Sqlite.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Data.Sqlite.dll": {}
         }
       },
       "Microsoft.Dnx.Compilation.Abstractions/1.0.0-rc1-final": {
@@ -440,6 +513,85 @@
         },
         "runtime": {
           "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll": {}
+        }
+      },
+      "System.Data.SQLite/1.0.101": {
+        "type": "package",
+        "dependencies": {
+          "System.Data.SQLite.Core": "1.0.101",
+          "System.Data.SQLite.EF6": "1.0.101",
+          "System.Data.SQLite.Linq": "1.0.101"
+        }
+      },
+      "System.Data.SQLite.Core/1.0.101": {
+        "type": "package",
+        "compile": {
+          "lib/net451/System.Data.SQLite.dll": {}
+        },
+        "runtime": {
+          "lib/net451/System.Data.SQLite.dll": {}
+        }
+      },
+      "System.Data.SQLite.EF6/1.0.101": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework": "6.0.0"
+        },
+        "compile": {
+          "lib/net451/System.Data.SQLite.EF6.dll": {}
+        },
+        "runtime": {
+          "lib/net451/System.Data.SQLite.EF6.dll": {}
+        }
+      },
+      "System.Data.SQLite.Linq/1.0.101": {
+        "type": "package",
+        "compile": {
+          "lib/net451/System.Data.SQLite.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/net451/System.Data.SQLite.Linq.dll": {}
+        }
+      },
+      "System.Diagnostics.DiagnosticSource/4.0.0-beta-23516": {
+        "type": "package",
+        "dependencies": {
+          "System.Diagnostics.Tracing": "4.0.0",
+          "System.Runtime": "4.0.0",
+          "System.Threading": "4.0.0"
+        },
+        "compile": {
+          "lib/dotnet5.2/System.Diagnostics.DiagnosticSource.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet5.2/System.Diagnostics.DiagnosticSource.dll": {}
+        }
+      },
+      "System.Diagnostics.Tracing/4.0.0": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "System.Runtime/4.0.0": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "System.Threading/4.0.0": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
         }
       },
       "xunit/2.1.0": {
@@ -553,40 +705,54 @@
       }
     },
     "DNX,Version=v4.5.1/win7-x86": {
-      "Arcane/1.0.0": {
+      "Arcane/0.0.1": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1"
       },
-      "Arcane.DocumentDB/1.0.0": {
+      "Arcane.DocumentDB/0.0.1": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Arcane": "1.0.0",
+          "Arcane": "0.0.1",
           "Microsoft.Azure.DocumentDB": "1.7.1"
         }
       },
-      "Arcane.EntityFramework/1.0.0": {
+      "Arcane.EntityFramework/0.0.1": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Arcane": "1.0.0",
+          "Arcane": "0.0.1",
           "EntityFramework.Core": "7.0.0-rc1-final"
         }
       },
-      "Arcane.LiteDb/1.0.0": {
+      "Arcane.LiteDb/0.0.1": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Arcane": "1.0.0",
+          "Arcane": "0.0.1",
           "LiteDB": "2.0.0-rc"
         }
       },
-      "Arcane.MongoDB/1.0.0": {
+      "Arcane.MongoDB/0.0.1": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Arcane": "1.0.0",
+          "Arcane": "0.0.1",
           "MongoDB.Driver": "2.2.3"
+        }
+      },
+      "EntityFramework/6.0.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations"
+        ],
+        "compile": {
+          "lib/net45/EntityFramework.dll": {},
+          "lib/net45/EntityFramework.SqlServer.dll": {}
+        },
+        "runtime": {
+          "lib/net45/EntityFramework.dll": {},
+          "lib/net45/EntityFramework.SqlServer.dll": {}
         }
       },
       "EntityFramework.Core/7.0.0-rc1-final": {
@@ -631,6 +797,46 @@
           "lib/dnx451/EntityFramework.Core.dll": {}
         }
       },
+      "EntityFramework.Relational/7.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework.Core": "7.0.0-rc1-final",
+          "System.Diagnostics.DiagnosticSource": "4.0.0-beta-23516"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core",
+          "System.Data",
+          "System.Transactions"
+        ],
+        "compile": {
+          "lib/net451/EntityFramework.Relational.dll": {}
+        },
+        "runtime": {
+          "lib/net451/EntityFramework.Relational.dll": {}
+        }
+      },
+      "EntityFramework.Sqlite/7.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework.Relational": "7.0.0-rc1-final",
+          "Microsoft.Data.Sqlite": "1.0.0-rc1-final"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/EntityFramework.Sqlite.dll": {}
+        },
+        "runtime": {
+          "lib/net451/EntityFramework.Sqlite.dll": {}
+        }
+      },
       "Ix-Async/1.2.5": {
         "type": "package",
         "frameworkAssemblies": [
@@ -663,6 +869,28 @@
         },
         "runtime": {
           "lib/net45/Microsoft.Azure.Documents.Client.dll": {}
+        }
+      },
+      "Microsoft.Data.Sqlite/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.PlatformAbstractions": "1.0.0-rc1-final"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core",
+          "System.Data"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Data.Sqlite.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Data.Sqlite.dll": {}
+        },
+        "native": {
+          "runtimes/win7-x86/native/sqlite3.dll": {}
         }
       },
       "Microsoft.Dnx.Compilation.Abstractions/1.0.0-rc1-final": {
@@ -990,6 +1218,85 @@
         },
         "runtime": {
           "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll": {}
+        }
+      },
+      "System.Data.SQLite/1.0.101": {
+        "type": "package",
+        "dependencies": {
+          "System.Data.SQLite.Core": "1.0.101",
+          "System.Data.SQLite.EF6": "1.0.101",
+          "System.Data.SQLite.Linq": "1.0.101"
+        }
+      },
+      "System.Data.SQLite.Core/1.0.101": {
+        "type": "package",
+        "compile": {
+          "lib/net451/System.Data.SQLite.dll": {}
+        },
+        "runtime": {
+          "lib/net451/System.Data.SQLite.dll": {}
+        }
+      },
+      "System.Data.SQLite.EF6/1.0.101": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework": "6.0.0"
+        },
+        "compile": {
+          "lib/net451/System.Data.SQLite.EF6.dll": {}
+        },
+        "runtime": {
+          "lib/net451/System.Data.SQLite.EF6.dll": {}
+        }
+      },
+      "System.Data.SQLite.Linq/1.0.101": {
+        "type": "package",
+        "compile": {
+          "lib/net451/System.Data.SQLite.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/net451/System.Data.SQLite.Linq.dll": {}
+        }
+      },
+      "System.Diagnostics.DiagnosticSource/4.0.0-beta-23516": {
+        "type": "package",
+        "dependencies": {
+          "System.Diagnostics.Tracing": "4.0.0",
+          "System.Runtime": "4.0.0",
+          "System.Threading": "4.0.0"
+        },
+        "compile": {
+          "lib/dotnet5.2/System.Diagnostics.DiagnosticSource.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet5.2/System.Diagnostics.DiagnosticSource.dll": {}
+        }
+      },
+      "System.Diagnostics.Tracing/4.0.0": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "System.Runtime/4.0.0": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "System.Threading/4.0.0": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
         }
       },
       "xunit/2.1.0": {
@@ -1103,40 +1410,54 @@
       }
     },
     "DNX,Version=v4.5.1/win7-x64": {
-      "Arcane/1.0.0": {
+      "Arcane/0.0.1": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1"
       },
-      "Arcane.DocumentDB/1.0.0": {
+      "Arcane.DocumentDB/0.0.1": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Arcane": "1.0.0",
+          "Arcane": "0.0.1",
           "Microsoft.Azure.DocumentDB": "1.7.1"
         }
       },
-      "Arcane.EntityFramework/1.0.0": {
+      "Arcane.EntityFramework/0.0.1": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Arcane": "1.0.0",
+          "Arcane": "0.0.1",
           "EntityFramework.Core": "7.0.0-rc1-final"
         }
       },
-      "Arcane.LiteDb/1.0.0": {
+      "Arcane.LiteDb/0.0.1": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Arcane": "1.0.0",
+          "Arcane": "0.0.1",
           "LiteDB": "2.0.0-rc"
         }
       },
-      "Arcane.MongoDB/1.0.0": {
+      "Arcane.MongoDB/0.0.1": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Arcane": "1.0.0",
+          "Arcane": "0.0.1",
           "MongoDB.Driver": "2.2.3"
+        }
+      },
+      "EntityFramework/6.0.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations"
+        ],
+        "compile": {
+          "lib/net45/EntityFramework.dll": {},
+          "lib/net45/EntityFramework.SqlServer.dll": {}
+        },
+        "runtime": {
+          "lib/net45/EntityFramework.dll": {},
+          "lib/net45/EntityFramework.SqlServer.dll": {}
         }
       },
       "EntityFramework.Core/7.0.0-rc1-final": {
@@ -1181,6 +1502,46 @@
           "lib/dnx451/EntityFramework.Core.dll": {}
         }
       },
+      "EntityFramework.Relational/7.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework.Core": "7.0.0-rc1-final",
+          "System.Diagnostics.DiagnosticSource": "4.0.0-beta-23516"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core",
+          "System.Data",
+          "System.Transactions"
+        ],
+        "compile": {
+          "lib/net451/EntityFramework.Relational.dll": {}
+        },
+        "runtime": {
+          "lib/net451/EntityFramework.Relational.dll": {}
+        }
+      },
+      "EntityFramework.Sqlite/7.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework.Relational": "7.0.0-rc1-final",
+          "Microsoft.Data.Sqlite": "1.0.0-rc1-final"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/EntityFramework.Sqlite.dll": {}
+        },
+        "runtime": {
+          "lib/net451/EntityFramework.Sqlite.dll": {}
+        }
+      },
       "Ix-Async/1.2.5": {
         "type": "package",
         "frameworkAssemblies": [
@@ -1213,6 +1574,28 @@
         },
         "runtime": {
           "lib/net45/Microsoft.Azure.Documents.Client.dll": {}
+        }
+      },
+      "Microsoft.Data.Sqlite/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.PlatformAbstractions": "1.0.0-rc1-final"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core",
+          "System.Data"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Data.Sqlite.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Data.Sqlite.dll": {}
+        },
+        "native": {
+          "runtimes/win7-x64/native/sqlite3.dll": {}
         }
       },
       "Microsoft.Dnx.Compilation.Abstractions/1.0.0-rc1-final": {
@@ -1540,6 +1923,85 @@
         },
         "runtime": {
           "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll": {}
+        }
+      },
+      "System.Data.SQLite/1.0.101": {
+        "type": "package",
+        "dependencies": {
+          "System.Data.SQLite.Core": "1.0.101",
+          "System.Data.SQLite.EF6": "1.0.101",
+          "System.Data.SQLite.Linq": "1.0.101"
+        }
+      },
+      "System.Data.SQLite.Core/1.0.101": {
+        "type": "package",
+        "compile": {
+          "lib/net451/System.Data.SQLite.dll": {}
+        },
+        "runtime": {
+          "lib/net451/System.Data.SQLite.dll": {}
+        }
+      },
+      "System.Data.SQLite.EF6/1.0.101": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework": "6.0.0"
+        },
+        "compile": {
+          "lib/net451/System.Data.SQLite.EF6.dll": {}
+        },
+        "runtime": {
+          "lib/net451/System.Data.SQLite.EF6.dll": {}
+        }
+      },
+      "System.Data.SQLite.Linq/1.0.101": {
+        "type": "package",
+        "compile": {
+          "lib/net451/System.Data.SQLite.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/net451/System.Data.SQLite.Linq.dll": {}
+        }
+      },
+      "System.Diagnostics.DiagnosticSource/4.0.0-beta-23516": {
+        "type": "package",
+        "dependencies": {
+          "System.Diagnostics.Tracing": "4.0.0",
+          "System.Runtime": "4.0.0",
+          "System.Threading": "4.0.0"
+        },
+        "compile": {
+          "lib/dotnet5.2/System.Diagnostics.DiagnosticSource.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet5.2/System.Diagnostics.DiagnosticSource.dll": {}
+        }
+      },
+      "System.Diagnostics.Tracing/4.0.0": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "System.Runtime/4.0.0": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "System.Threading/4.0.0": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
         }
       },
       "xunit/2.1.0": {
@@ -1654,25 +2116,53 @@
     }
   },
   "libraries": {
-    "Arcane/1.0.0": {
+    "Arcane/0.0.1": {
       "type": "project",
       "path": "../../src/Arcane/project.json"
     },
-    "Arcane.DocumentDB/1.0.0": {
+    "Arcane.DocumentDB/0.0.1": {
       "type": "project",
       "path": "../../src/Arcane.DocumentDB/project.json"
     },
-    "Arcane.EntityFramework/1.0.0": {
+    "Arcane.EntityFramework/0.0.1": {
       "type": "project",
       "path": "../../src/Arcane.EntityFramework/project.json"
     },
-    "Arcane.LiteDb/1.0.0": {
+    "Arcane.LiteDb/0.0.1": {
       "type": "project",
       "path": "../../src/Arcane.LiteDb/project.json"
     },
-    "Arcane.MongoDB/1.0.0": {
+    "Arcane.MongoDB/0.0.1": {
       "type": "project",
       "path": "../../src/Arcane.MongoDB/project.json"
+    },
+    "EntityFramework/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "y6lX/VMghGBV6TvgQS4Q2WK6kAcOoyD+TQxObN9utd0JsMMdMxyqARxKbvgi7KEIbQ8osZ4ZvImaly7l3NDFDw==",
+      "files": [
+        "Content/App.config.transform",
+        "Content/Web.config.transform",
+        "EntityFramework.6.0.0.nupkg",
+        "EntityFramework.6.0.0.nupkg.sha512",
+        "EntityFramework.nuspec",
+        "lib/net40/EntityFramework.dll",
+        "lib/net40/EntityFramework.SqlServer.dll",
+        "lib/net40/EntityFramework.SqlServer.xml",
+        "lib/net40/EntityFramework.xml",
+        "lib/net45/EntityFramework.dll",
+        "lib/net45/EntityFramework.SqlServer.dll",
+        "lib/net45/EntityFramework.SqlServer.xml",
+        "lib/net45/EntityFramework.xml",
+        "tools/about_EntityFramework.help.txt",
+        "tools/EntityFramework.PowerShell.dll",
+        "tools/EntityFramework.PowerShell.Utility.dll",
+        "tools/EntityFramework.psd1",
+        "tools/EntityFramework.psm1",
+        "tools/init.ps1",
+        "tools/install.ps1",
+        "tools/migrate.exe"
+      ]
     },
     "EntityFramework.Core/7.0.0-rc1-final": {
       "type": "package",
@@ -1690,6 +2180,38 @@
         "lib/net451/EntityFramework.Core.xml",
         "lib/netcore50/EntityFramework.Core.dll",
         "lib/netcore50/EntityFramework.Core.xml"
+      ]
+    },
+    "EntityFramework.Relational/7.0.0-rc1-final": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "0Feoct9mtKOIjovUgfESfVDL/odvxNXsIgK3bdlkx7Fsiqp5/tx8oiMx+qO7oNRYWsXN6XDlGKHLOzWEdUssKA==",
+      "files": [
+        "EntityFramework.Relational.7.0.0-rc1-final.nupkg",
+        "EntityFramework.Relational.7.0.0-rc1-final.nupkg.sha512",
+        "EntityFramework.Relational.nuspec",
+        "lib/dotnet5.4/EntityFramework.Relational.dll",
+        "lib/dotnet5.4/EntityFramework.Relational.xml",
+        "lib/net451/EntityFramework.Relational.dll",
+        "lib/net451/EntityFramework.Relational.xml",
+        "lib/netcore50/EntityFramework.Relational.dll",
+        "lib/netcore50/EntityFramework.Relational.xml"
+      ]
+    },
+    "EntityFramework.Sqlite/7.0.0-rc1-final": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "B+h4HHUnCSN/d4DIxW89B6q4efcZzQjajQb1yrlALEeZuCBDIzO0nrEdRZsRSNqJaNzmxRu/OsYqrZVOORUrGw==",
+      "files": [
+        "EntityFramework.Sqlite.7.0.0-rc1-final.nupkg",
+        "EntityFramework.Sqlite.7.0.0-rc1-final.nupkg.sha512",
+        "EntityFramework.Sqlite.nuspec",
+        "lib/dotnet5.4/EntityFramework.Sqlite.dll",
+        "lib/dotnet5.4/EntityFramework.Sqlite.xml",
+        "lib/net451/EntityFramework.Sqlite.dll",
+        "lib/net451/EntityFramework.Sqlite.xml",
+        "lib/netcore50/EntityFramework.Sqlite.dll",
+        "lib/netcore50/EntityFramework.Sqlite.xml"
       ]
     },
     "Ix-Async/1.2.5": {
@@ -1730,6 +2252,29 @@
         "Microsoft.Azure.DocumentDB.1.7.1.nupkg",
         "Microsoft.Azure.DocumentDB.1.7.1.nupkg.sha512",
         "Microsoft.Azure.DocumentDB.nuspec"
+      ]
+    },
+    "Microsoft.Data.Sqlite/1.0.0-rc1-final": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "54F32OBWIWMIpeKggCMEX+Bp/TiAiKzBaQ4z+IRr61eNSnJhxMnLE/QWDs5YbCtbDlWIB4+VBC1rnT8PFGCtdw==",
+      "files": [
+        "build/net451/Microsoft.Data.Sqlite.props",
+        "build/netcore50/Microsoft.Data.Sqlite.targets",
+        "build/netcore50/win10-arm/native/sqlite3.dll",
+        "build/netcore50/win10-x64/native/sqlite3.dll",
+        "build/netcore50/win10-x86/native/sqlite3.dll",
+        "lib/dotnet5.4/Microsoft.Data.Sqlite.dll",
+        "lib/dotnet5.4/Microsoft.Data.Sqlite.xml",
+        "lib/net451/Microsoft.Data.Sqlite.dll",
+        "lib/net451/Microsoft.Data.Sqlite.xml",
+        "lib/netcore50/Microsoft.Data.Sqlite.dll",
+        "lib/netcore50/Microsoft.Data.Sqlite.xml",
+        "Microsoft.Data.Sqlite.1.0.0-rc1-final.nupkg",
+        "Microsoft.Data.Sqlite.1.0.0-rc1-final.nupkg.sha512",
+        "Microsoft.Data.Sqlite.nuspec",
+        "runtimes/win7-x64/native/sqlite3.dll",
+        "runtimes/win7-x86/native/sqlite3.dll"
       ]
     },
     "Microsoft.Dnx.Compilation.Abstractions/1.0.0-rc1-final": {
@@ -2052,6 +2597,262 @@
         "System.Collections.Immutable.nuspec"
       ]
     },
+    "System.Data.SQLite/1.0.101": {
+      "type": "package",
+      "sha512": "M5utCOXPTN6LrJsS6KV+SCHKHH3WOyqDcbvTEhBcwBXdULNDGlEkSmLuoPTkgZpMrUaUQ2pGmO2IwjTEm8WmCQ==",
+      "files": [
+        "System.Data.SQLite.1.0.101.nupkg",
+        "System.Data.SQLite.1.0.101.nupkg.sha512",
+        "System.Data.SQLite.nuspec"
+      ]
+    },
+    "System.Data.SQLite.Core/1.0.101": {
+      "type": "package",
+      "sha512": "bf8ypdk893cULN88LNBgltntmFghY9Zu1xTJfwcaKVS5i1pUw8eLjjTdfmwX/SqYkZouzt8NJqLavEzIDpIG2w==",
+      "files": [
+        "build/net20/System.Data.SQLite.Core.targets",
+        "build/net20/x64/SQLite.Interop.dll",
+        "build/net20/x86/SQLite.Interop.dll",
+        "build/net40/System.Data.SQLite.Core.targets",
+        "build/net40/x64/SQLite.Interop.dll",
+        "build/net40/x86/SQLite.Interop.dll",
+        "build/net45/System.Data.SQLite.Core.targets",
+        "build/net45/x64/SQLite.Interop.dll",
+        "build/net45/x86/SQLite.Interop.dll",
+        "build/net451/System.Data.SQLite.Core.targets",
+        "build/net451/x64/SQLite.Interop.dll",
+        "build/net451/x86/SQLite.Interop.dll",
+        "build/net46/System.Data.SQLite.Core.targets",
+        "build/net46/x64/SQLite.Interop.dll",
+        "build/net46/x86/SQLite.Interop.dll",
+        "lib/net20/System.Data.SQLite.dll",
+        "lib/net20/System.Data.SQLite.xml",
+        "lib/net40/System.Data.SQLite.dll",
+        "lib/net40/System.Data.SQLite.xml",
+        "lib/net45/System.Data.SQLite.dll",
+        "lib/net45/System.Data.SQLite.xml",
+        "lib/net451/System.Data.SQLite.dll",
+        "lib/net451/System.Data.SQLite.xml",
+        "lib/net46/System.Data.SQLite.dll",
+        "lib/net46/System.Data.SQLite.xml",
+        "System.Data.SQLite.Core.1.0.101.nupkg",
+        "System.Data.SQLite.Core.1.0.101.nupkg.sha512",
+        "System.Data.SQLite.Core.nuspec"
+      ]
+    },
+    "System.Data.SQLite.EF6/1.0.101": {
+      "type": "package",
+      "sha512": "o38q1rhDnd27Z0t0rJXOem7QNJM+KDuodcdsi+uDAWorYVSypgXRzq9zeUg+hztrZm5AitIds3dzdebKRcDU8A==",
+      "files": [
+        "content/net40/app.config.install.xdt",
+        "content/net40/app.config.transform",
+        "content/net40/web.config.install.xdt",
+        "content/net40/web.config.transform",
+        "content/net45/app.config.install.xdt",
+        "content/net45/app.config.transform",
+        "content/net45/web.config.install.xdt",
+        "content/net45/web.config.transform",
+        "content/net451/app.config.install.xdt",
+        "content/net451/app.config.transform",
+        "content/net451/web.config.install.xdt",
+        "content/net451/web.config.transform",
+        "content/net46/app.config.install.xdt",
+        "content/net46/app.config.transform",
+        "content/net46/web.config.install.xdt",
+        "content/net46/web.config.transform",
+        "lib/net40/System.Data.SQLite.EF6.dll",
+        "lib/net45/System.Data.SQLite.EF6.dll",
+        "lib/net451/System.Data.SQLite.EF6.dll",
+        "lib/net46/System.Data.SQLite.EF6.dll",
+        "System.Data.SQLite.EF6.1.0.101.nupkg",
+        "System.Data.SQLite.EF6.1.0.101.nupkg.sha512",
+        "System.Data.SQLite.EF6.nuspec",
+        "tools/net40/install.ps1",
+        "tools/net45/install.ps1",
+        "tools/net451/install.ps1",
+        "tools/net46/install.ps1"
+      ]
+    },
+    "System.Data.SQLite.Linq/1.0.101": {
+      "type": "package",
+      "sha512": "2ODAzaJGGsIMJGylyiiuO0KcfLAvs30kTSfT4gWyx64lCMFSO5qt9XEBkuoQ3qVPcPJn1wUaLyFeqN1Ccms/2Q==",
+      "files": [
+        "content/net20/app.config.transform",
+        "content/net20/web.config.transform",
+        "content/net40/app.config.transform",
+        "content/net40/web.config.transform",
+        "content/net45/app.config.transform",
+        "content/net45/web.config.transform",
+        "content/net451/app.config.transform",
+        "content/net451/web.config.transform",
+        "content/net46/app.config.transform",
+        "content/net46/web.config.transform",
+        "lib/net20/System.Data.SQLite.Linq.dll",
+        "lib/net40/System.Data.SQLite.Linq.dll",
+        "lib/net45/System.Data.SQLite.Linq.dll",
+        "lib/net451/System.Data.SQLite.Linq.dll",
+        "lib/net46/System.Data.SQLite.Linq.dll",
+        "System.Data.SQLite.Linq.1.0.101.nupkg",
+        "System.Data.SQLite.Linq.1.0.101.nupkg.sha512",
+        "System.Data.SQLite.Linq.nuspec"
+      ]
+    },
+    "System.Diagnostics.DiagnosticSource/4.0.0-beta-23516": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "0uDR/UOmFCNPDCyHEPHhCrk6c1iRnDp00YqwSZ8Qf5aaaJjm4WXnf4Q9xZw4OoApsSiODSypDMdpQU24IxR16A==",
+      "files": [
+        "lib/dotnet5.2/System.Diagnostics.DiagnosticSource.dll",
+        "lib/dotnet5.2/System.Diagnostics.DiagnosticSource.xml",
+        "lib/portable-net45+win8+wp8+wpa81/System.Diagnostics.DiagnosticSource.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Diagnostics.DiagnosticSource.xml",
+        "System.Diagnostics.DiagnosticSource.4.0.0-beta-23516.nupkg",
+        "System.Diagnostics.DiagnosticSource.4.0.0-beta-23516.nupkg.sha512",
+        "System.Diagnostics.DiagnosticSource.nuspec"
+      ]
+    },
+    "System.Diagnostics.Tracing/4.0.0": {
+      "type": "package",
+      "sha512": "tzqQJPgD4bKs0eE5Gx9HEsxiHSBGcL42PImkjhwXTQK6iQbLTTB9mi+G7mUyEjlH8LUcm7F5QHEs+O+LpruOrQ==",
+      "files": [
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/win8/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "License.rtf",
+        "ref/dotnet/de/System.Diagnostics.Tracing.xml",
+        "ref/dotnet/es/System.Diagnostics.Tracing.xml",
+        "ref/dotnet/fr/System.Diagnostics.Tracing.xml",
+        "ref/dotnet/it/System.Diagnostics.Tracing.xml",
+        "ref/dotnet/ja/System.Diagnostics.Tracing.xml",
+        "ref/dotnet/ko/System.Diagnostics.Tracing.xml",
+        "ref/dotnet/ru/System.Diagnostics.Tracing.xml",
+        "ref/dotnet/System.Diagnostics.Tracing.dll",
+        "ref/dotnet/System.Diagnostics.Tracing.xml",
+        "ref/dotnet/zh-hans/System.Diagnostics.Tracing.xml",
+        "ref/dotnet/zh-hant/System.Diagnostics.Tracing.xml",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netcore50/de/System.Diagnostics.Tracing.xml",
+        "ref/netcore50/es/System.Diagnostics.Tracing.xml",
+        "ref/netcore50/fr/System.Diagnostics.Tracing.xml",
+        "ref/netcore50/it/System.Diagnostics.Tracing.xml",
+        "ref/netcore50/ja/System.Diagnostics.Tracing.xml",
+        "ref/netcore50/ko/System.Diagnostics.Tracing.xml",
+        "ref/netcore50/ru/System.Diagnostics.Tracing.xml",
+        "ref/netcore50/System.Diagnostics.Tracing.dll",
+        "ref/netcore50/System.Diagnostics.Tracing.xml",
+        "ref/netcore50/zh-hans/System.Diagnostics.Tracing.xml",
+        "ref/netcore50/zh-hant/System.Diagnostics.Tracing.xml",
+        "ref/win8/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "System.Diagnostics.Tracing.4.0.0.nupkg",
+        "System.Diagnostics.Tracing.4.0.0.nupkg.sha512",
+        "System.Diagnostics.Tracing.nuspec"
+      ]
+    },
+    "System.Runtime/4.0.0": {
+      "type": "package",
+      "sha512": "Uq9epame8hEqJlj4KaWb67dDJvj4IM37jRFGVeFbugRdPz48bR0voyBhrbf3iSa2tAmlkg4lsa6BUOL9iwlMew==",
+      "files": [
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "License.rtf",
+        "ref/dotnet/de/System.Runtime.xml",
+        "ref/dotnet/es/System.Runtime.xml",
+        "ref/dotnet/fr/System.Runtime.xml",
+        "ref/dotnet/it/System.Runtime.xml",
+        "ref/dotnet/ja/System.Runtime.xml",
+        "ref/dotnet/ko/System.Runtime.xml",
+        "ref/dotnet/ru/System.Runtime.xml",
+        "ref/dotnet/System.Runtime.dll",
+        "ref/dotnet/System.Runtime.xml",
+        "ref/dotnet/zh-hans/System.Runtime.xml",
+        "ref/dotnet/zh-hant/System.Runtime.xml",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netcore50/de/System.Runtime.xml",
+        "ref/netcore50/es/System.Runtime.xml",
+        "ref/netcore50/fr/System.Runtime.xml",
+        "ref/netcore50/it/System.Runtime.xml",
+        "ref/netcore50/ja/System.Runtime.xml",
+        "ref/netcore50/ko/System.Runtime.xml",
+        "ref/netcore50/ru/System.Runtime.xml",
+        "ref/netcore50/System.Runtime.dll",
+        "ref/netcore50/System.Runtime.xml",
+        "ref/netcore50/zh-hans/System.Runtime.xml",
+        "ref/netcore50/zh-hant/System.Runtime.xml",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "System.Runtime.4.0.0.nupkg",
+        "System.Runtime.4.0.0.nupkg.sha512",
+        "System.Runtime.nuspec"
+      ]
+    },
+    "System.Threading/4.0.0": {
+      "type": "package",
+      "sha512": "H6O/9gUrjPDNYanh/7OFGAZHjVXvEuITD0RcnjfvIV04HOGrOPqUBU0kmz9RIX/7YGgCQn1o1S2DX6Cuv8kVGQ==",
+      "files": [
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "License.rtf",
+        "ref/dotnet/de/System.Threading.xml",
+        "ref/dotnet/es/System.Threading.xml",
+        "ref/dotnet/fr/System.Threading.xml",
+        "ref/dotnet/it/System.Threading.xml",
+        "ref/dotnet/ja/System.Threading.xml",
+        "ref/dotnet/ko/System.Threading.xml",
+        "ref/dotnet/ru/System.Threading.xml",
+        "ref/dotnet/System.Threading.dll",
+        "ref/dotnet/System.Threading.xml",
+        "ref/dotnet/zh-hans/System.Threading.xml",
+        "ref/dotnet/zh-hant/System.Threading.xml",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netcore50/de/System.Threading.xml",
+        "ref/netcore50/es/System.Threading.xml",
+        "ref/netcore50/fr/System.Threading.xml",
+        "ref/netcore50/it/System.Threading.xml",
+        "ref/netcore50/ja/System.Threading.xml",
+        "ref/netcore50/ko/System.Threading.xml",
+        "ref/netcore50/ru/System.Threading.xml",
+        "ref/netcore50/System.Threading.dll",
+        "ref/netcore50/System.Threading.xml",
+        "ref/netcore50/zh-hans/System.Threading.xml",
+        "ref/netcore50/zh-hant/System.Threading.xml",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "System.Threading.4.0.0.nupkg",
+        "System.Threading.4.0.0.nupkg.sha512",
+        "System.Threading.nuspec"
+      ]
+    },
     "xunit/2.1.0": {
       "type": "package",
       "sha512": "u/7VQSOSXa7kSG4iK6Lcn7RqKZQ3hk7cnyMNVMpXHSP0RI5VQEtc44hvkG3LyWOVsx1dhUDD3rPAHAxyOUDQJw==",
@@ -2218,16 +3019,19 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "Arcane >= 1.0.0-*",
-      "Arcane.DocumentDB >= 1.0.0-*",
-      "Arcane.EntityFramework >= 1.0.0-*",
-      "Arcane.LiteDb >= 1.0.0-*",
-      "Arcane.MongoDB >= 1.0.0-*",
+      "Arcane >= 0.0.1-*",
+      "Arcane.DocumentDB >= 0.0.1-*",
+      "Arcane.EntityFramework >= 0.0.1-*",
+      "Arcane.LiteDb >= 0.0.1-*",
+      "Arcane.MongoDB >= 0.0.1-*",
       "xunit >= 2.1.0",
       "xunit.runner.dnx >= 2.1.0-rc1-build204"
     ],
     "DNX,Version=v4.5.1": [
-      "EntityFramework.Core >= 7.0.0-rc1-final"
+      "System.Data.SQLite >= 1.0.101",
+      "Microsoft.Data.Sqlite >= 1.0.0-rc1-final",
+      "EntityFramework.Core >= 7.0.0-rc1-final",
+      "EntityFramework.Sqlite >= 7.0.0-rc1-final"
     ]
   }
 }

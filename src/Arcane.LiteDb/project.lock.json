@@ -3,7 +3,7 @@
   "version": 2,
   "targets": {
     "DNX,Version=v4.5.1": {
-      "Arcane/1.0.0": {
+      "Arcane/0.0.1": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1"
       },
@@ -18,7 +18,7 @@
       }
     },
     "DNX,Version=v4.5.2": {
-      "Arcane/1.0.0": {
+      "Arcane/0.0.1": {
         "type": "project",
         "framework": "DNX,Version=v4.5.2"
       },
@@ -33,7 +33,7 @@
       }
     },
     ".NETFramework,Version=v4.5.1": {
-      "Arcane/1.0.0": {
+      "Arcane/0.0.1": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1"
       },
@@ -48,7 +48,7 @@
       }
     },
     ".NETFramework,Version=v4.5.2": {
-      "Arcane/1.0.0": {
+      "Arcane/0.0.1": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.2"
       },
@@ -63,7 +63,7 @@
       }
     },
     "DNX,Version=v4.5.1/win7-x86": {
-      "Arcane/1.0.0": {
+      "Arcane/0.0.1": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1"
       },
@@ -78,7 +78,7 @@
       }
     },
     "DNX,Version=v4.5.1/win7-x64": {
-      "Arcane/1.0.0": {
+      "Arcane/0.0.1": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1"
       },
@@ -93,7 +93,7 @@
       }
     },
     "DNX,Version=v4.5.2/win7-x86": {
-      "Arcane/1.0.0": {
+      "Arcane/0.0.1": {
         "type": "project",
         "framework": "DNX,Version=v4.5.2"
       },
@@ -108,7 +108,7 @@
       }
     },
     "DNX,Version=v4.5.2/win7-x64": {
-      "Arcane/1.0.0": {
+      "Arcane/0.0.1": {
         "type": "project",
         "framework": "DNX,Version=v4.5.2"
       },
@@ -123,7 +123,7 @@
       }
     },
     ".NETFramework,Version=v4.5.1/win7-x86": {
-      "Arcane/1.0.0": {
+      "Arcane/0.0.1": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1"
       },
@@ -138,7 +138,7 @@
       }
     },
     ".NETFramework,Version=v4.5.1/win7-x64": {
-      "Arcane/1.0.0": {
+      "Arcane/0.0.1": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1"
       },
@@ -153,7 +153,7 @@
       }
     },
     ".NETFramework,Version=v4.5.2/win7-x86": {
-      "Arcane/1.0.0": {
+      "Arcane/0.0.1": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.2"
       },
@@ -168,7 +168,7 @@
       }
     },
     ".NETFramework,Version=v4.5.2/win7-x64": {
-      "Arcane/1.0.0": {
+      "Arcane/0.0.1": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.2"
       },
@@ -184,7 +184,7 @@
     }
   },
   "libraries": {
-    "Arcane/1.0.0": {
+    "Arcane/0.0.1": {
       "type": "project",
       "path": "../Arcane/project.json"
     },
@@ -202,7 +202,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "Arcane >= 1.0.0-*",
+      "Arcane >= 0.0.1-*",
       "LiteDB >= 2.0.0-rc"
     ],
     "DNX,Version=v4.5.1": [],

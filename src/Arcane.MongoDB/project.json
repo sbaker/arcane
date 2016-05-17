@@ -1,13 +1,13 @@
 ﻿{
-  "version": "1.0.0-*",
-  "description": "",
-  "authors": [ "" ],
-  "tags": [ "" ],
+  "version": "0.0.1-*",
+  "description": "An implementation of Arcane for DocumentDB.",
+  "authors": [ "Stephen Baker" ],
+  "tags": [ "IQueryProvider", "IQueryable<T>", "DocumentDB" ],
   "projectUrl": "",
   "licenseUrl": "",
 
   "dependencies": {
-    "Arcane": "1.0.0-*",
+    "Arcane": "0.0.1-*",
     "MongoDB.Driver": "2.2.3"
   },
 

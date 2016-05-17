@@ -3,28 +3,45 @@ using System.Threading.Tasks;
 
 namespace Arcane.EntityFramework
 {
-    // This project can output the Class library as a NuGet Package.
-    // To enable this option, right-click on the project and select the Properties menu item. In the Build tab select "Produce outputs on build".
-    public class EntityFrameworkQueryContext : IQueryContext
+    /// <summary>
+    /// An EntityFramework implementation of <see cref="IQueryContext"/> wrapping the base <see cref="DbContext"/>.
+    /// </summary>
+    public class EntityFrameworkQueryContext : EntityFrameworkQueryContext<DbContext>
     {
-        public EntityFrameworkQueryContext(DbContext context)
+        public EntityFrameworkQueryContext()
         {
-            Context = context;
         }
 
-        protected DbContext Context { get; }
+        public EntityFrameworkQueryContext(DbContext context) : base(context)
+        {
+        }
+    }
 
-        public IQuery<T> Query<T>() where T : class, new()
+    /// <summary>
+    /// An EntityFramework implementation of <see cref="IQueryContext"/> wrapping a generic <see cref="TContext"/>.
+    /// </summary>
+    /// <typeparam name="TContext">The <typeparamref name="TContext"/> to encapsulate.</typeparam>
+    public class EntityFrameworkQueryContext<TContext> : QueryContext<TContext> where TContext : DbContext
+    {
+        public EntityFrameworkQueryContext()
+        {
+        }
+
+        public EntityFrameworkQueryContext(TContext context) : base(context)
+        {
+        }
+
+        public override IQuery<T> Query<T>()
         {
             return new Query<T>(Context.Set<T>());
         }
 
-        public void SaveChanges()
+        public override void SaveChanges()
         {
             Context.SaveChanges();
         }
 
-        public async Task<int> SaveChangesAsync()
+        public override async Task<int> SaveChangesAsync()
         {
             return await Context.SaveChangesAsync();
         }
