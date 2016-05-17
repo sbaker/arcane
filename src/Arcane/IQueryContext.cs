@@ -8,7 +8,7 @@ namespace Arcane
     /// </summary>
     public interface IQueryContext : IDisposable
     {
-        IQuery<T> Query<T>() where T : class, new();
+        IQuery<T> Query<T>(string name = null) where T : class, new();
 
         void SaveChanges();
 

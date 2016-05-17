@@ -1,4 +1,5 @@
-﻿using ArcaneTests.InMemoryTests.Data;
+﻿using Arcane;
+using ArcaneTests.InMemoryTests.Data;
 using ArcaneTests.Models;
 using System.Linq;
 using Xunit;
@@ -10,6 +11,13 @@ namespace ArcaneTests.InMemoryTests
         public InMemoryQueryContextTests()
         {
             Context = new InMemoryQueryContext(GetAuthors());
+        }
+
+        [Fact]
+        public void ContextReturnsIQueryOfAuthorTest()
+        {
+            var entities = Context.Query<Author>();
+            Assert.IsAssignableFrom<IQuery<Author>>(entities);
         }
 
         [Fact]

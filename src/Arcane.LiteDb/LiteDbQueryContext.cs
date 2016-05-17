@@ -18,7 +18,7 @@ namespace Arcane.LiteDb
 
         protected LiteDatabase Database { get; }
 
-        public override IQuery<T> Query<T>()
+        public override IQuery<T> Query<T>(string name = null)
         {
             throw new NotImplementedException();
             //return new Query<T>(Database.GetCollection<T>(nameof(T)).FindAll().AsQueryable());

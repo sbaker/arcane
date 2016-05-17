@@ -12,7 +12,7 @@ namespace Arcane
 
         public bool IsDisposed { get; private set; }
 
-        public abstract IQuery<T> Query<T>() where T : class, new();
+        public abstract IQuery<T> Query<T>(string name = null) where T : class, new();
 
         public abstract void SaveChanges();
 

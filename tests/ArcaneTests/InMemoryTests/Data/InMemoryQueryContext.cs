@@ -16,7 +16,7 @@ namespace ArcaneTests.InMemoryTests.Data
             _authors.AddRange(authors);
         }
 
-        public override IQuery<T> Query<T>()
+        public override IQuery<T> Query<T>(string name = null)
         {
             var type = typeof(T);
 

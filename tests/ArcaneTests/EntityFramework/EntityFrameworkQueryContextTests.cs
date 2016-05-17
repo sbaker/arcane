@@ -34,7 +34,7 @@ namespace ArcaneTests.EntityFramework
         }
 
         [Fact]
-        public void ContextReturnsIQueryOfEntityTest()
+        public void ContextReturnsIQueryOfAuthorTest()
         {
             var entities = Context.Query<Author>();
             Assert.IsAssignableFrom<IQuery<Author>>(entities);

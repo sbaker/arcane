@@ -31,7 +31,7 @@ namespace Arcane.EntityFramework
         {
         }
 
-        public override IQuery<T> Query<T>()
+        public override IQuery<T> Query<T>(string name = null)
         {
             return new Query<T>(Context.Set<T>());
         }
