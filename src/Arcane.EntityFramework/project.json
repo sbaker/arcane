@@ -1,0 +1,22 @@
+﻿{
+  "version": "1.0.0-*",
+  "description": "Arcane.EntityFramework Class Library",
+  "authors": [ "sbaker" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+
+  "dependencies": {
+    "Arcane": "1.0.0-*",
+    "EntityFramework.Core": "7.0.0-rc1-final"
+  },
+
+  "commands": { },
+
+  "frameworks": {
+    "dnx451": { },
+    "dnx452": { },
+    "net451": { },
+    "net452": { }
+  }
+}

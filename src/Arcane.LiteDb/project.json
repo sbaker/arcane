@@ -1,0 +1,22 @@
+﻿{
+  "version": "1.0.0-*",
+  "description": "IQueryLiteDb Class Library",
+  "authors": [ "sbaker" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+
+  "dependencies": {
+    "Arcane": "1.0.0-*",
+    "LiteDB": "2.0.0-rc"
+  },
+
+  "commands": { },
+
+  "frameworks": {
+    "dnx451": { },
+    "dnx452": { },
+    "net451": { },
+    "net452": { }
+  }
+}

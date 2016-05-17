@@ -1,0 +1,22 @@
+﻿{
+  "version": "1.0.0-*",
+  "description": "",
+  "authors": [ "" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+
+  "dependencies": {
+    "Arcane": "1.0.0-*",
+    "MongoDB.Driver": "2.2.3"
+  },
+
+  "commands": { },
+
+  "frameworks": {
+    "dnx451": { },
+    "dnx452": { },
+    "net451": { },
+    "net452": { }
+  }
+}

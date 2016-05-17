@@ -1,0 +1,22 @@
+﻿{
+  "version": "1.0.0-*",
+  "description": "",
+  "authors": [ "" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+
+  "dependencies": {
+    "Arcane": "1.0.0-*",
+    "Microsoft.Azure.DocumentDB": "1.7.1"
+  },
+
+  "commands": { },
+
+  "frameworks": {
+    "dnx451": { },
+    "dnx452": { },
+    "net451": { },
+    "net452": { }
+  }
+}

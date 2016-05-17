@@ -1,0 +1,21 @@
+﻿{
+  "version": "1.0.0-*",
+  "description": "",
+  "authors": [ "" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+
+  "dependencies": {
+
+  },
+
+  "commands": { },
+
+  "frameworks": {
+    "dnx451": { },
+    "dnx452": { },
+    "net451": { },
+    "net452": { }
+  }
+}
