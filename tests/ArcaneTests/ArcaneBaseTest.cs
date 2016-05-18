@@ -3,17 +3,22 @@ using ArcaneTests.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using ArcaneTests.Repositories;
 
 namespace ArcaneTests
 {
     // This project can output the Class library as a NuGet Package.
     // To enable this option, right-click on the project and select the Properties menu item. In the Build tab select "Produce outputs on build".
-    public class ArcaneBaseTest
+    public abstract class ArcaneBaseTest
     {
         protected const int Total = 100;
         protected static readonly DateTime Date = new DateTime(2016, 6, 30, 0, 0, 0, DateTimeKind.Utc);
         
         protected IQueryContext Context { get; set; }
+
+        protected IRepository Repository => new Repository(Context);
+
+        protected IAuthorRepository AuthorRepository => new AuthorRepository(Context);
 
         protected static Author[] GetAuthors(int? total = null)
         {
@@ -30,6 +35,7 @@ namespace ArcaneTests
                 {
                     Id = i,
                     Name = $"First{i} Last{i}",
+                    CreatedDate = Date.AddDays(-(Total + i)),
                     Books = new Collection<Book> {
                         new Book {
                             Id = i,

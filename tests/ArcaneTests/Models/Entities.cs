@@ -3,16 +3,23 @@ using System.Collections.ObjectModel;
 
 namespace ArcaneTests.Models
 {
-    public class Author
+    public interface IRootEntity<T> where T : struct
+    {
+        T Id { get; set; }
+    }
+
+    public class Author : IRootEntity<int>
     {
         public int Id { get; set; }
 
         public string Name { get; set; }
 
         public Collection<Book> Books { get; set; }
+
+        public DateTime CreatedDate { get; set; }
     }
 
-    public class Book
+    public class Book : IRootEntity<int>
     {
         public int Id { get; set; }
 

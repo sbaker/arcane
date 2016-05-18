@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Threading.Tasks;
+using System.Linq;
 
 namespace Arcane
 {
@@ -12,11 +12,12 @@ namespace Arcane
 
         public bool IsDisposed { get; private set; }
 
-        public abstract IQuery<T> Query<T>() where T : class, new();
+        public IQuery<T> Query<T>(string name = null) where T : class, new()
+        {
+            return new Query<T>(CreateQueryable<T>(name));
+        }
 
-        public abstract void SaveChanges();
-
-        public abstract Task<int> SaveChangesAsync();
+        protected abstract IQueryable<T> CreateQueryable<T>(string name = null) where T : class, new();
 
         public void Dispose()
         {
@@ -76,12 +77,7 @@ namespace Arcane
         {
             if (disposing)
             {
-                var disposable = Context as IDisposable;
-
-                if (disposable != null)
-                {
-                    disposable.Dispose();
-                }
+                (Context as IDisposable)?.Dispose();
             }
         }
     }

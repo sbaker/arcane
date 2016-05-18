@@ -18,20 +18,10 @@ namespace Arcane.LiteDb
 
         protected LiteDatabase Database { get; }
 
-        public override IQuery<T> Query<T>()
+        protected override IQueryable<T> CreateQueryable<T>(string name = null)
         {
             throw new NotImplementedException();
-            //return new Query<T>(Database.GetCollection<T>(nameof(T)).FindAll().AsQueryable());
-        }
-
-        public override void SaveChanges()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override Task<int> SaveChangesAsync()
-        {
-            throw new NotImplementedException();
+            //return Database.GetCollection<T>(nameof(T)).FindAll().AsQueryable();
         }
         
         protected override void DisposeCore(bool disposing)

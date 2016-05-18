@@ -1,4 +1,4 @@
-﻿namespace Arcane.Extensions
+﻿namespace Arcane
 {
     public static class ArcaneExtensions
     {

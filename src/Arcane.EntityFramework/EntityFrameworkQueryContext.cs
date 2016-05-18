@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.Entity;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Arcane.EntityFramework
@@ -31,19 +32,9 @@ namespace Arcane.EntityFramework
         {
         }
 
-        public override IQuery<T> Query<T>()
+        protected override IQueryable<T> CreateQueryable<T>(string name = null)
         {
-            return new Query<T>(Context.Set<T>());
-        }
-
-        public override void SaveChanges()
-        {
-            Context.SaveChanges();
-        }
-
-        public override async Task<int> SaveChangesAsync()
-        {
-            return await Context.SaveChangesAsync();
+            return Context.Set<T>();
         }
     }
 }

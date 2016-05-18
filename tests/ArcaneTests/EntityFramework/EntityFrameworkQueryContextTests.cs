@@ -13,7 +13,6 @@ namespace ArcaneTests.EntityFramework
     {
         public EntityFrameworkQueryContextTests()
         {
-            //ContextFactory<EntityDbContext>.OnContextNeeded = context => new EntityDbContext();
             ContextFactory<DbContext>.OnContextNeeded = context => new EntityDbContext();
             Context = new EntityFrameworkQueryContext();
 
@@ -26,7 +25,7 @@ namespace ArcaneTests.EntityFramework
             {
                 if (db.Database.EnsureCreated())
                 {
-                    var authors = GetAuthors(Total);
+                    db.Authors.AddRange(GetAuthors());
 
                     db.SaveChanges();
                 }
@@ -34,14 +33,14 @@ namespace ArcaneTests.EntityFramework
         }
 
         [Fact]
-        public void ContextReturnsIQueryOfEntityTest()
+        public void ContextReturnsIQueryOfAuthorTest()
         {
             var entities = Context.Query<Author>();
             Assert.IsAssignableFrom<IQuery<Author>>(entities);
         }
 
         [Fact]
-        public void InnerQueryIsInternalDbSetOfEntityTest()
+        public void InnerQueryIsInternalDbSetOfAuthorTest()
         {
             var entities = Context.Query<Author>();
             Assert.IsAssignableFrom<InternalDbSet<Author>>(((Query<Author>)entities).InnerQuery);
@@ -52,6 +51,20 @@ namespace ArcaneTests.EntityFramework
         {
             var entities = Context.Query<Author>().Where(a => a.Id <= 24);
             Assert.True(entities.Count() == 24);
+        }
+
+        [Fact]
+        public void GetTheFirst24UsingRepository()
+        {
+            var entities = Repository.GetAll<Author>(a => a.Id <= 24);
+            Assert.True(entities.Count() == 24);
+        }
+
+        [Fact]
+        public void GetThe10MostRecentAuthorsUsingRepository()
+        {
+            var entities = AuthorRepository.GetMostRecent10Authors().ToList();
+            Assert.True(entities.Count == 10);
         }
     }
 }
