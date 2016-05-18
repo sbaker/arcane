@@ -14,7 +14,8 @@ namespace ArcaneTests.DocumentDB
     {
         public DocumentDbQueryContextTests()
         {
-            ContextFactory<DatabaseQueryConfig>.OnContextNeeded = context => {
+            ContextFactory<DatabaseQueryConfig>.OnContextNeeded = context =>
+            {
                 var client = new DocumentClient(new Uri(""), "");
 
                 var database = client.CreateDatabaseQuery().Where(db => db.Id == "Arcane").ToArray().FirstOrDefault()
@@ -25,7 +26,7 @@ namespace ArcaneTests.DocumentDB
                     Client = client,
                     Database = database
                 };
-                
+
                 return config;
             };
 
@@ -38,7 +39,7 @@ namespace ArcaneTests.DocumentDB
             database = client.CreateDatabaseAsync(database).Result;
 
             var collection = new DocumentCollection { Id = "Authors" };
-            collection = client.CreateDocumentCollectionAsync(database.SelfLink, collection).Result;
+            collection = DocumentClientHelper.CreateDocumentCollectionWithRetriesAsync(client, database.Id, collection).Result;
 
             var authors = GetAuthors();
 
@@ -53,8 +54,13 @@ namespace ArcaneTests.DocumentDB
         [Fact]
         public void GetTheFirst24UsingRepository()
         {
-            //var entities = Repository.GetAll<Author>(a => a.Id <= 24);
-            //Assert.True(entities.Count() == 24);
+            // TODO: Test failes due to DocumentDB creating a unique identifier
+            // TODO: field behind the scenes. Find an alternative way to make
+            // TODO: identifiers work cross provider.
+            // Json.Net throws here saying it can't convert from string to int due to 
+            // document db creating an id field automatically.
+            var entities = Repository.GetAll<Author>(a => a.Id <= 24);
+            Assert.True(entities.Count() == 24);
         }
     }
 }

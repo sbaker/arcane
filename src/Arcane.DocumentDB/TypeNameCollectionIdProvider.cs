@@ -7,7 +7,7 @@ namespace Arcane.DocumentDB
     {
         public override Uri GetId<T>(string databaseId)
         {
-            return UriFactory.CreateDocumentCollectionUri(databaseId, typeof(T).Name);
+            return UriFactory.CreateDocumentCollectionUri(databaseId, $"{typeof(T).Name}s");
         }
     }
 }

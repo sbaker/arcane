@@ -18,19 +18,9 @@ namespace Arcane.MongoDB
         {
         }
 
-        public override IQuery<T> Query<T>(string name = null)
+        protected override IQueryable<T> CreateQueryable<T>(string name = null)
         {
-            return new Query<T>(Context.GetCollection<T>(name ?? $"{typeof(T).Name}s").AsQueryable());
+            return Context.GetCollection<T>(name ?? $"{typeof(T).Name}s").AsQueryable();
         }
-
-        //public override void SaveChanges()
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //public override Task<int> SaveChangesAsync()
-        //{
-        //    throw new NotImplementedException();
-        //}
     }
 }
