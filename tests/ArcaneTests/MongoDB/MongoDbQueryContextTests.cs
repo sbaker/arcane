@@ -1,11 +1,8 @@
-﻿using Arcane;
+﻿using System.Linq;
+using Arcane;
 using Arcane.MongoDB;
 using ArcaneTests.Models;
 using MongoDB.Driver;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace ArcaneTests.MongoDB
@@ -15,7 +12,7 @@ namespace ArcaneTests.MongoDB
         public MongoDbQueryContextTests()
         {
             ContextFactory<IMongoDatabase>.OnContextNeeded = context => {
-                var client = new MongoClient("mongodb://arcanetests01:arcanetests01@ds023912.mlab.com:23912/arcanetests");
+                var client = new MongoClient("mongodb://localhost/arcanetests");
                 var database = client.GetDatabase("arcanetests");
                 var collection = database.GetCollection<Author>("Authors");
 
@@ -42,6 +39,20 @@ namespace ArcaneTests.MongoDB
         {
             var entities = Context.Query<Author>().Where(a => a.Id <= 24);
             Assert.True(entities.Count() == 24);
+        }
+
+        [Fact]
+        public void GetTheFirst24UsingRepository()
+        {
+            var entities = Repository.GetAll<Author>(a => a.Id <= 24);
+            Assert.True(entities.Count() == 24);
+        }
+
+        [Fact]
+        public void GetThe10MostRecentAuthorsUsingRepository()
+        {
+            var entities = AuthorRepository.GetMostRecent10Authors().ToList();
+            Assert.True(entities.Count == 10);
         }
     }
 }

@@ -33,15 +33,15 @@ namespace ArcaneTests.InMemoryTests.Data
             return new Query<T>(Enumerable.Empty<T>().AsQueryable());
         }
 
-        public override void SaveChanges()
-        {
-            throw new NotImplementedException();
-        }
+        //public override void SaveChanges()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public override Task<int> SaveChangesAsync()
-        {
-            throw new NotImplementedException();
-        }
+        //public override Task<int> SaveChangesAsync()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         protected override void DisposeCore(bool disposing)
         {

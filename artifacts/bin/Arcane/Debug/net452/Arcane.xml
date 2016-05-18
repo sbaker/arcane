@@ -6,8 +6,16 @@
     <members>
         <member name="T:Arcane.IQueryContext">
             <summary>
-            Provides an interface for an abstraction around access to <see cref="!:IQueryable&lt;T&gt;" /> data entity classes
+            Provides an interface for an abstraction around access to <see cref="T:System.Linq.IQueryable`1" /> data entity classes.
             </summary>
+        </member>
+        <member name="M:Arcane.IQueryContext.Query``1(System.String)">
+            <summary>
+            When implemented in a derived class, creates a query for the given <typeparamref name="T"/> table or collection.
+            </summary>
+            <typeparam name="T">The type representing the table or collection.</typeparam>
+            <param name="name">Optional, parameter is only used in some implementations of the <see cref="T:Arcane.IQueryContext"/></param>
+            <returns></returns>
         </member>
     </members>
 </doc>

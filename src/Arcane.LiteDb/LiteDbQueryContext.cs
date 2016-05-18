@@ -24,15 +24,15 @@ namespace Arcane.LiteDb
             //return new Query<T>(Database.GetCollection<T>(nameof(T)).FindAll().AsQueryable());
         }
 
-        public override void SaveChanges()
-        {
-            throw new NotImplementedException();
-        }
+        //public override void SaveChanges()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public override Task<int> SaveChangesAsync()
-        {
-            throw new NotImplementedException();
-        }
+        //public override Task<int> SaveChangesAsync()
+        //{
+        //    throw new NotImplementedException();
+        //}
         
         protected override void DisposeCore(bool disposing)
         {

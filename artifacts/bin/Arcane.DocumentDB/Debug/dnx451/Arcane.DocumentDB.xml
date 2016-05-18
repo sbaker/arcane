@@ -4,5 +4,20 @@
         <name>Arcane.DocumentDB</name>
     </assembly>
     <members>
+        <member name="M:Arcane.DocumentDB.DatabaseQueryConfig.#ctor">
+            <summary>
+            Creates an instance of this class using the default <see cref="P:Arcane.DocumentDB.CollectionIdProvider.Default"/>.
+            </summary>
+        </member>
+        <member name="M:Arcane.DocumentDB.DatabaseQueryConfig.#ctor(Arcane.DocumentDB.ICollectionIdProvider)">
+            <summary>
+            Creates an instance of this class using the specified <paramref name="provider"/>.
+            </summary>
+        </member>
+        <member name="P:Arcane.DocumentDB.DatabaseQueryConfig.FeedOptions">
+            <summary>
+            The <see cref="P:Arcane.DocumentDB.DatabaseQueryConfig.FeedOptions"/> to pass along for the current requests.
+            </summary>
+        </member>
     </members>
 </doc>

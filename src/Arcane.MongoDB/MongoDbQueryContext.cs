@@ -23,14 +23,14 @@ namespace Arcane.MongoDB
             return new Query<T>(Context.GetCollection<T>(name ?? $"{typeof(T).Name}s").AsQueryable());
         }
 
-        public override void SaveChanges()
-        {
-            throw new NotImplementedException();
-        }
+        //public override void SaveChanges()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public override Task<int> SaveChangesAsync()
-        {
-            throw new NotImplementedException();
-        }
+        //public override Task<int> SaveChangesAsync()
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

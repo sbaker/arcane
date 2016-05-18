@@ -36,14 +36,14 @@ namespace Arcane.EntityFramework
             return new Query<T>(Context.Set<T>());
         }
 
-        public override void SaveChanges()
-        {
-            Context.SaveChanges();
-        }
+        //public override void SaveChanges()
+        //{
+        //    Context.SaveChanges();
+        //}
 
-        public override async Task<int> SaveChangesAsync()
-        {
-            return await Context.SaveChangesAsync();
-        }
+        //public override async Task<int> SaveChangesAsync()
+        //{
+        //    return await Context.SaveChangesAsync();
+        //}
     }
 }
