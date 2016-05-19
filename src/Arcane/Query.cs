@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Arcane
 {
@@ -21,8 +22,29 @@ namespace Arcane
             AddCore(entity);
         }
 
-        protected abstract void AddCore(T entity);
+        void IQuery<T>.Add(IEnumerable<T> entities)
+        {
+            AddCore(entities);
+        }
+
+        void IQuery<T>.Delete(T entity)
+        {
+            DeleteCore(entity);
+        }
+
+        void IQuery<T>.Delete(IEnumerable<T> entities)
+        {
+            DeleteCore(entities);
+        }
 
         #endregion
+
+        protected abstract void AddCore(T entity);
+
+        protected abstract void AddCore(IEnumerable<T> entities);
+
+        protected abstract void DeleteCore(T entity);
+
+        protected abstract void DeleteCore(IEnumerable<T> entities);
     }
 }

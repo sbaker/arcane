@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 
 namespace Arcane
 {
-    public class ArcaneQueryable<T> : IQueryable<T>, IQueryProvider
+    public class ArcaneQueryable<T> : IOrderedQueryable<T>, IQueryProvider
     {
         public ArcaneQueryable(IQueryable<T> innerQuery, IQueryContext context)
         {
@@ -84,6 +84,11 @@ namespace Arcane
         protected virtual IQueryable<TElement> CreateQueryCore<TElement>(IQueryable<TElement> innerQuery)
         {
             return new ArcaneQueryable<TElement>(innerQuery, Context);
+        }
+
+        public override string ToString()
+        {
+            return InnerQuery.ToString();
         }
     }
 }

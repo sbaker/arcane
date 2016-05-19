@@ -54,10 +54,32 @@ namespace ArcaneTests.EntityFramework
         }
 
         [Fact]
+        public void GetTheFirst24UsingRepositorySelectAnonomous()
+        {
+            var entities = Repository.GetAll<Author>(a => a.Id <= 24).Select(a => new { a.Name });
+            Assert.True(entities.Count() == 24);
+        }
+
+        [Fact]
         public void GetThe10MostRecentAuthorsUsingRepository()
         {
             var entities = AuthorRepository.GetMostRecent10Authors().ToList();
             Assert.True(entities.Count == 10);
+        }
+
+        [Fact]
+        public void GetTheAuthorsByFirstNameStartsWithFirst1UsingRepository()
+        {
+            var entities = AuthorRepository.GetAuthorsByFirstName("First1").ToList();
+            Assert.True(entities.Count == 12);
+        }
+
+        [Fact]
+        public void GetTheAuthorsByFirstNameStartsWithFirst1UsingRepositoryNameCheck()
+        {
+            var entities = AuthorRepository.GetAuthorsByFirstName("First2").ToList();
+            Assert.True(entities.Count == 11);
+            Assert.True(entities.All(t => t.Name.StartsWith("First2")));
         }
     }
 }

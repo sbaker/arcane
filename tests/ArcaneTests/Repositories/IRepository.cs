@@ -1,6 +1,5 @@
-﻿
-using System;
-using System.Collections.Generic;
+﻿using System;
+using System.Linq;
 using System.Linq.Expressions;
 using ArcaneTests.Models;
 
@@ -10,7 +9,7 @@ namespace ArcaneTests.Repositories
     {
         T Get<T>(int id) where T : class, IRootEntity<int>, new();
 
-        IEnumerable<T> GetAll<T>(Expression<Func<T, bool>> predicate) where T : class, IRootEntity<int>, new();
+        IQueryable<T> GetAll<T>(Expression<Func<T, bool>> predicate) where T : class, IRootEntity<int>, new();
 
         void Add<T>(T entity) where T : class, IRootEntity<int>, new();
     }
@@ -19,7 +18,7 @@ namespace ArcaneTests.Repositories
     {
         T Get(int id);
 
-        IEnumerable<T> GetAll(Expression<Func<T, bool>> predicate);
+        IQueryable<T> GetAll(Expression<Func<T, bool>> predicate);
 
         void Add(T entity);
     }

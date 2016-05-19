@@ -21,7 +21,7 @@ namespace ArcaneTests.Repositories
             return Context.Query<T>().FirstOrDefault(e => e.Id == id);
         }
 
-        public IEnumerable<T> GetAll<T>(Expression<Func<T, bool>> predicate) where T : class, IRootEntity<int>, new()
+        public IQueryable<T> GetAll<T>(Expression<Func<T, bool>> predicate) where T : class, IRootEntity<int>, new()
         {
             return Context.Query<T>().Where(predicate);
         }
@@ -46,7 +46,7 @@ namespace ArcaneTests.Repositories
             return Context.Query<T>().FirstOrDefault(e => e.Id == id);
         }
 
-        public IEnumerable<T> GetAll(Expression<Func<T, bool>> predicate)
+        public IQueryable<T> GetAll(Expression<Func<T, bool>> predicate)
         {
             return Context.Query<T>().Where(predicate);
         }

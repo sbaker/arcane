@@ -1,4 +1,6 @@
-﻿using MongoDB.Driver;
+﻿using System;
+using System.Collections.Generic;
+using MongoDB.Driver;
 
 namespace Arcane.MongoDB
 {
@@ -14,6 +16,23 @@ namespace Arcane.MongoDB
         protected override void AddCore(T entity)
         {
             Collection.InsertOne(entity);
+        }
+
+        protected override void AddCore(IEnumerable<T> entities)
+        {
+            Collection.InsertMany(entities);
+        }
+
+        protected override void DeleteCore(T entity)
+        {
+            throw new NotImplementedException();
+            //Collection.DeleteOne(Builders<T>.Filter.In(e => e, new[] {entity}));
+        }
+
+        protected override void DeleteCore(IEnumerable<T> entities)
+        {
+            throw new NotImplementedException();
+            //Collection.DeleteMany(Builders<T>.Filter.In(e => e, entities));
         }
     }
 }

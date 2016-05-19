@@ -11,6 +11,12 @@ namespace ArcaneTests.Repositories
         {
         }
 
+        public IEnumerable<Author> GetAuthorsByFirstName(string name)
+        {
+            return Context.Query<Author>()
+                .Where(a => a.Name.StartsWith(name));
+        }
+
         public IEnumerable<Author> GetMostRecent10Authors()
         {
             return Context.Query<Author>()

@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using Arcane;
 
 namespace ArcaneTests.InMemoryTests.Data
@@ -17,6 +16,27 @@ namespace ArcaneTests.InMemoryTests.Data
         protected override void AddCore(T entity)
         {
             List.Add(entity);
+        }
+
+        protected override void AddCore(IEnumerable<T> entities)
+        {
+            foreach (var entity in entities)
+            {
+                AddCore(entity);
+            }
+        }
+
+        protected override void DeleteCore(T entity)
+        {
+            List.Remove(entity);
+        }
+
+        protected override void DeleteCore(IEnumerable<T> entities)
+        {
+            foreach (var entity in entities)
+            {
+                DeleteCore(entity);
+            }
         }
     }
 }

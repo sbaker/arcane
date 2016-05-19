@@ -64,5 +64,11 @@ namespace Arcane.DocumentDB
             Client.CreateDocumentAsync(GetId<T>(), document, RequestOptions, EnableAutoIdGeneration).Wait();
             return document;
         }
+
+        internal void DeleteDocument<T>(T document)
+        {
+            throw new NotImplementedException();
+            //Client.DeleteDocumentAsync("").Wait();
+        }
     }
 }
