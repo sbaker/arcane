@@ -33,6 +33,16 @@ namespace Arcane.DocumentDB
         /// </summary>
         public FeedOptions FeedOptions { get; set; }
 
+        /// <summary>
+        /// The <see cref="RequestOptions"/> to pass along for the current requests.
+        /// </summary>
+        public RequestOptions RequestOptions { get; set; }
+
+        /// <summary>
+        /// The <see cref="FeedOptions"/> to pass along for the current requests.
+        /// </summary>
+        public bool EnableAutoIdGeneration { get; set; }
+
         protected virtual Uri GetId<T>()
         {
             return Provider.GetId<T>(Database.Id);
@@ -43,9 +53,16 @@ namespace Arcane.DocumentDB
             return CreateDocumentQuery<T>(GetId<T>(), FeedOptions);
         }
 
+
         internal IQueryable<T> CreateDocumentQuery<T>(Uri documentUri, FeedOptions feedOptions = null)
         {
             return Client.CreateDocumentQuery<T>(documentUri, feedOptions);
+        }
+
+        internal T CreateDocument<T>(T document)
+        {
+            Client.CreateDocumentAsync(GetId<T>(), document, RequestOptions, EnableAutoIdGeneration).Wait();
+            return document;
         }
     }
 }

@@ -12,12 +12,7 @@ namespace Arcane
 
         public bool IsDisposed { get; private set; }
 
-        public IQuery<T> Query<T>(string name = null) where T : class, new()
-        {
-            return new Query<T>(CreateQueryable<T>(name));
-        }
-
-        protected abstract IQueryable<T> CreateQueryable<T>(string name = null) where T : class, new();
+        public abstract IQuery<T> Query<T>(string name = null) where T : class, new();
 
         public void Dispose()
         {

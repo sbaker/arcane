@@ -40,13 +40,6 @@ namespace ArcaneTests.EntityFramework
         }
 
         [Fact]
-        public void InnerQueryIsInternalDbSetOfAuthorTest()
-        {
-            var entities = Context.Query<Author>();
-            Assert.IsAssignableFrom<InternalDbSet<Author>>(((Query<Author>)entities).InnerQuery);
-        }
-
-        [Fact]
         public void GetTheFirst24Authors()
         {
             var entities = Context.Query<Author>().Where(a => a.Id <= 24);

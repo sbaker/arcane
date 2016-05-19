@@ -2,7 +2,10 @@
 
 namespace Arcane
 {
-    public interface IQuery<out T> : IOrderedQueryable<T>
+    public interface IQuery<T> : IOrderedQueryable<T>
     {
+        IQueryContext Context { get; }
+
+        void Add(T entity);
     }
 }

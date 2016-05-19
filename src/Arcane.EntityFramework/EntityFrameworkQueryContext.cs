@@ -1,6 +1,4 @@
 ﻿using Microsoft.Data.Entity;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Arcane.EntityFramework
 {
@@ -32,9 +30,9 @@ namespace Arcane.EntityFramework
         {
         }
 
-        protected override IQueryable<T> CreateQueryable<T>(string name = null)
+        public override IQuery<T> Query<T>(string name = null)
         {
-            return Context.Set<T>();
+            return new EntityFrameworkQuery<T>(Context.Set<T>(), this);
         }
     }
 }

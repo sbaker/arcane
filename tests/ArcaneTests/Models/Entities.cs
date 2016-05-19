@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using Newtonsoft.Json;
 
 namespace ArcaneTests.Models
 {
@@ -10,6 +11,7 @@ namespace ArcaneTests.Models
 
     public class Author : IRootEntity<int>
     {
+        [JsonProperty("id")]
         public int Id { get; set; }
 
         public string Name { get; set; }

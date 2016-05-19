@@ -10,7 +10,7 @@ namespace Arcane
     public interface IQueryContext : IDisposable
     {
         /// <summary>
-        /// When implemented in a derived class, creates a query for the given <typeparamref name="T"/> table or collection.
+        /// When implemented in a derived class, creates a query for the given <typeparamref name="T"/> model representing a table or collection.
         /// </summary>
         /// <typeparam name="T">The type representing the table or collection.</typeparam>
         /// <param name="name">Optional, parameter is only used in some implementations of the <see cref="IQueryContext"/></param>

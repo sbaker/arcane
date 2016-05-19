@@ -45,7 +45,7 @@ namespace ArcaneTests.DocumentDB
 
             for (var i = 0; i < authors.Length; i++)
             {
-                client.CreateDocumentAsync(collection.SelfLink, authors[i]).Wait();
+                client.CreateDocumentAsync(collection.SelfLink, authors[i], disableAutomaticIdGeneration:true).Wait();
             }
 
             return database;

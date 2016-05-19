@@ -19,5 +19,15 @@
             The <see cref="P:Arcane.DocumentDB.DatabaseQueryConfig.FeedOptions"/> to pass along for the current requests.
             </summary>
         </member>
+        <member name="P:Arcane.DocumentDB.DatabaseQueryConfig.RequestOptions">
+            <summary>
+            The <see cref="P:Arcane.DocumentDB.DatabaseQueryConfig.RequestOptions"/> to pass along for the current requests.
+            </summary>
+        </member>
+        <member name="P:Arcane.DocumentDB.DatabaseQueryConfig.EnableAutoIdGeneration">
+            <summary>
+            The <see cref="P:Arcane.DocumentDB.DatabaseQueryConfig.FeedOptions"/> to pass along for the current requests.
+            </summary>
+        </member>
     </members>
 </doc>

@@ -25,6 +25,11 @@ namespace ArcaneTests.Repositories
         {
             return Context.Query<T>().Where(predicate);
         }
+
+        public void Add<T>(T entity) where T : class, IRootEntity<int>, new()
+        {
+            Context.Query<T>().Add(entity);
+        }
     }
 
     public class Repository<T> : IRepository<T> where T : class, IRootEntity<int>, new()
@@ -44,6 +49,11 @@ namespace ArcaneTests.Repositories
         public IEnumerable<T> GetAll(Expression<Func<T, bool>> predicate)
         {
             return Context.Query<T>().Where(predicate);
+        }
+
+        public void Add(T entity)
+        {
+            Context.Query<T>().Add(entity);
         }
     }
 }

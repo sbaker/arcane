@@ -18,9 +18,9 @@ namespace Arcane.MongoDB
         {
         }
 
-        protected override IQueryable<T> CreateQueryable<T>(string name = null)
+        public override IQuery<T> Query<T>(string name = null)
         {
-            return Context.GetCollection<T>(name ?? $"{typeof(T).Name}s").AsQueryable();
+            return new MongoDbQuery<T>(Context.GetCollection<T>(name ?? $"{typeof(T).Name}s"), this);
         }
     }
 }
