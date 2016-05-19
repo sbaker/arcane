@@ -1,5 +1,4 @@
-﻿
-using System.Linq;
+﻿using System.Linq.Expressions;
 
 namespace Arcane.DocumentDB
 {
@@ -10,6 +9,11 @@ namespace Arcane.DocumentDB
         public override IQuery<T> Query<T>(string name = null)
         {
             return new DocumentDbQuery<T>(Context.CreateDocumentQuery<T>(), this, Context);
+        }
+
+        protected override void EvaluateExpression(Expression expression)
+        {
+            throw new System.NotImplementedException();
         }
 
         protected override void DisposeCore(bool disposing)

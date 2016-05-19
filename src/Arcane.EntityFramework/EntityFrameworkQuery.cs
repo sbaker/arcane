@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.Data.Entity;
+﻿using Microsoft.Data.Entity;
 
 namespace Arcane.EntityFramework
 {
@@ -10,9 +9,9 @@ namespace Arcane.EntityFramework
             DbSet = dbSet;
         }
 
-        public DbSet<T> DbSet { get; set; }
+        private DbSet<T> DbSet { get; }
 
-        public override void Add(T entity)
+        protected override void AddCore(T entity)
         {
             DbSet.Add(entity);
         }

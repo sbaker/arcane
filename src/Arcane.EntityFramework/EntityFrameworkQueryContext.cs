@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.Entity;
+﻿using System.Linq.Expressions;
+using Microsoft.Data.Entity;
 
 namespace Arcane.EntityFramework
 {
@@ -33,6 +34,11 @@ namespace Arcane.EntityFramework
         public override IQuery<T> Query<T>(string name = null)
         {
             return new EntityFrameworkQuery<T>(Context.Set<T>(), this);
+        }
+
+        protected override void EvaluateExpression(Expression expression)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

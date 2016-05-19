@@ -1,19 +1,20 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using Arcane;
 
 namespace ArcaneTests.InMemoryTests.Data
 {
     public class InMemoryQuery<T> : Query<T>
     {
-        public IList<T> List { get; set; }
-
         public InMemoryQuery(IList<T> list, IQueryContext context) : base(list.AsQueryable(), context)
         {
             List = list;
         }
+        
+        private IList<T> List { get; }
 
-        public override void Add(T entity)
+        protected override void AddCore(T entity)
         {
             List.Add(entity);
         }

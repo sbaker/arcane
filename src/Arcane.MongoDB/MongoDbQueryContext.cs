@@ -1,8 +1,6 @@
-﻿using MongoDB.Driver;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System;
+using System.Linq.Expressions;
+using MongoDB.Driver;
 
 namespace Arcane.MongoDB
 {
@@ -21,6 +19,11 @@ namespace Arcane.MongoDB
         public override IQuery<T> Query<T>(string name = null)
         {
             return new MongoDbQuery<T>(Context.GetCollection<T>(name ?? $"{typeof(T).Name}s"), this);
+        }
+
+        protected override void EvaluateExpression(Expression expression)
+        {
+            throw new NotImplementedException();
         }
     }
 }

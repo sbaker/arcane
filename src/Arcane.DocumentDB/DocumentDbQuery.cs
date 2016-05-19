@@ -11,7 +11,7 @@ namespace Arcane.DocumentDB
 
         public DatabaseQueryConfig Config { get; }
 
-        public override void Add(T entity)
+        protected override void AddCore(T entity)
         {
             Config.CreateDocument(entity);
         }

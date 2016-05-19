@@ -1,39 +1,28 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
+﻿using System.Linq;
 
 namespace Arcane
 {
-    public abstract class Query<T> : IQuery<T>
+    public abstract class Query<T> : ArcaneQueryable<T>, IQuery<T>
     {
-        protected Query(IQueryable<T> innerQuery, IQueryContext context)
+        protected Query(IQueryable<T> innerQuery, IQueryContext context) : base(innerQuery, context)
         {
-            InnerQuery = innerQuery;
-            Context = context;
         }
 
-        protected IQueryable<T> InnerQuery { get; }
+        #region IQuery implementation
 
-        public IQueryContext Context { get; set; }
-
-        Type IQueryable.ElementType => InnerQuery.ElementType;
-
-        Expression IQueryable.Expression => InnerQuery.Expression;
-
-        IQueryProvider IQueryable.Provider => InnerQuery.Provider;
-
-        public abstract void Add(T entity);
-
-        IEnumerator IEnumerable.GetEnumerator()
+        IQueryContext IQuery<T>.Context => Context;
+        
+        /// <summary>
+        /// Add a new <typeparamref name="T"/> entity to the backing database or collection.
+        /// </summary>
+        /// <param name="entity">The entity to add.</param>
+        void IQuery<T>.Add(T entity)
         {
-            return ((IQuery<T>)this).GetEnumerator();
+            AddCore(entity);
         }
 
-        IEnumerator<T> IEnumerable<T>.GetEnumerator()
-        {
-            return InnerQuery.GetEnumerator();
-        }
+        protected abstract void AddCore(T entity);
+
+        #endregion
     }
 }

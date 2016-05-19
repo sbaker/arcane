@@ -4,9 +4,17 @@
         <name>Arcane</name>
     </assembly>
     <members>
+        <member name="M:Arcane.ArcaneQueryable`1.CreateQueryCore``1(System.Linq.IQueryable{``0})">
+            <summary>
+            Wraps the <paramref name="innerQuery"/> in a <see cref="T:Arcane.ArcaneQueryable`1"/> instance of <see cref="T:System.Linq.IQueryable`1"/>.
+            </summary>
+            <typeparam name="TElement">The type of element the <see cref="T:System.Linq.IQueryable`1"/> wraps.</typeparam>
+            <param name="innerQuery">The <see cref="T:System.Linq.IQueryable`1"/> innerQuery to wrap.</param>
+            <returns></returns>
+        </member>
         <member name="T:Arcane.IQueryContext">
             <summary>
-            Provides an interface for an abstraction around access to <see cref="T:System.Linq.IQueryable`1" /> data entity classes.
+            Provides an interface for an abstraction around access to <see cref="!:IQueryable&lt;T&gt;" /> data entity classes.
             </summary>
         </member>
         <member name="M:Arcane.IQueryContext.Query``1(System.String)">
@@ -16,6 +24,12 @@
             <typeparam name="T">The type representing the table or collection.</typeparam>
             <param name="name">Optional, parameter is only used in some implementations of the <see cref="T:Arcane.IQueryContext"/></param>
             <returns></returns>
+        </member>
+        <member name="M:Arcane.Query`1.Arcane#IQuery{T}#Add(`0)">
+            <summary>
+            Add a new <typeparamref name="T"/> entity to the backing database or collection.
+            </summary>
+            <param name="entity">The entity to add.</param>
         </member>
     </members>
 </doc>

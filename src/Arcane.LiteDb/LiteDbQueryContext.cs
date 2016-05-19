@@ -1,8 +1,6 @@
-﻿using LiteDB;
-using Arcane;
-using System.Linq;
-using System;
-using System.Threading.Tasks;
+﻿using System;
+using System.Linq.Expressions;
+using LiteDB;
 
 namespace Arcane.LiteDb
 {
@@ -23,7 +21,12 @@ namespace Arcane.LiteDb
             throw new NotImplementedException();
             //return Database.GetCollection<T>(nameof(T)).FindAll().AsQueryable();
         }
-        
+
+        protected override void EvaluateExpression(Expression expression)
+        {
+            throw new NotImplementedException();
+        }
+
         protected override void DisposeCore(bool disposing)
         {
             throw new NotImplementedException();

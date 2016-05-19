@@ -2,6 +2,7 @@
 using ArcaneTests.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 
 namespace ArcaneTests.InMemoryTests.Data
 {
@@ -29,6 +30,11 @@ namespace ArcaneTests.InMemoryTests.Data
             }
 
             return new InMemoryQuery<T>(Enumerable.Empty<T>().ToList(), this);
+        }
+
+        protected override void EvaluateExpression(Expression expression)
+        {
+            throw new System.NotImplementedException();
         }
 
         protected override void DisposeCore(bool disposing)

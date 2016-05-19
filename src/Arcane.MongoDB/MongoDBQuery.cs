@@ -9,9 +9,9 @@ namespace Arcane.MongoDB
             Collection = collection;
         }
 
-        public IMongoCollection<T> Collection { get; set; }
+        private IMongoCollection<T> Collection { get; }
 
-        public override void Add(T entity)
+        protected override void AddCore(T entity)
         {
             Collection.InsertOne(entity);
         }

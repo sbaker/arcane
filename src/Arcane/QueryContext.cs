@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Linq;
+using System.Linq.Expressions;
 
 namespace Arcane
 {
@@ -12,13 +12,25 @@ namespace Arcane
 
         public bool IsDisposed { get; private set; }
 
-        public abstract IQuery<T> Query<T>(string name = null) where T : class, new();
+        public bool SuppressCompatabilityErrors { get; set; } = GlobalSettings.SuppressCompatibilityErrors;
 
         public void Dispose()
         {
             Dispose(true);
             GC.SuppressFinalize(this);
         }
+
+        public abstract IQuery<T> Query<T>(string name = null) where T : class, new();
+
+        void IQueryContext.EvaluateExpression(Expression expression)
+        {
+            if (!SuppressCompatabilityErrors)
+            {
+                EvaluateExpression(expression);
+            }
+        }
+
+        protected abstract void EvaluateExpression(Expression expression);
 
         protected abstract void DisposeCore(bool disposing);
 

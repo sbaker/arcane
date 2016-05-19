@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Linq.Expressions;
 
 namespace Arcane
 {
@@ -9,6 +8,8 @@ namespace Arcane
     /// </summary>
     public interface IQueryContext : IDisposable
     {
+        bool SuppressCompatabilityErrors { get; set; }
+
         /// <summary>
         /// When implemented in a derived class, creates a query for the given <typeparamref name="T"/> model representing a table or collection.
         /// </summary>
@@ -16,5 +17,7 @@ namespace Arcane
         /// <param name="name">Optional, parameter is only used in some implementations of the <see cref="IQueryContext"/></param>
         /// <returns></returns>
         IQuery<T> Query<T>(string name = null) where T : class, new();
+
+        void EvaluateExpression(Expression expression);
     }
 }
