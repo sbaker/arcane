@@ -19,7 +19,6 @@ namespace Arcane.LiteDb
         public override IQuery<T> Query<T>(string name = null)
         {
             throw new NotImplementedException();
-            //return Database.GetCollection<T>(nameof(T)).FindAll().AsQueryable();
         }
 
         protected override void EvaluateExpression(Expression expression)
