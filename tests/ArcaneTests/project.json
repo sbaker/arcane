@@ -7,11 +7,10 @@
   "licenseUrl": "",
 
   "dependencies": {
-    "Arcane": "0.0.1-*",
-    "Arcane.DocumentDB": "0.0.1-*",
-    "Arcane.EntityFramework": "0.0.1-*",
-    "Arcane.LiteDb": "0.0.1-*",
-    "Arcane.MongoDB": "0.0.1-*",
+    "Arcane": "0.0.2-*",
+    "Arcane.DocumentDB": "0.0.2-*",
+    "Arcane.EntityFramework": "0.0.2-*",
+    "Arcane.MongoDB": "0.0.2-*",
     "xunit": "2.1.0",
     "xunit.runner.dnx": "2.1.0-rc1-build204"
   },

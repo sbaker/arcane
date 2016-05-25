@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace Arcane
 {
-    public abstract class QueryContext : IQueryContext
+    public abstract class QueryContext : IQueryContext, ISaveChanges
     {
         ~QueryContext()
         {
@@ -34,6 +35,16 @@ namespace Arcane
 
         protected abstract void DisposeCore(bool disposing);
 
+        protected virtual int SaveChangesCore()
+        {
+            return 0;
+        }
+
+        protected virtual async Task<int> SaveChangesCoreAsync()
+        {
+            return await Task.FromResult(0);
+        }
+
         protected void Dispose(bool disposing)
         {
             if (!IsDisposed)
@@ -42,6 +53,16 @@ namespace Arcane
 
                 IsDisposed = true;
             }
+        }
+
+        int ISaveChanges.SaveChanges()
+        {
+            return SaveChangesCore();
+        }
+
+        async Task<int> ISaveChanges.SaveChangesAsync()
+        {
+            return await SaveChangesCoreAsync();
         }
     }
 

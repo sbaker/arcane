@@ -1,5 +1,5 @@
 ﻿{
-  "version": "0.0.1-*",
+  "version": "0.0.2-*",
   "description": "An implementation of Arcane for DocumentDB.",
   "authors": [ "Stephen Baker" ],
   "tags": [ "IQueryProvider", "IQueryable<T>", "DocumentDB" ],
@@ -7,7 +7,7 @@
   "licenseUrl": "",
 
   "dependencies": {
-    "Arcane": "0.0.1-*",
+    "Arcane": "0.0.2-*",
     "MongoDB.Driver": "2.2.3"
   },
 

@@ -1,4 +1,5 @@
 ﻿using System.Linq.Expressions;
+using System.Threading.Tasks;
 using Microsoft.Data.Entity;
 
 namespace Arcane.EntityFramework
@@ -21,7 +22,7 @@ namespace Arcane.EntityFramework
     /// An EntityFramework implementation of <see cref="IQueryContext"/> wrapping a generic <see cref="TContext"/>.
     /// </summary>
     /// <typeparam name="TContext">The <typeparamref name="TContext"/> to encapsulate.</typeparam>
-    public class EntityFrameworkQueryContext<TContext> : QueryContext<TContext> where TContext : DbContext
+    public class EntityFrameworkQueryContext<TContext> : QueryContext<TContext>, ISaveChanges where TContext : DbContext
     {
         public EntityFrameworkQueryContext()
         {
@@ -39,6 +40,16 @@ namespace Arcane.EntityFramework
         protected override void EvaluateExpression(Expression expression)
         {
             throw new System.NotImplementedException();
+        }
+
+        public int SaveChanges()
+        {
+            return Context.SaveChanges();
+        }
+
+        public async Task<int> SaveChangesAsync()
+        {
+            return await Context.SaveChangesAsync();
         }
     }
 }

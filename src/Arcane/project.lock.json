@@ -2,22 +2,84 @@
   "locked": false,
   "version": 2,
   "targets": {
-    "DNX,Version=v4.5.1": {},
-    "DNX,Version=v4.5.2": {},
-    ".NETFramework,Version=v4.5.1": {},
-    ".NETFramework,Version=v4.5.2": {},
-    "DNX,Version=v4.5.1/win7-x86": {},
-    "DNX,Version=v4.5.1/win7-x64": {},
-    "DNX,Version=v4.5.2/win7-x86": {},
-    "DNX,Version=v4.5.2/win7-x64": {},
-    ".NETFramework,Version=v4.5.1/win7-x86": {},
-    ".NETFramework,Version=v4.5.1/win7-x64": {},
-    ".NETFramework,Version=v4.5.2/win7-x86": {},
-    ".NETFramework,Version=v4.5.2/win7-x64": {}
+    "DNX,Version=v4.5.1": {
+      "NETStandard.Library/1.5.0-rc2-24027": {
+        "type": "package"
+      }
+    },
+    "DNX,Version=v4.5.2": {
+      "NETStandard.Library/1.5.0-rc2-24027": {
+        "type": "package"
+      }
+    },
+    ".NETFramework,Version=v4.5.1": {
+      "NETStandard.Library/1.5.0-rc2-24027": {
+        "type": "package"
+      }
+    },
+    ".NETFramework,Version=v4.5.2": {
+      "NETStandard.Library/1.5.0-rc2-24027": {
+        "type": "package"
+      }
+    },
+    "DNX,Version=v4.5.1/win7-x86": {
+      "NETStandard.Library/1.5.0-rc2-24027": {
+        "type": "package"
+      }
+    },
+    "DNX,Version=v4.5.1/win7-x64": {
+      "NETStandard.Library/1.5.0-rc2-24027": {
+        "type": "package"
+      }
+    },
+    "DNX,Version=v4.5.2/win7-x86": {
+      "NETStandard.Library/1.5.0-rc2-24027": {
+        "type": "package"
+      }
+    },
+    "DNX,Version=v4.5.2/win7-x64": {
+      "NETStandard.Library/1.5.0-rc2-24027": {
+        "type": "package"
+      }
+    },
+    ".NETFramework,Version=v4.5.1/win7-x86": {
+      "NETStandard.Library/1.5.0-rc2-24027": {
+        "type": "package"
+      }
+    },
+    ".NETFramework,Version=v4.5.1/win7-x64": {
+      "NETStandard.Library/1.5.0-rc2-24027": {
+        "type": "package"
+      }
+    },
+    ".NETFramework,Version=v4.5.2/win7-x86": {
+      "NETStandard.Library/1.5.0-rc2-24027": {
+        "type": "package"
+      }
+    },
+    ".NETFramework,Version=v4.5.2/win7-x64": {
+      "NETStandard.Library/1.5.0-rc2-24027": {
+        "type": "package"
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "NETStandard.Library/1.5.0-rc2-24027": {
+      "type": "package",
+      "sha512": "SD27bvP2gNnlpC7HZUbnPOXS1M7VbBZoi0bdlqe5tj7weJQ2EyGDGw8mi7K1yUmeqjL6jPWBLSC28TDaLnyqwA==",
+      "files": [
+        "dotnet_library_license.txt",
+        "NETStandard.Library.1.5.0-rc2-24027.nupkg",
+        "NETStandard.Library.1.5.0-rc2-24027.nupkg.sha512",
+        "NETStandard.Library.nuspec",
+        "ThirdPartyNotices.txt"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "": [],
+    "": [
+      "NETStandard.Library >= 1.5.0-rc2-24027"
+    ],
     "DNX,Version=v4.5.1": [],
     "DNX,Version=v4.5.2": [],
     ".NETFramework,Version=v4.5.1": [],
