@@ -38,5 +38,24 @@ namespace ArcaneTests.InMemoryTests.Data
                 DeleteCore(entity);
             }
         }
+
+        protected override void UpdateCore(T entity)
+        {
+            if (!List.Contains(entity))
+            {
+                AddCore(entity);
+            }
+        }
+
+        protected override void UpdateCore(IEnumerable<T> entities)
+        {
+            foreach (var entity in entities)
+            {
+                if (!List.Contains(entity))
+                {
+                    AddCore(entity);
+                }
+            }
+        }
     }
 }

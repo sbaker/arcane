@@ -37,5 +37,15 @@ namespace Arcane.DocumentDB
                 DeleteCore(entity);
             }
         }
+
+        protected override void UpdateCore(T entity)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        protected override void UpdateCore(IEnumerable<T> entities)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

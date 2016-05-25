@@ -22,19 +22,31 @@
             <summary>
             Add all the new <typeparamref name="T"/> entities to the backing database or collection.
             </summary>
-            <param name="entities">The entity to add.</param>
+            <param name="entities">The entities to add.</param>
         </member>
         <member name="M:Arcane.IQuery`1.Delete(`0)">
             <summary>
             Deletes the <typeparamref name="T"/> entity from the backing database or collection.
             </summary>
-            <param name="entity">The entity to add.</param>
+            <param name="entity">The entity to delete.</param>
         </member>
         <member name="M:Arcane.IQuery`1.Delete(System.Collections.Generic.IEnumerable{`0})">
             <summary>
             Deletes all the <typeparamref name="T"/> entities from the backing database or collection.
             </summary>
-            <param name="entities">The entity to add.</param>
+            <param name="entities">The entities to delete.</param>
+        </member>
+        <member name="M:Arcane.IQuery`1.Update(`0)">
+            <summary>
+            Updates the <typeparamref name="T"/> entity in the backing database or collection.
+            </summary>
+            <param name="entity">The entity to update.</param>
+        </member>
+        <member name="M:Arcane.IQuery`1.Update(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Deletes all the <typeparamref name="T"/> entities in the backing database or collection.
+            </summary>
+            <param name="entities">The entities to update.</param>
         </member>
         <member name="T:Arcane.IQueryContext">
             <summary>

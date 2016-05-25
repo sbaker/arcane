@@ -31,5 +31,15 @@ namespace Arcane.EntityFramework
         {
             DbSet.RemoveRange(entities);
         }
+
+        protected override void UpdateCore(T entity)
+        {
+            DbSet.Update(entity);
+        }
+
+        protected override void UpdateCore(IEnumerable<T> entities)
+        {
+            DbSet.UpdateRange(entities);
+        }
     }
 }

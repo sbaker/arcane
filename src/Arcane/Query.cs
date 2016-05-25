@@ -37,6 +37,16 @@ namespace Arcane
             DeleteCore(entities);
         }
 
+        void IQuery<T>.Update(T entity)
+        {
+            UpdateCore(entity);
+        }
+
+        void IQuery<T>.Update(IEnumerable<T> entities)
+        {
+            UpdateCore(entities);
+        }
+
         #endregion
 
         protected abstract void AddCore(T entity);
@@ -46,5 +56,9 @@ namespace Arcane
         protected abstract void DeleteCore(T entity);
 
         protected abstract void DeleteCore(IEnumerable<T> entities);
+
+        protected abstract void UpdateCore(T entity);
+
+        protected abstract void UpdateCore(IEnumerable<T> entities);
     }
 }
