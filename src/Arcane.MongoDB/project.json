@@ -2,21 +2,34 @@
   "version": "0.0.2-*",
   "description": "An implementation of Arcane for DocumentDB.",
   "authors": [ "Stephen Baker" ],
-  "tags": [ "IQueryProvider", "IQueryable<T>", "DocumentDB" ],
-  "projectUrl": "",
-  "licenseUrl": "",
+  "buildOptions": {
+    "xmlDoc": true
+  },
+  "packOptions": {
+    "tags": [ "IQueryProvider", "IQueryable<T>", "DocumentDB" ],
+    "projectUrl": "",
+    "licenseUrl": ""
+  },
 
   "dependencies": {
-    "Arcane": "0.0.2-*",
+    "Arcane": "0.0.*",
     "MongoDB.Driver": "2.2.3"
   },
 
   "commands": { },
 
   "frameworks": {
-    "dnx451": { },
-    "dnx452": { },
-    "net451": { },
-    "net452": { }
+    "dnx451": {
+      "dependencies": { }
+    },
+    "net451": {
+      "dependencies": { }
+    },
+    "net452": {
+      "dependencies": { }
+    },
+    "net46": {
+      "dependencies": { }
+    }
   }
 }

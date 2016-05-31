@@ -3,8 +3,15 @@ using System.Linq;
 
 namespace Arcane
 {
+    /// <summary>
+    /// An interface that represents a wrapped <see cref="IQueryable{T}"/>
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public interface IQuery<T> : IOrderedQueryable<T>
     {
+        /// <summary>
+        /// The <see cref="IQueryContext"/> responsible for creating this instance.
+        /// </summary>
         IQueryContext Context { get; }
         
         /// <summary>
@@ -38,7 +45,7 @@ namespace Arcane
         void Update(T entity);
 
         /// <summary>
-        /// Deletes all the <typeparamref name="T"/> entities in the backing database or collection.
+        /// Updates all the <typeparamref name="T"/> entities in the backing database or collection.
         /// </summary>
         /// <param name="entities">The entities to update.</param>
         void Update(IEnumerable<T> entities);

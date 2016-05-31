@@ -2,8 +2,7 @@
 using Arcane.EntityFramework;
 using ArcaneTests.EntityFramework.Data;
 using ArcaneTests.Models;
-using Microsoft.Data.Entity;
-using Microsoft.Data.Entity.Internal;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using Xunit;
 

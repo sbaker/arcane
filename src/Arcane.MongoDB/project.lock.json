@@ -2,152 +2,53 @@
   "locked": false,
   "version": 2,
   "targets": {
-    "DNX,Version=v4.5.1": {
-      "Arcane/0.0.2": {
-        "type": "project",
-        "framework": "DNX,Version=v4.5.1",
-        "dependencies": {
-          "NETStandard.Library": "1.5.0-rc2-24027"
-        }
-      },
-      "MongoDB.Bson/2.2.3": {
-        "type": "package",
-        "compile": {
-          "lib/net45/MongoDB.Bson.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Bson.dll": {}
-        }
-      },
-      "MongoDB.Driver/2.2.3": {
-        "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.2.3",
-          "MongoDB.Driver.Core": "2.2.3"
-        },
-        "compile": {
-          "lib/net45/MongoDB.Driver.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Driver.dll": {}
-        }
-      },
-      "MongoDB.Driver.Core/2.2.3": {
-        "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.2.3"
-        },
-        "compile": {
-          "lib/net45/MongoDB.Driver.Core.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Driver.Core.dll": {}
-        }
-      },
-      "NETStandard.Library/1.5.0-rc2-24027": {
-        "type": "package"
-      }
-    },
-    "DNX,Version=v4.5.2": {
-      "Arcane/0.0.2": {
-        "type": "project",
-        "framework": "DNX,Version=v4.5.2",
-        "dependencies": {
-          "NETStandard.Library": "1.5.0-rc2-24027"
-        }
-      },
-      "MongoDB.Bson/2.2.3": {
-        "type": "package",
-        "compile": {
-          "lib/net45/MongoDB.Bson.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Bson.dll": {}
-        }
-      },
-      "MongoDB.Driver/2.2.3": {
-        "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.2.3",
-          "MongoDB.Driver.Core": "2.2.3"
-        },
-        "compile": {
-          "lib/net45/MongoDB.Driver.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Driver.dll": {}
-        }
-      },
-      "MongoDB.Driver.Core/2.2.3": {
-        "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.2.3"
-        },
-        "compile": {
-          "lib/net45/MongoDB.Driver.Core.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Driver.Core.dll": {}
-        }
-      },
-      "NETStandard.Library/1.5.0-rc2-24027": {
-        "type": "package"
-      }
-    },
     ".NETFramework,Version=v4.5.1": {
+      "MongoDB.Bson/2.2.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/MongoDB.Bson.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MongoDB.Bson.dll": {}
+        }
+      },
+      "MongoDB.Driver/2.2.3": {
+        "type": "package",
+        "dependencies": {
+          "MongoDB.Bson": "2.2.3",
+          "MongoDB.Driver.Core": "2.2.3"
+        },
+        "compile": {
+          "lib/net45/MongoDB.Driver.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MongoDB.Driver.dll": {}
+        }
+      },
+      "MongoDB.Driver.Core/2.2.3": {
+        "type": "package",
+        "dependencies": {
+          "MongoDB.Bson": "2.2.3"
+        },
+        "compile": {
+          "lib/net45/MongoDB.Driver.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MongoDB.Driver.Core.dll": {}
+        }
+      },
       "Arcane/0.0.2": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1",
-        "dependencies": {
-          "NETStandard.Library": "1.5.0-rc2-24027"
-        }
-      },
-      "MongoDB.Bson/2.2.3": {
-        "type": "package",
         "compile": {
-          "lib/net45/MongoDB.Bson.dll": {}
+          "net451/Arcane.dll": {}
         },
         "runtime": {
-          "lib/net45/MongoDB.Bson.dll": {}
+          "net451/Arcane.dll": {}
         }
-      },
-      "MongoDB.Driver/2.2.3": {
-        "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.2.3",
-          "MongoDB.Driver.Core": "2.2.3"
-        },
-        "compile": {
-          "lib/net45/MongoDB.Driver.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Driver.dll": {}
-        }
-      },
-      "MongoDB.Driver.Core/2.2.3": {
-        "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.2.3"
-        },
-        "compile": {
-          "lib/net45/MongoDB.Driver.Core.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Driver.Core.dll": {}
-        }
-      },
-      "NETStandard.Library/1.5.0-rc2-24027": {
-        "type": "package"
       }
     },
     ".NETFramework,Version=v4.5.2": {
-      "Arcane/0.0.2": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.5.2",
-        "dependencies": {
-          "NETStandard.Library": "1.5.0-rc2-24027"
-        }
-      },
       "MongoDB.Bson/2.2.3": {
         "type": "package",
         "compile": {
@@ -182,439 +83,162 @@
           "lib/net45/MongoDB.Driver.Core.dll": {}
         }
       },
-      "NETStandard.Library/1.5.0-rc2-24027": {
-        "type": "package"
+      "Arcane/0.0.2": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.2",
+        "compile": {
+          "net452/Arcane.dll": {}
+        },
+        "runtime": {
+          "net452/Arcane.dll": {}
+        }
       }
     },
-    "DNX,Version=v4.5.1/win7-x86": {
+    ".NETFramework,Version=v4.6": {
+      "MongoDB.Bson/2.2.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/MongoDB.Bson.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MongoDB.Bson.dll": {}
+        }
+      },
+      "MongoDB.Driver/2.2.3": {
+        "type": "package",
+        "dependencies": {
+          "MongoDB.Bson": "2.2.3",
+          "MongoDB.Driver.Core": "2.2.3"
+        },
+        "compile": {
+          "lib/net45/MongoDB.Driver.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MongoDB.Driver.dll": {}
+        }
+      },
+      "MongoDB.Driver.Core/2.2.3": {
+        "type": "package",
+        "dependencies": {
+          "MongoDB.Bson": "2.2.3"
+        },
+        "compile": {
+          "lib/net45/MongoDB.Driver.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MongoDB.Driver.Core.dll": {}
+        }
+      },
+      "Arcane/0.0.2": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6",
+        "compile": {
+          "net46/Arcane.dll": {}
+        },
+        "runtime": {
+          "net46/Arcane.dll": {}
+        }
+      }
+    },
+    "DNX,Version=v4.5.1": {
+      "MongoDB.Bson/2.2.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/MongoDB.Bson.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MongoDB.Bson.dll": {}
+        }
+      },
+      "MongoDB.Driver/2.2.3": {
+        "type": "package",
+        "dependencies": {
+          "MongoDB.Bson": "2.2.3",
+          "MongoDB.Driver.Core": "2.2.3"
+        },
+        "compile": {
+          "lib/net45/MongoDB.Driver.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MongoDB.Driver.dll": {}
+        }
+      },
+      "MongoDB.Driver.Core/2.2.3": {
+        "type": "package",
+        "dependencies": {
+          "MongoDB.Bson": "2.2.3"
+        },
+        "compile": {
+          "lib/net45/MongoDB.Driver.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MongoDB.Driver.Core.dll": {}
+        }
+      },
       "Arcane/0.0.2": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
-        "dependencies": {
-          "NETStandard.Library": "1.5.0-rc2-24027"
-        }
-      },
-      "MongoDB.Bson/2.2.3": {
-        "type": "package",
         "compile": {
-          "lib/net45/MongoDB.Bson.dll": {}
+          "dnx451/Arcane.dll": {}
         },
         "runtime": {
-          "lib/net45/MongoDB.Bson.dll": {}
+          "dnx451/Arcane.dll": {}
         }
-      },
-      "MongoDB.Driver/2.2.3": {
-        "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.2.3",
-          "MongoDB.Driver.Core": "2.2.3"
-        },
-        "compile": {
-          "lib/net45/MongoDB.Driver.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Driver.dll": {}
-        }
-      },
-      "MongoDB.Driver.Core/2.2.3": {
-        "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.2.3"
-        },
-        "compile": {
-          "lib/net45/MongoDB.Driver.Core.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Driver.Core.dll": {}
-        }
-      },
-      "NETStandard.Library/1.5.0-rc2-24027": {
-        "type": "package"
-      }
-    },
-    "DNX,Version=v4.5.1/win7-x64": {
-      "Arcane/0.0.2": {
-        "type": "project",
-        "framework": "DNX,Version=v4.5.1",
-        "dependencies": {
-          "NETStandard.Library": "1.5.0-rc2-24027"
-        }
-      },
-      "MongoDB.Bson/2.2.3": {
-        "type": "package",
-        "compile": {
-          "lib/net45/MongoDB.Bson.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Bson.dll": {}
-        }
-      },
-      "MongoDB.Driver/2.2.3": {
-        "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.2.3",
-          "MongoDB.Driver.Core": "2.2.3"
-        },
-        "compile": {
-          "lib/net45/MongoDB.Driver.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Driver.dll": {}
-        }
-      },
-      "MongoDB.Driver.Core/2.2.3": {
-        "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.2.3"
-        },
-        "compile": {
-          "lib/net45/MongoDB.Driver.Core.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Driver.Core.dll": {}
-        }
-      },
-      "NETStandard.Library/1.5.0-rc2-24027": {
-        "type": "package"
-      }
-    },
-    "DNX,Version=v4.5.2/win7-x86": {
-      "Arcane/0.0.2": {
-        "type": "project",
-        "framework": "DNX,Version=v4.5.2",
-        "dependencies": {
-          "NETStandard.Library": "1.5.0-rc2-24027"
-        }
-      },
-      "MongoDB.Bson/2.2.3": {
-        "type": "package",
-        "compile": {
-          "lib/net45/MongoDB.Bson.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Bson.dll": {}
-        }
-      },
-      "MongoDB.Driver/2.2.3": {
-        "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.2.3",
-          "MongoDB.Driver.Core": "2.2.3"
-        },
-        "compile": {
-          "lib/net45/MongoDB.Driver.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Driver.dll": {}
-        }
-      },
-      "MongoDB.Driver.Core/2.2.3": {
-        "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.2.3"
-        },
-        "compile": {
-          "lib/net45/MongoDB.Driver.Core.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Driver.Core.dll": {}
-        }
-      },
-      "NETStandard.Library/1.5.0-rc2-24027": {
-        "type": "package"
-      }
-    },
-    "DNX,Version=v4.5.2/win7-x64": {
-      "Arcane/0.0.2": {
-        "type": "project",
-        "framework": "DNX,Version=v4.5.2",
-        "dependencies": {
-          "NETStandard.Library": "1.5.0-rc2-24027"
-        }
-      },
-      "MongoDB.Bson/2.2.3": {
-        "type": "package",
-        "compile": {
-          "lib/net45/MongoDB.Bson.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Bson.dll": {}
-        }
-      },
-      "MongoDB.Driver/2.2.3": {
-        "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.2.3",
-          "MongoDB.Driver.Core": "2.2.3"
-        },
-        "compile": {
-          "lib/net45/MongoDB.Driver.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Driver.dll": {}
-        }
-      },
-      "MongoDB.Driver.Core/2.2.3": {
-        "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.2.3"
-        },
-        "compile": {
-          "lib/net45/MongoDB.Driver.Core.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Driver.Core.dll": {}
-        }
-      },
-      "NETStandard.Library/1.5.0-rc2-24027": {
-        "type": "package"
-      }
-    },
-    ".NETFramework,Version=v4.5.1/win7-x86": {
-      "Arcane/0.0.2": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.5.1",
-        "dependencies": {
-          "NETStandard.Library": "1.5.0-rc2-24027"
-        }
-      },
-      "MongoDB.Bson/2.2.3": {
-        "type": "package",
-        "compile": {
-          "lib/net45/MongoDB.Bson.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Bson.dll": {}
-        }
-      },
-      "MongoDB.Driver/2.2.3": {
-        "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.2.3",
-          "MongoDB.Driver.Core": "2.2.3"
-        },
-        "compile": {
-          "lib/net45/MongoDB.Driver.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Driver.dll": {}
-        }
-      },
-      "MongoDB.Driver.Core/2.2.3": {
-        "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.2.3"
-        },
-        "compile": {
-          "lib/net45/MongoDB.Driver.Core.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Driver.Core.dll": {}
-        }
-      },
-      "NETStandard.Library/1.5.0-rc2-24027": {
-        "type": "package"
-      }
-    },
-    ".NETFramework,Version=v4.5.1/win7-x64": {
-      "Arcane/0.0.2": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.5.1",
-        "dependencies": {
-          "NETStandard.Library": "1.5.0-rc2-24027"
-        }
-      },
-      "MongoDB.Bson/2.2.3": {
-        "type": "package",
-        "compile": {
-          "lib/net45/MongoDB.Bson.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Bson.dll": {}
-        }
-      },
-      "MongoDB.Driver/2.2.3": {
-        "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.2.3",
-          "MongoDB.Driver.Core": "2.2.3"
-        },
-        "compile": {
-          "lib/net45/MongoDB.Driver.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Driver.dll": {}
-        }
-      },
-      "MongoDB.Driver.Core/2.2.3": {
-        "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.2.3"
-        },
-        "compile": {
-          "lib/net45/MongoDB.Driver.Core.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Driver.Core.dll": {}
-        }
-      },
-      "NETStandard.Library/1.5.0-rc2-24027": {
-        "type": "package"
-      }
-    },
-    ".NETFramework,Version=v4.5.2/win7-x86": {
-      "Arcane/0.0.2": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.5.2",
-        "dependencies": {
-          "NETStandard.Library": "1.5.0-rc2-24027"
-        }
-      },
-      "MongoDB.Bson/2.2.3": {
-        "type": "package",
-        "compile": {
-          "lib/net45/MongoDB.Bson.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Bson.dll": {}
-        }
-      },
-      "MongoDB.Driver/2.2.3": {
-        "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.2.3",
-          "MongoDB.Driver.Core": "2.2.3"
-        },
-        "compile": {
-          "lib/net45/MongoDB.Driver.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Driver.dll": {}
-        }
-      },
-      "MongoDB.Driver.Core/2.2.3": {
-        "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.2.3"
-        },
-        "compile": {
-          "lib/net45/MongoDB.Driver.Core.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Driver.Core.dll": {}
-        }
-      },
-      "NETStandard.Library/1.5.0-rc2-24027": {
-        "type": "package"
-      }
-    },
-    ".NETFramework,Version=v4.5.2/win7-x64": {
-      "Arcane/0.0.2": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.5.2",
-        "dependencies": {
-          "NETStandard.Library": "1.5.0-rc2-24027"
-        }
-      },
-      "MongoDB.Bson/2.2.3": {
-        "type": "package",
-        "compile": {
-          "lib/net45/MongoDB.Bson.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Bson.dll": {}
-        }
-      },
-      "MongoDB.Driver/2.2.3": {
-        "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.2.3",
-          "MongoDB.Driver.Core": "2.2.3"
-        },
-        "compile": {
-          "lib/net45/MongoDB.Driver.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Driver.dll": {}
-        }
-      },
-      "MongoDB.Driver.Core/2.2.3": {
-        "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.2.3"
-        },
-        "compile": {
-          "lib/net45/MongoDB.Driver.Core.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Driver.Core.dll": {}
-        }
-      },
-      "NETStandard.Library/1.5.0-rc2-24027": {
-        "type": "package"
       }
     }
   },
   "libraries": {
-    "Arcane/0.0.2": {
-      "type": "project",
-      "path": "../Arcane/project.json"
-    },
     "MongoDB.Bson/2.2.3": {
-      "type": "package",
       "sha512": "AwxyD8qYgy1GQkxQV2uMzymm19QwaNNAER6gf/w8f2dDjcboEve1kv9GEz7mtn2K8p6hYQjhgnvGc+xeh0KLmg==",
+      "type": "package",
       "files": [
-        "lib/net45/MongoDB.Bson.dll",
-        "lib/net45/MongoDB.Bson.XML",
         "License.rtf",
         "MongoDB.Bson.2.2.3.nupkg",
         "MongoDB.Bson.2.2.3.nupkg.sha512",
-        "MongoDB.Bson.nuspec"
+        "MongoDB.Bson.nuspec",
+        "lib/net45/MongoDB.Bson.XML",
+        "lib/net45/MongoDB.Bson.dll"
       ]
     },
     "MongoDB.Driver/2.2.3": {
-      "type": "package",
       "sha512": "ZgRSAv+vxCCYnL/V4mChGNnx8rBnnpDO2S8Fex+G3IrVWRRgJb3rEFOEoyuyR5C5qtOHGVMlGRSSngQwbgV2Dw==",
+      "type": "package",
       "files": [
-        "lib/net45/MongoDB.Driver.dll",
-        "lib/net45/MongoDB.Driver.XML",
         "License.rtf",
         "MongoDB.Driver.2.2.3.nupkg",
         "MongoDB.Driver.2.2.3.nupkg.sha512",
-        "MongoDB.Driver.nuspec"
+        "MongoDB.Driver.nuspec",
+        "lib/net45/MongoDB.Driver.XML",
+        "lib/net45/MongoDB.Driver.dll"
       ]
     },
     "MongoDB.Driver.Core/2.2.3": {
-      "type": "package",
       "sha512": "o9/7behJkN5TEG9KvRHM6HUdnsXgLl31pKRQwiCi4xgd7gAleI3sagBcujh7x40gl1NL/u4+uMPRZFpGAaGEQw==",
+      "type": "package",
       "files": [
-        "lib/net45/MongoDB.Driver.Core.dll",
         "License.rtf",
         "MongoDB.Driver.Core.2.2.3.nupkg",
         "MongoDB.Driver.Core.2.2.3.nupkg.sha512",
-        "MongoDB.Driver.Core.nuspec"
+        "MongoDB.Driver.Core.nuspec",
+        "lib/net45/MongoDB.Driver.Core.dll"
       ]
     },
-    "NETStandard.Library/1.5.0-rc2-24027": {
-      "type": "package",
-      "sha512": "SD27bvP2gNnlpC7HZUbnPOXS1M7VbBZoi0bdlqe5tj7weJQ2EyGDGw8mi7K1yUmeqjL6jPWBLSC28TDaLnyqwA==",
-      "files": [
-        "dotnet_library_license.txt",
-        "NETStandard.Library.1.5.0-rc2-24027.nupkg",
-        "NETStandard.Library.1.5.0-rc2-24027.nupkg.sha512",
-        "NETStandard.Library.nuspec",
-        "ThirdPartyNotices.txt"
-      ]
+    "Arcane/0.0.2": {
+      "type": "project",
+      "path": "../Arcane/project.json",
+      "msbuildProject": "../Arcane/Arcane.xproj"
     }
   },
   "projectFileDependencyGroups": {
     "": [
-      "Arcane >= 0.0.2-*",
+      "Arcane >= 0.0.*",
       "MongoDB.Driver >= 2.2.3"
     ],
-    "DNX,Version=v4.5.1": [],
-    "DNX,Version=v4.5.2": [],
     ".NETFramework,Version=v4.5.1": [],
-    ".NETFramework,Version=v4.5.2": []
-  }
+    ".NETFramework,Version=v4.5.2": [],
+    ".NETFramework,Version=v4.6": [],
+    "DNX,Version=v4.5.1": []
+  },
+  "tools": {},
+  "projectFileToolGroups": {}
 }

@@ -8,6 +8,9 @@ namespace Arcane
     /// </summary>
     public interface IQueryContext : IDisposable
     {
+        /// <summary>
+        /// When set to true, will suppress cross provider compatable issues. (Note: this is not yet implemented)
+        /// </summary>
         bool SuppressCompatabilityErrors { get; set; }
 
         /// <summary>
@@ -18,6 +21,10 @@ namespace Arcane
         /// <returns></returns>
         IQuery<T> Query<T>(string name = null) where T : class, new();
 
+        /// <summary>
+        /// If <see cref="SuppressCompatabilityErrors"/> is false, will evaluate the current expression for common cross provider issues.
+        /// </summary>
+        /// <param name="expression">The expression to evaluate.</param>
         void EvaluateExpression(Expression expression);
     }
 }

@@ -1,5 +1,5 @@
-﻿using Microsoft.Data.Entity;
-using System.Data.SQLite;
+﻿using System.Data.SQLite;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Data.Sqlite;
 using ArcaneTests.Models;
 

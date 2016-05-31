@@ -1,0 +1,30 @@
+--temp-output:D:\git\arcane\src\Arcane\obj\Debug\dnx451\
+--out:D:\git\arcane\src\Arcane\bin\Debug\dnx451\Arcane.dll
+--define:DEBUG
+--define:TRACE
+--define:DNX451
+--suppress-warning:CS1701
+--suppress-warning:CS1702
+--suppress-warning:CS1705
+--optimize:False
+--generate-xml-documentation:True
+--output-name:Arcane
+--description:Arcane is an abstraction layer on top of an IQueryProvider to allow for decoupling of the code from the actual ORM providing the actual data.
+--file-version:0.0.2.0
+--version:0.0.2.0
+--informational-version:0.0.2
+--target-framework:.NETFramework,Version=v4.5.1
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\mscorlib.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\System.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\System.Core.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Microsoft.CSharp.dll
+D:\git\arcane\src\Arcane\ArcaneQueryable.cs
+D:\git\arcane\src\Arcane\ContextFactory.cs
+D:\git\arcane\src\Arcane\GlobalSettings.cs
+D:\git\arcane\src\Arcane\IQuery.cs
+D:\git\arcane\src\Arcane\IQueryContext.cs
+D:\git\arcane\src\Arcane\ISaveChanges.cs
+D:\git\arcane\src\Arcane\Query.cs
+D:\git\arcane\src\Arcane\QueryContext.cs
+D:\git\arcane\src\Arcane\Extensions\ArcaneExtensions.cs
+D:\git\arcane\src\Arcane\Properties\AssemblyInfo.cs

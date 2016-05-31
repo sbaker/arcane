@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Microsoft.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 
 namespace Arcane.EntityFramework
 {

@@ -1,0 +1,27 @@
+--temp-output:D:\git\arcane\src\Arcane.MongoDB\obj\Debug\net452\
+--out:D:\git\arcane\src\Arcane.MongoDB\bin\Debug\net452\Arcane.MongoDB.dll
+--define:DEBUG
+--define:TRACE
+--define:NET452
+--suppress-warning:CS1701
+--suppress-warning:CS1702
+--suppress-warning:CS1705
+--optimize:False
+--generate-xml-documentation:True
+--output-name:Arcane.MongoDB
+--description:An implementation of Arcane for DocumentDB.
+--file-version:0.0.2.0
+--version:0.0.2.0
+--informational-version:0.0.2
+--target-framework:.NETFramework,Version=v4.5.2
+--reference:C:\Users\sbaker\.nuget\packages\MongoDB.Bson\2.2.3\lib\net45\MongoDB.Bson.dll
+--reference:C:\Users\sbaker\.nuget\packages\MongoDB.Driver\2.2.3\lib\net45\MongoDB.Driver.dll
+--reference:C:\Users\sbaker\.nuget\packages\MongoDB.Driver.Core\2.2.3\lib\net45\MongoDB.Driver.Core.dll
+--reference:D:\git\arcane\src\Arcane\bin\Debug\net452\Arcane.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\mscorlib.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Core.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Microsoft.CSharp.dll
+D:\git\arcane\src\Arcane.MongoDB\MongoDBQuery.cs
+D:\git\arcane\src\Arcane.MongoDB\MongoDbQueryContext.cs
+D:\git\arcane\src\Arcane.MongoDB\Properties\AssemblyInfo.cs

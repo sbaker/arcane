@@ -3,11 +3,11 @@ using Microsoft.Azure.Documents.Client;
 
 namespace Arcane.DocumentDB
 {
-    public class TypeNameCollectionIdProvider : CollectionIdProvider
+    public sealed class TypeNameCollectionIdProvider : CollectionIdProvider
     {
-        public override Uri GetId<T>(string databaseId)
+        public override Uri GetId<T>(string databaseId, string collectionName = null)
         {
-            return UriFactory.CreateDocumentCollectionUri(databaseId, $"{typeof(T).Name}s");
+            return UriFactory.CreateDocumentCollectionUri(databaseId, collectionName ?? $"{typeof(T).Name}s");
         }
     }
 }

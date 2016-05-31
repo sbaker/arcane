@@ -1,0 +1,112 @@
+--temp-output:D:\git\arcane\tests\ArcaneTests\obj\Release\dnx451\
+--out:D:\git\arcane\tests\ArcaneTests\bin\Release\dnx451\ArcaneTests.dll
+--define:RELEASE
+--define:TRACE
+--define:DNX451
+--suppress-warning:CS1701
+--suppress-warning:CS1702
+--suppress-warning:CS1705
+--optimize:True
+--emit-entry-point:False
+--generate-xml-documentation:True
+--output-name:ArcaneTests
+--file-version:1.0.0.0
+--version:1.0.0.0
+--informational-version:1.0.0
+--target-framework:.NETFramework,Version=v4.5.1
+--reference:C:\Users\sbaker\.nuget\packages\EntityFramework\6.0.0\lib\net45\EntityFramework.SqlServer.dll
+--reference:C:\Users\sbaker\.nuget\packages\EntityFramework\6.0.0\lib\net45\EntityFramework.dll
+--reference:C:\Users\sbaker\.nuget\packages\Ix-Async\1.2.5\lib\net45\System.Interactive.Async.dll
+--reference:C:\Users\sbaker\.nuget\packages\Microsoft.Azure.DocumentDB\1.7.1\lib\net45\Microsoft.Azure.Documents.Client.dll
+--reference:C:\Users\sbaker\.nuget\packages\Microsoft.Data.Sqlite\1.0.0-rc2-final\lib\net451\Microsoft.Data.Sqlite.dll
+--reference:C:\Users\sbaker\.nuget\packages\Microsoft.Dnx.Compilation.Abstractions\1.0.0-rc1-final\lib\net451\Microsoft.Dnx.Compilation.Abstractions.dll
+--reference:C:\Users\sbaker\.nuget\packages\Microsoft.Dnx.TestHost\1.0.0-rc1-final\lib\dnx451\Microsoft.Dnx.TestHost.dll
+--reference:C:\Users\sbaker\.nuget\packages\Microsoft.Dnx.Testing.Abstractions\1.0.0-rc1-final\lib\net451\Microsoft.Dnx.Testing.Abstractions.dll
+--reference:C:\Users\sbaker\.nuget\packages\Microsoft.EntityFrameworkCore\1.0.0-rc3-21052\lib\net451\Microsoft.EntityFrameworkCore.dll
+--reference:C:\Users\sbaker\.nuget\packages\Microsoft.EntityFrameworkCore.Relational\1.0.0-rc2-final\lib\net451\Microsoft.EntityFrameworkCore.Relational.dll
+--reference:C:\Users\sbaker\.nuget\packages\Microsoft.EntityFrameworkCore.Sqlite\1.0.0-rc2-final\lib\net451\Microsoft.EntityFrameworkCore.Sqlite.dll
+--reference:C:\Users\sbaker\.nuget\packages\Microsoft.Extensions.Caching.Abstractions\1.0.0-rc3-21052\lib\netstandard1.0\Microsoft.Extensions.Caching.Abstractions.dll
+--reference:C:\Users\sbaker\.nuget\packages\Microsoft.Extensions.Caching.Memory\1.0.0-rc3-21052\lib\net451\Microsoft.Extensions.Caching.Memory.dll
+--reference:C:\Users\sbaker\.nuget\packages\Microsoft.Extensions.DependencyInjection\1.0.0-rc3-21052\lib\netstandard1.1\Microsoft.Extensions.DependencyInjection.dll
+--reference:C:\Users\sbaker\.nuget\packages\Microsoft.Extensions.DependencyInjection.Abstractions\1.0.0-rc3-21052\lib\netstandard1.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+--reference:C:\Users\sbaker\.nuget\packages\Microsoft.Extensions.Logging\1.0.0-rc3-21052\lib\netstandard1.1\Microsoft.Extensions.Logging.dll
+--reference:C:\Users\sbaker\.nuget\packages\Microsoft.Extensions.Logging.Abstractions\1.0.0-rc3-21052\lib\netstandard1.1\Microsoft.Extensions.Logging.Abstractions.dll
+--reference:C:\Users\sbaker\.nuget\packages\Microsoft.Extensions.Options\1.0.0-rc3-21052\lib\netstandard1.0\Microsoft.Extensions.Options.dll
+--reference:C:\Users\sbaker\.nuget\packages\Microsoft.Extensions.PlatformAbstractions\1.0.0-rc1-final\lib\net451\Microsoft.Extensions.PlatformAbstractions.dll
+--reference:C:\Users\sbaker\.nuget\packages\Microsoft.Extensions.Primitives\1.0.0-rc3-21052\lib\netstandard1.0\Microsoft.Extensions.Primitives.dll
+--reference:C:\Users\sbaker\.nuget\packages\MongoDB.Bson\2.2.3\lib\net45\MongoDB.Bson.dll
+--reference:C:\Users\sbaker\.nuget\packages\MongoDB.Driver\2.2.3\lib\net45\MongoDB.Driver.dll
+--reference:C:\Users\sbaker\.nuget\packages\MongoDB.Driver.Core\2.2.3\lib\net45\MongoDB.Driver.Core.dll
+--reference:C:\Users\sbaker\.nuget\packages\Newtonsoft.Json\7.0.1\lib\net45\Newtonsoft.Json.dll
+--reference:C:\Users\sbaker\.nuget\packages\Remotion.Linq\2.0.2\lib\net45\Remotion.Linq.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Facades\System.Collections.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Facades\System.Collections.Concurrent.dll
+--reference:C:\Users\sbaker\.nuget\packages\System.Collections.Immutable\1.1.37\lib\dotnet\System.Collections.Immutable.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Facades\System.ComponentModel.dll
+--reference:C:\Users\sbaker\.nuget\packages\System.Data.SQLite.Core\1.0.101\lib\net451\System.Data.SQLite.dll
+--reference:C:\Users\sbaker\.nuget\packages\System.Data.SQLite.EF6\1.0.101\lib\net451\System.Data.SQLite.EF6.dll
+--reference:C:\Users\sbaker\.nuget\packages\System.Data.SQLite.Linq\1.0.101\lib\net451\System.Data.SQLite.Linq.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Facades\System.Diagnostics.Debug.dll
+--reference:C:\Users\sbaker\.nuget\packages\System.Diagnostics.DiagnosticSource\4.0.0-rc2-24027\lib\portable-net45+win8+wpa81\System.Diagnostics.DiagnosticSource.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Facades\System.Diagnostics.Tools.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Facades\System.Diagnostics.Tracing.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Facades\System.Globalization.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Facades\System.IO.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\System.IO.Compression.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Facades\System.Linq.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Facades\System.Linq.Expressions.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\System.Net.Http.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Facades\System.Net.Primitives.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Facades\System.ObjectModel.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Facades\System.Reflection.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Facades\System.Reflection.Extensions.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Facades\System.Reflection.Primitives.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Facades\System.Resources.ResourceManager.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Facades\System.Runtime.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Facades\System.Runtime.Extensions.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Facades\System.Runtime.InteropServices.dll
+--reference:C:\Users\sbaker\.nuget\packages\System.Runtime.InteropServices.RuntimeInformation\4.0.0-rc2-24027\ref\netstandard1.1\System.Runtime.InteropServices.RuntimeInformation.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Facades\System.Runtime.Numerics.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Facades\System.Text.Encoding.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Facades\System.Text.Encoding.Extensions.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Facades\System.Text.RegularExpressions.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Facades\System.Threading.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Facades\System.Threading.Tasks.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Facades\System.Threading.Timer.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Facades\System.Xml.ReaderWriter.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Facades\System.Xml.XDocument.dll
+--reference:C:\Users\sbaker\.nuget\packages\xunit.abstractions\2.0.0\lib\net35\xunit.abstractions.dll
+--reference:C:\Users\sbaker\.nuget\packages\xunit.assert\2.1.0\lib\dotnet\xunit.assert.dll
+--reference:C:\Users\sbaker\.nuget\packages\xunit.extensibility.core\2.1.0\lib\dotnet\xunit.core.dll
+--reference:C:\Users\sbaker\.nuget\packages\xunit.extensibility.execution\2.1.0\lib\dnx451\xunit.execution.dotnet.dll
+--reference:C:\Users\sbaker\.nuget\packages\xunit.runner.dnx\2.1.0-rc1-build204\lib\dnx451\xunit.runner.dnx.dll
+--reference:C:\Users\sbaker\.nuget\packages\xunit.runner.reporters\2.1.0\lib\dnx451\xunit.runner.reporters.dotnet.dll
+--reference:C:\Users\sbaker\.nuget\packages\xunit.runner.utility\2.1.0\lib\dnx451\xunit.runner.utility.dotnet.dll
+--reference:D:\git\arcane\src\Arcane\bin\Release\dnx451\Arcane.dll
+--reference:D:\git\arcane\src\Arcane.DocumentDB\bin\Release\dnx451\Arcane.DocumentDB.dll
+--reference:D:\git\arcane\src\Arcane.EntityFramework\bin\Release\dnx451\Arcane.EntityFramework.dll
+--reference:D:\git\arcane\src\Arcane.MongoDB\bin\Release\dnx451\Arcane.MongoDB.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\mscorlib.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\System.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\System.Core.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Microsoft.CSharp.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\System.ComponentModel.DataAnnotations.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\System.Data.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\System.Transactions.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\System.Xml.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\System.Xml.Linq.dll
+D:\git\arcane\tests\ArcaneTests\ArcaneBaseTest.cs
+D:\git\arcane\tests\ArcaneTests\DocumentDB\DocumentClientHelper.cs
+D:\git\arcane\tests\ArcaneTests\DocumentDB\DocumentDbQueryContextTests.cs
+D:\git\arcane\tests\ArcaneTests\EntityFramework\EntityFrameworkQueryContextTests.cs
+D:\git\arcane\tests\ArcaneTests\EntityFramework\Data\EntityDbContext.cs
+D:\git\arcane\tests\ArcaneTests\InMemoryTests\InMemoryQueryContextTests.cs
+D:\git\arcane\tests\ArcaneTests\InMemoryTests\Data\InMemoryQuery.cs
+D:\git\arcane\tests\ArcaneTests\InMemoryTests\Data\InMemoryQueryContext.cs
+D:\git\arcane\tests\ArcaneTests\Models\Entities.cs
+D:\git\arcane\tests\ArcaneTests\MongoDB\MongoDbQueryContextTests.cs
+D:\git\arcane\tests\ArcaneTests\Properties\AssemblyInfo.cs
+D:\git\arcane\tests\ArcaneTests\Repositories\AuthorRepository.cs
+D:\git\arcane\tests\ArcaneTests\Repositories\IAuthorRepository.cs
+D:\git\arcane\tests\ArcaneTests\Repositories\IRepository.cs
+D:\git\arcane\tests\ArcaneTests\Repositories\Repository.cs

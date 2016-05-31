@@ -43,17 +43,16 @@ namespace Arcane.DocumentDB
         /// </summary>
         public bool EnableAutoIdGeneration { get; set; }
 
-        protected virtual Uri GetId<T>()
+        protected virtual Uri GetId<T>(string name = null)
         {
-            return Provider.GetId<T>(Database.Id);
+            return Provider.GetId<T>(Database.Id, name);
         }
 
-        internal IQueryable<T> CreateDocumentQuery<T>()
+        internal IQueryable<T> CreateDocumentQuery<T>(string name = null)
         {
             return CreateDocumentQuery<T>(GetId<T>(), FeedOptions);
         }
-
-
+        
         internal IQueryable<T> CreateDocumentQuery<T>(Uri documentUri, FeedOptions feedOptions = null)
         {
             return Client.CreateDocumentQuery<T>(documentUri, feedOptions);
@@ -69,6 +68,11 @@ namespace Arcane.DocumentDB
         {
             throw new NotImplementedException();
             //Client.DeleteDocumentAsync("").Wait();
+        }
+
+        internal void UpdateDocument<T>(T entity)
+        {
+            throw new NotImplementedException();
         }
     }
 }

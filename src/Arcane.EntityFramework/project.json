@@ -1,22 +1,63 @@
 ﻿{
   "version": "0.0.2-*",
-  "description": "An implementation of Arcane for EntityFramework.",
+  "description": "Arcane.EntityFramework is an implementation of Arcane wrapping the EntityFramework's DbContext.",
   "authors": [ "Stephen Baker" ],
-  "tags": [ "IQueryProvider", "IQueryable<T>", "EntityFramework" ],
-  "projectUrl": "",
-  "licenseUrl": "",
-
-  "dependencies": {
-    "Arcane": "0.0.2-*",
-    "EntityFramework.Core": "7.0.0-rc1-final"
+  "buildOptions": {
+    "xmlDoc": true
+  },
+  "packOptions": {
+    "tags": [ "IQueryProvider", "IQueryable<T>", "EntityFramework Core" ],
+    "projectUrl": "",
+    "licenseUrl": ""
   },
 
-  "commands": { },
+  "dependencies": {
+    "Arcane": "0.0.2",
+    "NETStandard.Library": "1.5.0-rc2-24027",
+    "Microsoft.EntityFrameworkCore": "1.0.0-rc3-21052"
+  },
 
   "frameworks": {
-    "dnx451": { },
-    "dnx452": { },
-    "net451": { },
-    "net452": { }
+    "dnx451": {
+      "dependencies": {
+        //"Microsoft.EntityFrameworkCore": "1.0.0-rc3-21052",
+        //"Microsoft.EntityFrameworkCore.SqlServer": "1.0.0-rc3-21052"
+      }
+    },
+    "net451": {
+      "dependencies": {
+        //"Microsoft.EntityFrameworkCore": "1.0.0-rc2-final",
+        //"Microsoft.EntityFrameworkCore.SqlServer": "1.0.0-rc2-final"
+      }
+    },
+    "net452": {
+      "dependencies": {
+        //"Microsoft.EntityFrameworkCore": "1.0.0-rc2-final",
+        //"Microsoft.EntityFrameworkCore.SqlServer": "1.0.0-rc2-final"
+      }
+    },
+    "net46": {
+      "dependencies": {
+        //"Microsoft.EntityFrameworkCore": "1.0.0-rc2-final",
+        //"Microsoft.EntityFrameworkCore.SqlServer": "1.0.0-rc2-final"
+      }
+    } //,
+    //"dnxcore50": {
+    //  "dependencies": {
+    //    "System.Linq": "4.1.0-rc2-24027",
+    //    "System.Linq.Expressions": "4.0.11-rc2-24027"
+    //    //"Microsoft.EntityFrameworkCore": "0.0.1-alpha",
+    //    //"Microsoft.EntityFrameworkCore.SqlServer": "0.0.1-alpha"
+    //  }
+    //},
+    //"netstandard1.5": {
+    //  "imports": "dnxcore50",
+    //  "dependencies": {
+    //    "System.Linq": "4.1.0-rc2-24027",
+    //    "System.Linq.Expressions": "4.0.11-rc2-24027"
+    //    //"Microsoft.EntityFrameworkCore": "0.0.1-alpha",
+    //    //"Microsoft.EntityFrameworkCore.SqlServer": "0.0.1-alpha"
+    //  }
+    //}
   }
 }

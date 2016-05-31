@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Arcane.EntityFramework</name>
+    </assembly>
+    <members>
+        <member name="T:Arcane.EntityFramework.EntityFrameworkQueryContext">
+            <summary>
+            An EntityFramework implementation of <see cref="T:Arcane.IQueryContext"/> wrapping the base <see cref="T:Microsoft.EntityFrameworkCore.DbContext"/>.
+            </summary>
+        </member>
+        <member name="T:Arcane.EntityFramework.EntityFrameworkQueryContext`1">
+            <summary>
+            An EntityFramework implementation of <see cref="T:Arcane.IQueryContext"/> wrapping a generic <see cref="!:TContext"/>.
+            </summary>
+            <typeparam name="TContext">The <typeparamref name="TContext"/> to encapsulate.</typeparam>
+        </member>
+    </members>
+</doc>

@@ -1,6 +1,7 @@
 ﻿using System.Linq.Expressions;
 using System.Threading.Tasks;
-using Microsoft.Data.Entity;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace Arcane.EntityFramework
 {

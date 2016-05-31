@@ -19,6 +19,6 @@ namespace Arcane.DocumentDB
             Interlocked.Exchange(ref _instance, provider);
         }
 
-        public abstract Uri GetId<T>(string databaseId);
+        public abstract Uri GetId<T>(string databaseId, string collectionName = null);
     }
 }

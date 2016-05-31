@@ -40,12 +40,15 @@ namespace Arcane.DocumentDB
 
         protected override void UpdateCore(T entity)
         {
-            throw new System.NotImplementedException();
+            Config.UpdateDocument(entity);
         }
 
         protected override void UpdateCore(IEnumerable<T> entities)
         {
-            throw new System.NotImplementedException();
+            foreach (var entity in entities)
+            {
+                UpdateCore(entity);
+            }
         }
     }
 }
