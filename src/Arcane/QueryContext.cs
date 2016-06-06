@@ -175,7 +175,7 @@ namespace Arcane
         {
             if (disposing)
             {
-                (Context as IDisposable)?.Dispose();
+                (_context as IDisposable)?.Dispose();
             }
         }
     }
