@@ -902,7 +902,7 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "Arcane": "0.0.4",
-          "Microsoft.EntityFrameworkCore": "1.0.0-rc3-21052",
+          "Microsoft.EntityFrameworkCore": "1.0.0-rc2-final",
           "NETStandard.Library": "1.5.0-rc2-24027"
         },
         "compile": {
@@ -2046,7 +2046,7 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "Arcane": "0.0.4",
-          "Microsoft.EntityFrameworkCore": "1.0.0-rc3-21052",
+          "Microsoft.EntityFrameworkCore": "1.0.0-rc2-final",
           "NETStandard.Library": "1.5.0-rc2-24027"
         },
         "compile": {

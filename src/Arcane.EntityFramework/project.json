@@ -1,5 +1,5 @@
 ﻿{
-  "version": "0.0.4-beta001",
+  "version": "0.0.4-beta001-001",
   "description": "Arcane.EntityFramework is an implementation of Arcane wrapping the EntityFramework's DbContext.",
   "authors": [ "Stephen Baker" ],
   "buildOptions": {
@@ -14,7 +14,7 @@
   "dependencies": {
     "Arcane": "0.0.4-*",
     "NETStandard.Library": "1.5.0-rc2-24027",
-    "Microsoft.EntityFrameworkCore": "1.0.0-rc3-21052"
+    "Microsoft.EntityFrameworkCore": "1.0.0-rc2-final"
   },
 
   "frameworks": {

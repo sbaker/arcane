@@ -1,5 +1,5 @@
 ﻿{
-  "version": "0.0.4-beta001",
+  "version": "0.0.4-beta001-001",
   "description": "Arcane is an abstraction layer on top of an IQueryProvider to allow for decoupling of the code from the actual ORM providing the actual data.",
   "authors": [ "Stephen Baker" ],
   "buildOptions": {
