@@ -5,6 +5,9 @@ using Microsoft.Azure.Documents.Client;
 
 namespace Arcane.DocumentDB
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class DatabaseQueryConfig
     {
         /// <summary>
@@ -22,10 +25,19 @@ namespace Arcane.DocumentDB
             Provider = provider;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         protected ICollectionIdProvider Provider { get; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public DocumentClient Client { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public Database Database { get; set; }
 
         /// <summary>
@@ -43,6 +55,12 @@ namespace Arcane.DocumentDB
         /// </summary>
         public bool EnableAutoIdGeneration { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="name"></param>
+        /// <returns></returns>
         protected virtual Uri GetId<T>(string name = null)
         {
             return Provider.GetId<T>(Database.Id, name);

@@ -2,18 +2,16 @@
 using Arcane.EntityFramework;
 using ArcaneTests.EntityFramework.Data;
 using ArcaneTests.Models;
-using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using Xunit;
 
 namespace ArcaneTests.EntityFramework
 {
-    public class EntityFrameworkQueryContextTests : ArcaneBaseTest
+    internal class EntityFrameworkQueryContextTests : ArcaneBaseTest
     {
         public EntityFrameworkQueryContextTests()
         {
-            ContextFactory<DbContext>.OnContextNeeded = context => new EntityDbContext();
-            Context = new EntityFrameworkQueryContext();
+            Context = new EntityFrameworkQueryContext(new EntityDbContext());
 
             EnsureTestDatabase();
         }

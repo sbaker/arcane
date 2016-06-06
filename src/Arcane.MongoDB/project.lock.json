@@ -37,7 +37,7 @@
           "lib/net45/MongoDB.Driver.Core.dll": {}
         }
       },
-      "Arcane/0.0.2": {
+      "Arcane/0.0.4-beta001": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1",
         "compile": {
@@ -83,7 +83,7 @@
           "lib/net45/MongoDB.Driver.Core.dll": {}
         }
       },
-      "Arcane/0.0.2": {
+      "Arcane/0.0.4-beta001": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.2",
         "compile": {
@@ -129,7 +129,7 @@
           "lib/net45/MongoDB.Driver.Core.dll": {}
         }
       },
-      "Arcane/0.0.2": {
+      "Arcane/0.0.4-beta001": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6",
         "compile": {
@@ -175,7 +175,7 @@
           "lib/net45/MongoDB.Driver.Core.dll": {}
         }
       },
-      "Arcane/0.0.2": {
+      "Arcane/0.0.4-beta001": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "compile": {
@@ -223,7 +223,7 @@
         "lib/net45/MongoDB.Driver.Core.dll"
       ]
     },
-    "Arcane/0.0.2": {
+    "Arcane/0.0.4-beta001": {
       "type": "project",
       "path": "../Arcane/project.json",
       "msbuildProject": "../Arcane/Arcane.xproj"
@@ -231,7 +231,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "Arcane >= 0.0.*",
+      "Arcane >= 0.0.4-*",
       "MongoDB.Driver >= 2.2.3"
     ],
     ".NETFramework,Version=v4.5.1": [],

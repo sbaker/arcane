@@ -28,4 +28,11 @@ namespace Arcane
         /// <param name="expression">The expression to evaluate.</param>
         void EvaluateExpression(Expression expression);
     }
+
+    /// <summary>
+    /// Provides an interface for an abstraction around access to <see cref="IQueryable{T}" /> data entity classes.
+    /// </summary>
+    public interface IQueryContext<in TContext> : IQueryContext
+    {
+    }
 }

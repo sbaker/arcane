@@ -1,8 +1,6 @@
 ﻿using Microsoft.Azure.Documents;
 using Microsoft.Azure.Documents.Client;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace ArcaneTests.DocumentDB
@@ -13,7 +11,7 @@ namespace ArcaneTests.DocumentDB
         /// Create a DocumentCollection, and retries if throttled.
         /// </summary>
         /// <param name="client">The DocumentDB client instance.</param>
-        /// <param name="database">The database to use.</param>
+        /// <param name="databaseId">The database to use.</param>
         /// <param name="collectionDefinition">The collection definition to use.</param>
         /// <param name="offerThroughput">The offer throughput for the collection.</param>
         /// <returns>The created DocumentCollection.</returns>

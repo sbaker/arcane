@@ -5,13 +5,13 @@
 -nowarn:CS1702
 -nowarn:CS1705
 -optimize
--doc:"D:\git\arcane\src\Arcane\bin\release\net46\Arcane.xml"
+-doc:"D:\git\arcane\src\Arcane\bin\Release\net46\Arcane.xml"
 -t:library
 -debug:full
 -nostdlib
 -nologo
-"D:\git\arcane\src\Arcane\obj\release\net46\dotnet-compile.assemblyinfo.cs"
--out:"D:\git\arcane\src\Arcane\bin\release\net46\Arcane.dll"
+"D:\git\arcane\src\Arcane\obj\Release\net46\dotnet-compile.assemblyinfo.cs"
+-out:"D:\git\arcane\src\Arcane\bin\Release\net46\Arcane.dll"
 -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\mscorlib.dll"
 -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.dll"
 -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Core.dll"

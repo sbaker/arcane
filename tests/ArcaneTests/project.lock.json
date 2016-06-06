@@ -873,7 +873,7 @@
           "lib/dnx451/xunit.runner.utility.dotnet.dll": {}
         }
       },
-      "Arcane/0.0.3": {
+      "Arcane/0.0.4-beta001": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "compile": {
@@ -883,11 +883,11 @@
           "dnx451/Arcane.dll": {}
         }
       },
-      "Arcane.DocumentDB/0.0.3": {
+      "Arcane.DocumentDB/0.0.4-beta001": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Arcane": "0.0.0",
+          "Arcane": "0.0.4",
           "Microsoft.Azure.DocumentDB": "1.7.1"
         },
         "compile": {
@@ -897,11 +897,11 @@
           "dnx451/Arcane.DocumentDB.dll": {}
         }
       },
-      "Arcane.EntityFramework/0.0.3": {
+      "Arcane.EntityFramework/0.0.4-beta001": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Arcane": "0.0.0",
+          "Arcane": "0.0.4",
           "Microsoft.EntityFrameworkCore": "1.0.0-rc3-21052",
           "NETStandard.Library": "1.5.0-rc2-24027"
         },
@@ -912,11 +912,11 @@
           "dnx451/Arcane.EntityFramework.dll": {}
         }
       },
-      "Arcane.MongoDB/0.0.3": {
+      "Arcane.MongoDB/0.0.4-beta001": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Arcane": "0.0.0",
+          "Arcane": "0.0.4",
           "MongoDB.Driver": "2.2.3"
         },
         "compile": {
@@ -2017,7 +2017,7 @@
           "lib/dnx451/xunit.runner.utility.dotnet.dll": {}
         }
       },
-      "Arcane/0.0.3": {
+      "Arcane/0.0.4-beta001": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "compile": {
@@ -2027,11 +2027,11 @@
           "dnx451/Arcane.dll": {}
         }
       },
-      "Arcane.DocumentDB/0.0.3": {
+      "Arcane.DocumentDB/0.0.4-beta001": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Arcane": "0.0.0",
+          "Arcane": "0.0.4",
           "Microsoft.Azure.DocumentDB": "1.7.1"
         },
         "compile": {
@@ -2041,11 +2041,11 @@
           "dnx451/Arcane.DocumentDB.dll": {}
         }
       },
-      "Arcane.EntityFramework/0.0.3": {
+      "Arcane.EntityFramework/0.0.4-beta001": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Arcane": "0.0.0",
+          "Arcane": "0.0.4",
           "Microsoft.EntityFrameworkCore": "1.0.0-rc3-21052",
           "NETStandard.Library": "1.5.0-rc2-24027"
         },
@@ -2056,11 +2056,11 @@
           "dnx451/Arcane.EntityFramework.dll": {}
         }
       },
-      "Arcane.MongoDB/0.0.3": {
+      "Arcane.MongoDB/0.0.4-beta001": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Arcane": "0.0.0",
+          "Arcane": "0.0.4",
           "MongoDB.Driver": "2.2.3"
         },
         "compile": {
@@ -5154,22 +5154,22 @@
         "xunit.runner.utility.nuspec"
       ]
     },
-    "Arcane/0.0.3": {
+    "Arcane/0.0.4-beta001": {
       "type": "project",
       "path": "../../src/Arcane/project.json",
       "msbuildProject": "../../src/Arcane/Arcane.xproj"
     },
-    "Arcane.DocumentDB/0.0.3": {
+    "Arcane.DocumentDB/0.0.4-beta001": {
       "type": "project",
       "path": "../../src/Arcane.DocumentDB/project.json",
       "msbuildProject": "../../src/Arcane.DocumentDB/Arcane.DocumentDB.xproj"
     },
-    "Arcane.EntityFramework/0.0.3": {
+    "Arcane.EntityFramework/0.0.4-beta001": {
       "type": "project",
       "path": "../../src/Arcane.EntityFramework/project.json",
       "msbuildProject": "../../src/Arcane.EntityFramework/Arcane.EntityFramework.xproj"
     },
-    "Arcane.MongoDB/0.0.3": {
+    "Arcane.MongoDB/0.0.4-beta001": {
       "type": "project",
       "path": "../../src/Arcane.MongoDB/project.json",
       "msbuildProject": "../../src/Arcane.MongoDB/Arcane.MongoDB.xproj"
@@ -5177,10 +5177,10 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "Arcane >= 0.0.2-*",
-      "Arcane.DocumentDB >= 0.0.2-*",
-      "Arcane.EntityFramework >= 0.0.2-*",
-      "Arcane.MongoDB >= 0.0.2-*",
+      "Arcane >= 0.0.4-*",
+      "Arcane.DocumentDB >= 0.0.4-*",
+      "Arcane.EntityFramework >= 0.0.4-*",
+      "Arcane.MongoDB >= 0.0.4-*",
       "Microsoft.EntityFrameworkCore >= 1.0.0-rc3-21052",
       "Microsoft.EntityFrameworkCore.Sqlite >= 1.0.0-rc2-final",
       "System.Data.SQLite >= 1.0.101",

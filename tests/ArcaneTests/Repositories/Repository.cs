@@ -7,7 +7,7 @@ using ArcaneTests.Models;
 
 namespace ArcaneTests.Repositories
 {
-    public class Repository : IRepository
+    internal class Repository : IRepository
     {
         public IQueryContext Context { get; set; }
 
@@ -32,7 +32,7 @@ namespace ArcaneTests.Repositories
         }
     }
 
-    public class Repository<T> : IRepository<T> where T : class, IRootEntity<int>, new()
+    internal class Repository<T> : IRepository<T> where T : class, IRootEntity<int>, new()
     {
         public IQueryContext Context { get; set; }
 

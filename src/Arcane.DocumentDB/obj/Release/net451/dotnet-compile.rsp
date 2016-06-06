@@ -10,9 +10,9 @@
 --generate-xml-documentation:True
 --output-name:Arcane.DocumentDB
 --description:An implementation of Arcane for DocumentDB.
---file-version:0.0.2.0
---version:0.0.2.0
---informational-version:0.0.2
+--file-version:0.0.4.0
+--version:0.0.4.0
+--informational-version:0.0.4-beta001
 --target-framework:.NETFramework,Version=v4.5.1
 --reference:C:\Users\sbaker\.nuget\packages\Microsoft.Azure.DocumentDB\1.7.1\lib\net45\Microsoft.Azure.Documents.Client.dll
 --reference:C:\Users\sbaker\.nuget\packages\Newtonsoft.Json\6.0.8\lib\net45\Newtonsoft.Json.dll

@@ -1,5 +1,5 @@
 ﻿{
-  "version": "0.0.3-*",
+  "version": "0.0.4-beta001",
   "description": "An implementation of Arcane for DocumentDB.",
   "authors": [ "Stephen Baker" ],
   "buildOptions": {
@@ -7,12 +7,12 @@
   },
   "packOptions": {
     "tags": [ "IQueryProvider", "IQueryable<T>", "DocumentDB" ],
-    "projectUrl": "",
+    "projectUrl": "https://github.com/sbaker/arcane",
     "licenseUrl": ""
   },
 
   "dependencies": {
-    "Arcane": "0.0.*",
+    "Arcane": "0.0.4-*",
     "Microsoft.Azure.DocumentDB": "1.7.1"
   },
 

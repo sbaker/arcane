@@ -6,7 +6,7 @@ using Xunit;
 
 namespace ArcaneTests.InMemoryTests
 {
-    public class InMemoryQueryContextTests : ArcaneBaseTest
+    internal class InMemoryQueryContextTests : ArcaneBaseTest
     {
         public InMemoryQueryContextTests()
         {

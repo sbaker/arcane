@@ -4,12 +4,12 @@ using Newtonsoft.Json;
 
 namespace ArcaneTests.Models
 {
-    public interface IRootEntity<T> where T : struct
+    internal interface IRootEntity<T> where T : struct
     {
         T Id { get; set; }
     }
 
-    public class Author : IRootEntity<int>
+    internal class Author : IRootEntity<int>
     {
         [JsonProperty("id")]
         public int Id { get; set; }
@@ -21,7 +21,7 @@ namespace ArcaneTests.Models
         public DateTime CreatedDate { get; set; }
     }
 
-    public class Book : IRootEntity<int>
+    internal class Book : IRootEntity<int>
     {
         public int Id { get; set; }
 

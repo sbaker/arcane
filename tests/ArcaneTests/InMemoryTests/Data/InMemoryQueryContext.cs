@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 
 namespace ArcaneTests.InMemoryTests.Data
 {
-    public class InMemoryQueryContext : QueryContext
+    internal class InMemoryQueryContext : QueryContext
     {
         private readonly List<Author> _authors = new List<Author>();
 

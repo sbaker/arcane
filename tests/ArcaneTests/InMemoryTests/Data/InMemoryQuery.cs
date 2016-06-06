@@ -4,7 +4,7 @@ using Arcane;
 
 namespace ArcaneTests.InMemoryTests.Data
 {
-    public class InMemoryQuery<T> : Query<T>
+    internal class InMemoryQuery<T> : Query<T>
     {
         public InMemoryQuery(IList<T> list, IQueryContext context) : base(list.AsQueryable(), context)
         {

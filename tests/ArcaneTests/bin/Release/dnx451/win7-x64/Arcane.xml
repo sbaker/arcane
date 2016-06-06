@@ -97,17 +97,6 @@
             </summary>
             <returns>A <see cref="T:System.String"/></returns>
         </member>
-        <member name="T:Arcane.ContextFactory`1">
-            <summary>
-            Provides a static factory for creating <typeparamref name="TContext"/> instance.
-            </summary>
-            <typeparam name="TContext"></typeparam>
-        </member>
-        <member name="F:Arcane.ContextFactory`1.OnContextNeeded">
-            <summary>
-            The method called when a <typeparamref name="TContext"/> is needed.
-            </summary>
-        </member>
         <member name="T:Arcane.GlobalSettings">
             <summary>
             Allows for centralized settings.
@@ -167,7 +156,7 @@
         </member>
         <member name="T:Arcane.IQueryContext">
             <summary>
-            Provides an interface for an abstraction around access to <see cref="!:IQueryable&lt;T&gt;" /> data entity classes.
+            Provides an interface for an abstraction around access to <see cref="T:System.Linq.IQueryable`1" /> data entity classes.
             </summary>
         </member>
         <member name="P:Arcane.IQueryContext.SuppressCompatabilityErrors">
@@ -188,6 +177,11 @@
             If <see cref="P:Arcane.IQueryContext.SuppressCompatabilityErrors"/> is false, will evaluate the current expression for common cross provider issues.
             </summary>
             <param name="expression">The expression to evaluate.</param>
+        </member>
+        <member name="T:Arcane.IQueryContext`1">
+            <summary>
+            Provides an interface for an abstraction around access to <see cref="T:System.Linq.IQueryable`1" /> data entity classes.
+            </summary>
         </member>
         <member name="T:Arcane.ISaveChanges">
             <summary>
@@ -377,14 +371,15 @@
             An abstract implementation of <see cref="T:Arcane.IQueryContext"/> with some basic functionality and a strongly typed inner context.
             </summary>
         </member>
-        <member name="M:Arcane.QueryContext`1.#ctor">
+        <member name="M:Arcane.QueryContext`1.#ctor(System.IServiceProvider)">
             <summary>
-            When called from a derived class, initializes a new instance of the <see cref="T:Arcane.QueryContext`1"/> class.
+            When called from a derived class, initializes a new instance of the <see cref="T:Arcane.QueryContext`1"/> class using the provided <paramref name="provider"/> for service resolution.
             </summary>
+            <param name="provider">The <see cref="T:System.IServiceProvider"/> used to retreive services.</param>
         </member>
         <member name="M:Arcane.QueryContext`1.#ctor(`0)">
             <summary>
-            When called from a derived class, initializes a new instance of the <see cref="T:Arcane.QueryContext`1"/> class unsing the provided <paramref name="context"/>.
+            When called from a derived class, initializes a new instance of the <see cref="T:Arcane.QueryContext`1"/> class using the provided <paramref name="context"/>.
             </summary>
             <param name="context">The context to wrap.</param>
         </member>
@@ -398,6 +393,11 @@
             Disposes of the current instance's <see cref="P:Arcane.QueryContext`1.Context"/> if it implements IDisposable.
             </summary>
             <param name="disposing">True if the object is wrapped in a using, false if the GC is collecting the current instance.</param>
+        </member>
+        <member name="T:Arcane.ArcaneExtensions">
+            <summary>
+            A class containing extension methods for use with the Arcane library.
+            </summary>
         </member>
     </members>
 </doc>

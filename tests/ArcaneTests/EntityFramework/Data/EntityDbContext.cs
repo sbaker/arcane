@@ -5,7 +5,7 @@ using ArcaneTests.Models;
 
 namespace ArcaneTests.EntityFramework.Data
 {
-    public class EntityDbContext : DbContext
+    internal class EntityDbContext : DbContext
     {
         public DbSet<Author> Authors { get; set; }
         

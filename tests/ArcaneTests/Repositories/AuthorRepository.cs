@@ -5,7 +5,7 @@ using ArcaneTests.Models;
 
 namespace ArcaneTests.Repositories
 {
-    public class AuthorRepository : Repository<Author>, IAuthorRepository
+    internal class AuthorRepository : Repository<Author>, IAuthorRepository
     {
         public AuthorRepository(IQueryContext context) : base(context)
         {

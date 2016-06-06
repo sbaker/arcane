@@ -3,7 +3,7 @@ using ArcaneTests.Models;
 
 namespace ArcaneTests.Repositories
 {
-    public interface IAuthorRepository
+    internal interface IAuthorRepository
     {
         IEnumerable<Author> GetAuthorsByFirstName(string name);
 

@@ -7,25 +7,34 @@ using Xunit;
 
 namespace ArcaneTests.MongoDB
 {
-    public class MongoDbQueryContextTests : ArcaneBaseTest
+    internal class MongoDbQueryContextTests : ArcaneBaseTest
     {
         public MongoDbQueryContextTests()
         {
-            ContextFactory<IMongoDatabase>.OnContextNeeded = context =>
+            //ContextFactory<IMongoDatabase>.OnContextNeeded = context =>
+            //{
+            //    var client = new MongoClient("mongodb://localhost/arcanetests");
+            //    var database = client.GetDatabase("arcanetests");
+            //    var collection = database.GetCollection<Author>("Authors");
+
+            //    if (collection.Count(FilterDefinition<Author>.Empty) == 0L)
+            //    {
+            //        collection.InsertMany(GetAuthors());
+            //    }
+
+            //    return database;
+            //};
+
+            var client = new MongoClient("mongodb://localhost/arcanetests");
+            var database = client.GetDatabase("arcanetests");
+            var collection = database.GetCollection<Author>("Authors");
+
+            if (collection.Count(FilterDefinition<Author>.Empty) == 0L)
             {
-                var client = new MongoClient("mongodb://localhost/arcanetests");
-                var database = client.GetDatabase("arcanetests");
-                var collection = database.GetCollection<Author>("Authors");
-
-                if (collection.Count(FilterDefinition<Author>.Empty) == 0L)
-                {
-                    collection.InsertMany(GetAuthors());
-                }
-
-                return database;
-            };
-
-            Context = new MongoDbQueryContext();
+                collection.InsertMany(GetAuthors());
+            }
+            
+            Context = new MongoDbQueryContext(database);
         }
 
         [Fact]

@@ -122,22 +122,23 @@ namespace Arcane
     /// <summary>
     /// An abstract implementation of <see cref="IQueryContext"/> with some basic functionality and a strongly typed inner context.
     /// </summary>
-    public abstract class QueryContext<TContext> : QueryContext
+    public abstract class QueryContext<TContext> : QueryContext, IQueryContext<TContext>
     {
         private TContext _context;
 
         /// <summary>
-        /// When called from a derived class, initializes a new instance of the <see cref="QueryContext{TContext}"/> class.
+        /// When called from a derived class, initializes a new instance of the <see cref="QueryContext{TContext}"/> class using the provided <paramref name="provider"/> for service resolution.
         /// </summary>
-        protected QueryContext()
+        /// <param name="provider">The <see cref="IServiceProvider"/> used to retreive services.</param>
+        protected QueryContext(IServiceProvider provider) : this((TContext)provider.GetService(typeof(TContext)))
         {
         }
 
         /// <summary>
-        /// When called from a derived class, initializes a new instance of the <see cref="QueryContext{TContext}"/> class unsing the provided <paramref name="context"/>.
+        /// When called from a derived class, initializes a new instance of the <see cref="QueryContext{TContext}"/> class using the provided <paramref name="context"/>.
         /// </summary>
         /// <param name="context">The context to wrap.</param>
-        protected QueryContext(TContext context)
+        protected QueryContext(TContext context = default(TContext))
         {
             _context = context;
         }
@@ -149,15 +150,15 @@ namespace Arcane
         {
             get
             {
-                if (_context == null)
-                {
-                    if (ContextFactory<TContext>.OnContextNeeded == null)
-                    {
-                        throw new Exception($"The context was not provided and the factory method:{nameof(ContextFactory<TContext>.OnContextNeeded)} was set on: {typeof(ContextFactory<TContext>)}");
-                    }
+                //if (_context == null)
+                //{
+                //    if (ContextFactory<TContext>.OnContextNeeded == null)
+                //    {
+                //        throw new Exception($"The context was not provided and the factory method:{nameof(ContextFactory<TContext>.OnContextNeeded)} was set on: {typeof(ContextFactory<TContext>)}");
+                //    }
 
-                    _context = ContextFactory<TContext>.OnContextNeeded(this);
-                }
+                //    _context = ContextFactory<TContext>.OnContextNeeded(this);
+                //}
 
                 return _context;
             }

@@ -10,9 +10,9 @@
 --generate-xml-documentation:True
 --output-name:Arcane
 --description:Arcane is an abstraction layer on top of an IQueryProvider to allow for decoupling of the code from the actual ORM providing the actual data.
---file-version:0.0.3.0
---version:0.0.3.0
---informational-version:0.0.3
+--file-version:0.0.4.0
+--version:0.0.4.0
+--informational-version:0.0.4-beta1
 --target-framework:.NETFramework,Version=v4.5.2
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\mscorlib.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.dll

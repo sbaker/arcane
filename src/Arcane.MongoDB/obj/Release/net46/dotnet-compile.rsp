@@ -10,9 +10,9 @@
 --generate-xml-documentation:True
 --output-name:Arcane.MongoDB
 --description:An implementation of Arcane for DocumentDB.
---file-version:0.0.2.0
---version:0.0.2.0
---informational-version:0.0.2
+--file-version:0.0.4.0
+--version:0.0.4.0
+--informational-version:0.0.4-beta001
 --target-framework:.NETFramework,Version=v4.6
 --reference:C:\Users\sbaker\.nuget\packages\MongoDB.Bson\2.2.3\lib\net45\MongoDB.Bson.dll
 --reference:C:\Users\sbaker\.nuget\packages\MongoDB.Driver\2.2.3\lib\net45\MongoDB.Driver.dll

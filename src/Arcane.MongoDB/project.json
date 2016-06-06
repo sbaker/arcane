@@ -1,5 +1,5 @@
 ﻿{
-  "version": "0.0.3-*",
+  "version": "0.0.4-beta001",
   "description": "An implementation of Arcane for DocumentDB.",
   "authors": [ "Stephen Baker" ],
   "buildOptions": {
@@ -12,7 +12,7 @@
   },
 
   "dependencies": {
-    "Arcane": "0.0.*",
+    "Arcane": "0.0.4-*",
     "MongoDB.Driver": "2.2.3"
   },
 

@@ -10,9 +10,9 @@
 --generate-xml-documentation:True
 --output-name:Arcane.EntityFramework
 --description:Arcane.EntityFramework is an implementation of Arcane wrapping the EntityFramework's DbContext.
---file-version:0.0.3.0
---version:0.0.3.0
---informational-version:0.0.3
+--file-version:0.0.4.0
+--version:0.0.4.0
+--informational-version:0.0.4-beta001
 --target-framework:.NETFramework,Version=v4.5.1
 --reference:C:\Users\sbaker\.nuget\packages\Ix-Async\1.2.5\lib\net45\System.Interactive.Async.dll
 --reference:C:\Users\sbaker\.nuget\packages\Microsoft.EntityFrameworkCore\1.0.0-rc3-21052\lib\net451\Microsoft.EntityFrameworkCore.dll

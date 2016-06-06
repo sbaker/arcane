@@ -1,5 +1,4 @@
-﻿using Arcane;
-using Arcane.DocumentDB;
+﻿using Arcane.DocumentDB;
 using Microsoft.Azure.Documents.Client;
 using Microsoft.Azure.Documents.Linq;
 using System;
@@ -10,27 +9,36 @@ using Xunit;
 
 namespace ArcaneTests.DocumentDB
 {
-    public class DocumentDbQueryContextTests : ArcaneBaseTest
+    internal class DocumentDbQueryContextTests : ArcaneBaseTest
     {
         public DocumentDbQueryContextTests()
         {
-            ContextFactory<DatabaseQueryConfig>.OnContextNeeded = context =>
+            //ContextFactory<DatabaseQueryConfig>.OnContextNeeded = context =>
+            //{
+            //    var client = new DocumentClient(new Uri(""), "");
+
+            //    var database = client.CreateDatabaseQuery().Where(db => db.Id == "Arcane").ToArray().FirstOrDefault()
+            //        ?? EnsureTestDatabase(client, "Arcane");
+
+            //    var config = new DatabaseQueryConfig
+            //    {
+            //        Client = client,
+            //        Database = database
+            //    };
+
+            //    return config;
+            //};
+
+            var client = new DocumentClient(new Uri(""), "");
+
+            var database = client.CreateDatabaseQuery().Where(db => db.Id == "Arcane").ToArray().FirstOrDefault()
+                ?? EnsureTestDatabase(client, "Arcane");
+            
+            Context = new DocumentDbQueryContext(new DatabaseQueryConfig
             {
-                var client = new DocumentClient(new Uri(""), "");
-
-                var database = client.CreateDatabaseQuery().Where(db => db.Id == "Arcane").ToArray().FirstOrDefault()
-                    ?? EnsureTestDatabase(client, "Arcane");
-
-                var config = new DatabaseQueryConfig
-                {
-                    Client = client,
-                    Database = database
-                };
-
-                return config;
-            };
-
-            Context = new DocumentDbQueryContext();
+                Client = client,
+                Database = database
+            });
         }
 
         private static Database EnsureTestDatabase(DocumentClient client, string databaseName)
