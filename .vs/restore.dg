@@ -1,1 +1,10 @@
+#:D:\git\arcane\src\Arcane.DocumentDB\Arcane.DocumentDB.xproj
+D:\git\arcane\src\Arcane.DocumentDB\Arcane.DocumentDB.xproj|D:\git\arcane\src\Arcane\Arcane.xproj
 #:D:\git\arcane\tests\ArcaneTests\ArcaneTests.xproj
+D:\git\arcane\tests\ArcaneTests\ArcaneTests.xproj|D:\git\arcane\src\Arcane\Arcane.xproj
+D:\git\arcane\tests\ArcaneTests\ArcaneTests.xproj|D:\git\arcane\src\Arcane.DocumentDB\Arcane.DocumentDB.xproj
+D:\git\arcane\tests\ArcaneTests\ArcaneTests.xproj|D:\git\arcane\src\Arcane.EntityFramework\Arcane.EntityFramework.xproj
+D:\git\arcane\tests\ArcaneTests\ArcaneTests.xproj|D:\git\arcane\src\Arcane.MongoDB\Arcane.MongoDB.xproj
+D:\git\arcane\src\Arcane.DocumentDB\Arcane.DocumentDB.xproj|D:\git\arcane\src\Arcane\Arcane.xproj
+D:\git\arcane\src\Arcane.EntityFramework\Arcane.EntityFramework.xproj|D:\git\arcane\src\Arcane\Arcane.xproj
+D:\git\arcane\src\Arcane.MongoDB\Arcane.MongoDB.xproj|D:\git\arcane\src\Arcane\Arcane.xproj

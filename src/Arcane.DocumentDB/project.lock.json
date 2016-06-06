@@ -24,7 +24,7 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
-      "Arcane/0.0.2": {
+      "Arcane/0.0.3": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1",
         "compile": {
@@ -57,7 +57,7 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
-      "Arcane/0.0.2": {
+      "Arcane/0.0.3": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.2",
         "compile": {
@@ -90,7 +90,7 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
-      "Arcane/0.0.2": {
+      "Arcane/0.0.3": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6",
         "compile": {
@@ -123,7 +123,7 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
-      "Arcane/0.0.2": {
+      "Arcane/0.0.3": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "compile": {
@@ -174,7 +174,7 @@
         "tools/install.ps1"
       ]
     },
-    "Arcane/0.0.2": {
+    "Arcane/0.0.3": {
       "type": "project",
       "path": "../Arcane/project.json",
       "msbuildProject": "../Arcane/Arcane.xproj"
@@ -182,7 +182,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "Arcane >= 0.0.2-*",
+      "Arcane >= 0.0.*",
       "Microsoft.Azure.DocumentDB >= 1.7.1"
     ],
     ".NETFramework,Version=v4.5.1": [],

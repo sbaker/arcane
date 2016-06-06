@@ -1,5 +1,5 @@
---temp-output:D:\git\arcane\src\Arcane\obj\Release\dnxcore50\
---out:D:\git\arcane\src\Arcane\bin\Release\dnxcore50\Arcane.dll
+--temp-output:D:\git\arcane\src\Arcane\obj\release\dnxcore50\
+--out:D:\git\arcane\src\Arcane\bin\release\dnxcore50\Arcane.dll
 --define:RELEASE
 --define:TRACE
 --define:DNXCORE50
@@ -10,9 +10,9 @@
 --generate-xml-documentation:True
 --output-name:Arcane
 --description:Arcane is an abstraction layer on top of an IQueryProvider to allow for decoupling of the code from the actual ORM providing the actual data.
---file-version:0.0.2.0
---version:0.0.2.0
---informational-version:0.0.2
+--file-version:0.0.3.0
+--version:0.0.3.0
+--informational-version:0.0.3
 --target-framework:DNXCore,Version=v5.0
 --reference:C:\Users\sbaker\.nuget\packages\Microsoft.Win32.Primitives\4.0.1-rc2-24027\ref\netstandard1.3\Microsoft.Win32.Primitives.dll
 --reference:C:\Users\sbaker\.nuget\packages\System.AppContext\4.1.0-rc2-24027\ref\netstandard1.5\System.AppContext.dll

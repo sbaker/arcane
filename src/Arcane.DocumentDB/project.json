@@ -12,7 +12,7 @@
   },
 
   "dependencies": {
-    "Arcane": "0.0.2-*",
+    "Arcane": "0.0.*",
     "Microsoft.Azure.DocumentDB": "1.7.1"
   },
 

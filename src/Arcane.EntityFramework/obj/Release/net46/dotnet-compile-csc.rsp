@@ -5,13 +5,13 @@
 -nowarn:CS1702
 -nowarn:CS1705
 -optimize
--doc:"D:\git\arcane\src\Arcane.EntityFramework\bin\Release\net46\Arcane.EntityFramework.xml"
+-doc:"D:\git\arcane\src\Arcane.EntityFramework\bin\release\net46\Arcane.EntityFramework.xml"
 -t:library
 -debug:full
 -nostdlib
 -nologo
-"D:\git\arcane\src\Arcane.EntityFramework\obj\Release\net46\dotnet-compile.assemblyinfo.cs"
--out:"D:\git\arcane\src\Arcane.EntityFramework\bin\Release\net46\Arcane.EntityFramework.dll"
+"D:\git\arcane\src\Arcane.EntityFramework\obj\release\net46\dotnet-compile.assemblyinfo.cs"
+-out:"D:\git\arcane\src\Arcane.EntityFramework\bin\release\net46\Arcane.EntityFramework.dll"
 -r:"C:\Users\sbaker\.nuget\packages\Ix-Async\1.2.5\lib\net45\System.Interactive.Async.dll"
 -r:"C:\Users\sbaker\.nuget\packages\Microsoft.EntityFrameworkCore\1.0.0-rc3-21052\lib\net451\Microsoft.EntityFrameworkCore.dll"
 -r:"C:\Users\sbaker\.nuget\packages\Microsoft.Extensions.Caching.Abstractions\1.0.0-rc3-21052\lib\netstandard1.0\Microsoft.Extensions.Caching.Abstractions.dll"
@@ -64,7 +64,7 @@
 -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\Facades\System.Threading.Timer.dll"
 -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\Facades\System.Xml.ReaderWriter.dll"
 -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\Facades\System.Xml.XDocument.dll"
--r:"D:\git\arcane\src\Arcane\bin\Release\net46\Arcane.dll"
+-r:"D:\git\arcane\src\Arcane\bin\release\net46\Arcane.dll"
 -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\mscorlib.dll"
 -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.dll"
 -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Core.dll"

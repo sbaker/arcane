@@ -527,7 +527,7 @@
           "lib/net45/_._": {}
         }
       },
-      "Arcane/0.0.2": {
+      "Arcane/0.0.3": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1",
         "compile": {
@@ -1063,7 +1063,7 @@
           "lib/net45/_._": {}
         }
       },
-      "Arcane/0.0.2": {
+      "Arcane/0.0.3": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.2",
         "compile": {
@@ -1745,7 +1745,7 @@
           "lib/net45/_._": {}
         }
       },
-      "Arcane/0.0.2": {
+      "Arcane/0.0.3": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6",
         "compile": {
@@ -2281,7 +2281,7 @@
           "lib/net45/_._": {}
         }
       },
-      "Arcane/0.0.2": {
+      "Arcane/0.0.3": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "compile": {
@@ -4839,7 +4839,7 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
-    "Arcane/0.0.2": {
+    "Arcane/0.0.3": {
       "type": "project",
       "path": "../Arcane/project.json",
       "msbuildProject": "../Arcane/Arcane.xproj"
@@ -4847,7 +4847,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "Arcane >= 0.0.2",
+      "Arcane >= 0.0.*",
       "Microsoft.EntityFrameworkCore >= 1.0.0-rc3-21052",
       "NETStandard.Library >= 1.5.0-rc2-24027"
     ],

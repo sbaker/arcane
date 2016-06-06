@@ -5,13 +5,13 @@
 -nowarn:CS1702
 -nowarn:CS1705
 -optimize
--doc:"D:\git\arcane\src\Arcane\bin\Release\dnxcore50\Arcane.xml"
+-doc:"D:\git\arcane\src\Arcane\bin\release\dnxcore50\Arcane.xml"
 -t:library
 -debug:full
 -nostdlib
 -nologo
-"D:\git\arcane\src\Arcane\obj\Release\dnxcore50\dotnet-compile.assemblyinfo.cs"
--out:"D:\git\arcane\src\Arcane\bin\Release\dnxcore50\Arcane.dll"
+"D:\git\arcane\src\Arcane\obj\release\dnxcore50\dotnet-compile.assemblyinfo.cs"
+-out:"D:\git\arcane\src\Arcane\bin\release\dnxcore50\Arcane.dll"
 -r:"C:\Users\sbaker\.nuget\packages\Microsoft.Win32.Primitives\4.0.1-rc2-24027\ref\netstandard1.3\Microsoft.Win32.Primitives.dll"
 -r:"C:\Users\sbaker\.nuget\packages\System.AppContext\4.1.0-rc2-24027\ref\netstandard1.5\System.AppContext.dll"
 -r:"C:\Users\sbaker\.nuget\packages\System.Collections\4.0.11-rc2-24027\ref\netstandard1.3\System.Collections.dll"

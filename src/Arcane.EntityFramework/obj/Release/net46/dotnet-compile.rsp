@@ -1,5 +1,5 @@
---temp-output:D:\git\arcane\src\Arcane.EntityFramework\obj\Release\net46\
---out:D:\git\arcane\src\Arcane.EntityFramework\bin\Release\net46\Arcane.EntityFramework.dll
+--temp-output:D:\git\arcane\src\Arcane.EntityFramework\obj\release\net46\
+--out:D:\git\arcane\src\Arcane.EntityFramework\bin\release\net46\Arcane.EntityFramework.dll
 --define:RELEASE
 --define:TRACE
 --define:NET46
@@ -10,9 +10,9 @@
 --generate-xml-documentation:True
 --output-name:Arcane.EntityFramework
 --description:Arcane.EntityFramework is an implementation of Arcane wrapping the EntityFramework's DbContext.
---file-version:0.0.2.0
---version:0.0.2.0
---informational-version:0.0.2
+--file-version:0.0.3.0
+--version:0.0.3.0
+--informational-version:0.0.3
 --target-framework:.NETFramework,Version=v4.6
 --reference:C:\Users\sbaker\.nuget\packages\Ix-Async\1.2.5\lib\net45\System.Interactive.Async.dll
 --reference:C:\Users\sbaker\.nuget\packages\Microsoft.EntityFrameworkCore\1.0.0-rc3-21052\lib\net451\Microsoft.EntityFrameworkCore.dll
@@ -66,7 +66,7 @@
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\Facades\System.Threading.Timer.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\Facades\System.Xml.ReaderWriter.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\Facades\System.Xml.XDocument.dll
---reference:D:\git\arcane\src\Arcane\bin\Release\net46\Arcane.dll
+--reference:D:\git\arcane\src\Arcane\bin\release\net46\Arcane.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\mscorlib.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Core.dll

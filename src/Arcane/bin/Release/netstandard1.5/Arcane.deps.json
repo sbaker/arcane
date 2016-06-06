@@ -7,7 +7,7 @@
   "targets": {
     ".NETStandard,Version=v1.5": {},
     ".NETStandard,Version=v1.5/": {
-      "Arcane/0.0.2": {
+      "Arcane/0.0.3": {
         "dependencies": {
           "NETStandard.Library": "1.5.0-rc2-24027",
           "System.Linq": "4.1.0-rc2-24027",
@@ -683,7 +683,7 @@
     }
   },
   "libraries": {
-    "Arcane/0.0.2": {
+    "Arcane/0.0.3": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
