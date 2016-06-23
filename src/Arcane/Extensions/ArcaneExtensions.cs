@@ -1,4 +1,5 @@
-﻿namespace Arcane
+﻿ // ReSharper disable once CheckNamespace
+namespace Arcane
 {
     /// <summary>
     /// A class containing extension methods for use with the Arcane library.

@@ -11,6 +11,7 @@
 -nologo
 "D:\git\arcane\src\Arcane\obj\Debug\dnxcore50\dotnet-compile.assemblyinfo.cs"
 -out:"D:\git\arcane\src\Arcane\bin\Debug\dnxcore50\Arcane.dll"
+-r:"C:\Users\sbaker\.nuget\packages\Microsoft.Extensions.DependencyInjection.Abstractions\1.0.0-rc2-final\lib\netstandard1.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll"
 -r:"C:\Users\sbaker\.nuget\packages\Microsoft.Win32.Primitives\4.0.1-rc2-24027\ref\netstandard1.3\Microsoft.Win32.Primitives.dll"
 -r:"C:\Users\sbaker\.nuget\packages\System.AppContext\4.1.0-rc2-24027\ref\netstandard1.5\System.AppContext.dll"
 -r:"C:\Users\sbaker\.nuget\packages\System.Collections\4.0.11-rc2-24027\ref\netstandard1.3\System.Collections.dll"
@@ -60,5 +61,7 @@
 "D:\git\arcane\src\Arcane\ISaveChanges.cs"
 "D:\git\arcane\src\Arcane\Query.cs"
 "D:\git\arcane\src\Arcane\QueryContext.cs"
+"D:\git\arcane\src\Arcane\Extensions\ArcaneBuilder.cs"
 "D:\git\arcane\src\Arcane\Extensions\ArcaneExtensions.cs"
+"D:\git\arcane\src\Arcane\Extensions\IArcaneBuilder.cs"
 "D:\git\arcane\src\Arcane\Properties\AssemblyInfo.cs"

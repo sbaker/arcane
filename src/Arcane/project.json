@@ -10,7 +10,9 @@
     "projectUrl": "https://github.com/sbaker/arcane",
     "licenseUrl": ""
   },
-  "dependencies": { },
+  "dependencies": {
+    "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc2-final"
+  },
   "commands": { },
   "frameworks": {
     "dnx451": {

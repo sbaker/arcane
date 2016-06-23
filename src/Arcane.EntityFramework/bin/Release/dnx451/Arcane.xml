@@ -97,6 +97,17 @@
             </summary>
             <returns>A <see cref="T:System.String"/></returns>
         </member>
+        <member name="T:Arcane.ContextFactory`1">
+            <summary>
+            Provides a static factory for creating <typeparamref name="TContext"/> instance.
+            </summary>
+            <typeparam name="TContext"></typeparam>
+        </member>
+        <member name="F:Arcane.ContextFactory`1.OnContextNeeded">
+            <summary>
+            The method called when a <typeparamref name="TContext"/> is needed.
+            </summary>
+        </member>
         <member name="T:Arcane.GlobalSettings">
             <summary>
             Allows for centralized settings.
@@ -394,9 +405,35 @@
             </summary>
             <param name="disposing">True if the object is wrapped in a using, false if the GC is collecting the current instance.</param>
         </member>
+        <member name="T:Arcane.ArcaneBuilder">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Arcane.ArcaneBuilder.#ctor(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="P:Arcane.ArcaneBuilder.Arcane#IArcaneBuilder#Services">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:Arcane.ArcaneExtensions">
             <summary>
             A class containing extension methods for use with the Arcane library.
+            </summary>
+        </member>
+        <member name="T:Arcane.IArcaneBuilder">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Arcane.IArcaneBuilder.Services">
+            <summary>
+            
             </summary>
         </member>
     </members>
