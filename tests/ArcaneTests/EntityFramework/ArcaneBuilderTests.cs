@@ -14,7 +14,7 @@ namespace ArcaneTests.EntityFramework
         {
             _services.AddArcaneEntityFramework(builder =>
             {
-                builder.For<AuthorRepository>().Use<EntityDbContext>();
+                //builder.For<AuthorRepository>().Use<EntityDbContext>();
             });
         }
     }

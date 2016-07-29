@@ -7,7 +7,7 @@
   },
   "packOptions": {
     "tags": [ "IQueryProvider", "IQueryable<T>", "DocumentDB" ],
-    "projectUrl": "",
+    "projectUrl": "https://github.com/sbaker/arcane",
     "licenseUrl": ""
   },
 

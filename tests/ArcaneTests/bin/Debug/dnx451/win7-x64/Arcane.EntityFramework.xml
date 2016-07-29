@@ -132,5 +132,13 @@
             <typeparam name="TDbContext"></typeparam>
             <returns></returns>
         </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.IForBuilder`1.Use``2">
+            <summary>
+            
+            </summary>
+            <typeparam name="TImplementation"></typeparam>
+            <typeparam name="TDbContext"></typeparam>
+            <returns></returns>
+        </member>
     </members>
 </doc>

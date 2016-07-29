@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Arcane", "src\Arcane\Arcane.xproj", "{9EBC0185-7DCD-4A29-AEF6-2F6D07B3102E}"
 EndProject
@@ -17,7 +17,7 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Arcane.DocumentDB", "src\Ar
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A29D0DB9-551C-457A-91D6-FE8779634E07}"
 	ProjectSection(SolutionItems) = preProject
-		tests\ArcaneTests\global.json = tests\ArcaneTests\global.json
+		global.json = global.json
 	EndProjectSection
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Arcane.EntityFramework", "src\Arcane.EntityFramework\Arcane.EntityFramework.xproj", "{89609C98-26FB-4BAF-9D0A-C8344BC2D6C2}"
