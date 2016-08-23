@@ -13,7 +13,7 @@ namespace Arcane.MongoDB
         /// 
         /// </summary>
         /// <param name="database"></param>
-        public MongoDbQueryContext(IMongoDatabase database) : base(database)
+        public MongoDbQueryContext(IMongoDatabase database) : base(null, database)
         {
         }
 

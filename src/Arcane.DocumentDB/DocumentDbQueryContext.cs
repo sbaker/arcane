@@ -11,7 +11,7 @@ namespace Arcane.DocumentDB
         /// 
         /// </summary>
         /// <param name="config"></param>
-        public DocumentDbQueryContext(DatabaseQueryConfig config) : base(config)
+        public DocumentDbQueryContext(DatabaseQueryConfig config) : base(null, config)
         {
         }
 

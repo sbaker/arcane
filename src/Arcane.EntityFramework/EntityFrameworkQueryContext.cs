@@ -29,7 +29,7 @@ namespace Arcane.EntityFramework
         /// 
         /// </summary>
         /// <param name="context"></param>
-        public EntityFrameworkQueryContext(TContext context) : base(context)
+        public EntityFrameworkQueryContext(TContext context) : base(null, context)
         {
         }
 

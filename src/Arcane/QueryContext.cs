@@ -10,12 +10,33 @@ namespace Arcane
     public abstract class QueryContext : IQueryContext, ISaveChanges
     {
         /// <summary>
+        /// 
+        /// </summary>
+        protected QueryContext()
+        {
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="provider">The <see cref="IServiceProvider"/> used to retreive services.</param>
+        protected QueryContext(IServiceProvider provider)
+        {
+            Provider = provider;
+        }
+
+        /// <summary>
         /// Deconstructs the current instance and allows for disposing of any resources.
         /// </summary>
         ~QueryContext()
         {
             Dispose(false);
         }
+
+        /// <summary>
+        /// The ServiceProvider responsible for retreiving dependencies for this QueryContext.
+        /// </summary>
+        protected IServiceProvider Provider { get; set; }
 
         /// <summary>
         /// Returns true, if the current instance has been disposed, false otherwise.
@@ -130,15 +151,16 @@ namespace Arcane
         /// When called from a derived class, initializes a new instance of the <see cref="QueryContext{TContext}"/> class using the provided <paramref name="provider"/> for service resolution.
         /// </summary>
         /// <param name="provider">The <see cref="IServiceProvider"/> used to retreive services.</param>
-        protected QueryContext(IServiceProvider provider) : this((TContext)provider.GetService(typeof(TContext)))
+        protected QueryContext(IServiceProvider provider) : this(provider, (TContext)provider.GetService(typeof(TContext)))
         {
         }
 
         /// <summary>
         /// When called from a derived class, initializes a new instance of the <see cref="QueryContext{TContext}"/> class using the provided <paramref name="context"/>.
         /// </summary>
+        /// <param name="provider">The <see cref="IServiceProvider"/> used to retreive services.</param>
         /// <param name="context">The context to wrap.</param>
-        protected QueryContext(TContext context = default(TContext))
+        protected QueryContext(IServiceProvider provider, TContext context = default(TContext)) : base(provider)
         {
             _context = context;
         }
@@ -150,15 +172,15 @@ namespace Arcane
         {
             get
             {
-                //if (_context == null)
-                //{
-                //    if (ContextFactory<TContext>.OnContextNeeded == null)
-                //    {
-                //        throw new Exception($"The context was not provided and the factory method:{nameof(ContextFactory<TContext>.OnContextNeeded)} was set on: {typeof(ContextFactory<TContext>)}");
-                //    }
+                if (_context == null)
+                {
+                    if (ContextFactory<TContext>.OnContextNeeded == null)
+                    {
+                        throw new Exception($"The context was not provided and the factory method:{nameof(ContextFactory<TContext>.OnContextNeeded)} was set on: {typeof(ContextFactory<TContext>)}");
+                    }
 
-                //    _context = ContextFactory<TContext>.OnContextNeeded(this);
-                //}
+                    _context = ContextFactory<TContext>.OnContextNeeded(Provider);
+                }
 
                 return _context;
             }
