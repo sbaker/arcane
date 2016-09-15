@@ -39,6 +39,7 @@ namespace ArcaneTests
                     Books = new Collection<Book> {
                         new Book {
                             Id = i,
+                            Price = (decimal)(50.5 / (i % 3)),
                             Name = $"C# Development\nBook #{i} of {Total}",
                             PublishDate = Date.AddMonths(-(Total - i))
                         }
