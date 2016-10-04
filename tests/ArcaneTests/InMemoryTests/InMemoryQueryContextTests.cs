@@ -8,9 +8,9 @@ namespace ArcaneTests.InMemoryTests
 {
     internal class InMemoryQueryContextTests : ArcaneBaseTest
     {
-        public InMemoryQueryContextTests()
+        public InMemoryQueryContextTests() : base(null)
         {
-            Context = new InMemoryQueryContext(GetAuthors());
+            //Context = new InMemoryQueryContext(GetAuthors());
         }
 
         [Fact]

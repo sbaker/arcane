@@ -111,7 +111,7 @@ namespace Arcane
         /// Calls to the <seealso cref="InnerQuery"/>'s <see cref="IQueryProvider"/> 
         /// to create a new <see cref="IQueryable{T}"/> and returns a new instance wrapping the newly created query.
         /// 
-        /// Also, if <see cref="IQueryContext.SuppressCompatabilityErrors"/> is false it will call to
+        /// Also, if <see cref="IQueryContext.SuppressCompatibilityErrors"/> is false it will call to
         /// the parent context to examine the provided expression for cross-provider compatability.
         /// </summary>
         /// <typeparam name="TElement"></typeparam>

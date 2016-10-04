@@ -13,8 +13,17 @@ namespace ArcaneTests
     {
         protected const int Total = 100;
         protected static readonly DateTime Date = new DateTime(2016, 6, 30, 0, 0, 0, DateTimeKind.Utc);
+
+        protected ArcaneBaseTest(IServiceProviderFactory providerFactory)
+        {
+            var provider = providerFactory.CreateServiceProvider();
+            Provider = provider;
+            Context = (IQueryContext)provider.GetService(typeof(IQueryContext));
+        }
+
+        protected IServiceProvider Provider { get; }
         
-        protected IQueryContext Context { get; set; }
+        protected IQueryContext Context { get; }
 
         protected IRepository Repository => new Repository(Context);
 
@@ -48,5 +57,17 @@ namespace ArcaneTests
 
             return results.ToArray();
         }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public interface IServiceProviderFactory
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        IServiceProvider CreateServiceProvider();
     }
 }

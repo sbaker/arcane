@@ -82,37 +82,37 @@ namespace Arcane.Cassandra
         }
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
-    public class CassandraQueryContext : QueryContext<ISession>
-    {
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="provider"></param>
-        /// <param name="session"></param>
-        public CassandraQueryContext(IServiceProvider provider, ISession session) : base(provider)
-        {
-        }
+    ///// <summary>
+    ///// 
+    ///// </summary>
+    //public class CassandraQueryContext : QueryContext<ISession>
+    //{
+    //    /// <summary>
+    //    /// 
+    //    /// </summary>
+    //    /// <param name="provider"></param>
+    //    /// <param name="session"></param>
+    //    public CassandraQueryContext(IServiceProvider provider, ISession session) : base(provider)
+    //    {
+    //    }
 
-        /// <summary>
-        /// Creates a query for the given <typeparamref name="T"/> model representing a table or collection.
-        /// </summary>
-        /// <typeparam name="T">The type representing the table or collection.</typeparam>
-        /// <param name="name">Optional, parameter is only used in some implementations of the <see cref="IQueryContext"/></param>
-        /// <returns></returns>
-        public override IQuery<T> Query<T>(string name = null)
-        {
-            return new CassandraQuery<T>(new Table<T>(Context), this);
-        }
+    //    /// <summary>
+    //    /// Creates a query for the given <typeparamref name="T"/> model representing a table or collection.
+    //    /// </summary>
+    //    /// <typeparam name="T">The type representing the table or collection.</typeparam>
+    //    /// <param name="name">Optional, parameter is only used in some implementations of the <see cref="IQueryContext"/></param>
+    //    /// <returns></returns>
+    //    public override IQuery<T> Query<T>(string name = null)
+    //    {
+    //        return new CassandraQuery<T>(new Table<T>(Context), this);
+    //    }
 
-        /// <summary>
-        /// Will evaluate the <paramref name="expression"/> if <see cref="QueryContext.SuppressCompatabilityErrors"/> is false.
-        /// </summary>
-        /// <param name="expression"></param>
-        protected override void EvaluateExpression(Expression expression)
-        {
-        }
-    }
+    //    /// <summary>
+    //    /// Will evaluate the <paramref name="expression"/> if <see cref="QueryContext.SuppressCompatibilityErrors"/> is false.
+    //    /// </summary>
+    //    /// <param name="expression"></param>
+    //    protected override void EvaluateExpression(Expression expression)
+    //    {
+    //    }
+    //}
 }

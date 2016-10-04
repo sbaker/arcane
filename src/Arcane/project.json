@@ -16,16 +16,24 @@
   "commands": { },
   "frameworks": {
     "dnx451": {
-      "dependencies": {}
+      "dependencies": {
+        "System.Runtime": "4.0.10.0"
+      }
     },
     "net451": {
-      "dependencies": {}
+      "dependencies": {
+        "System.Runtime": "4.0.10.0"
+      }
     },
     "net452": {
-      "dependencies": {}
+      "dependencies": {
+        "System.Runtime": "4.0.10.0"
+      }
     },
     "net46": {
-      "dependencies": {}
+      "dependencies": {
+        "System.Runtime": "4.0.20.0"
+      }
     },
     "netstandard1.5": {
       "dependencies": {

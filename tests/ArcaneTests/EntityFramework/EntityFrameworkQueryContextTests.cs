@@ -1,24 +1,25 @@
-﻿using Arcane;
-using Arcane.EntityFramework;
+﻿using System;
+using System.Data.SQLite;
+using Arcane;
 using ArcaneTests.EntityFramework.Data;
 using ArcaneTests.Models;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Xunit;
 
 namespace ArcaneTests.EntityFramework
 {
     internal class EntityFrameworkQueryContextTests : ArcaneBaseTest
     {
-        public EntityFrameworkQueryContextTests()
+        public EntityFrameworkQueryContextTests() : base(new ServiceProviderFactory())
         {
-            Context = new EntityFrameworkQueryContext(new EntityDbContext());
-
             EnsureTestDatabase();
         }
 
-        private static void EnsureTestDatabase()
+        private void EnsureTestDatabase()
         {
-            using (var db = new EntityDbContext())
+            using (var db = Provider.GetService<EntityDbContext>())
             {
                 if (db.Database.EnsureCreated())
                 {
@@ -51,7 +52,7 @@ namespace ArcaneTests.EntityFramework
         }
 
         [Fact]
-        public void GetTheFirst24UsingRepositorySelectAnonomous()
+        public void GetTheFirst24UsingRepositorySelectAnonymous()
         {
             var entities = Repository.GetAll<Author>(a => a.Id <= 24).Select(a => new { a.Name });
             Assert.True(entities.Count() == 24);
@@ -77,6 +78,26 @@ namespace ArcaneTests.EntityFramework
             var entities = AuthorRepository.GetAuthorsByFirstName("First2").ToList();
             Assert.True(entities.Count == 11);
             Assert.True(entities.All(t => t.Name.StartsWith("First2")));
+        }
+
+        private class ServiceProviderFactory : IServiceProviderFactory
+        {
+            /// <summary>
+            /// 
+            /// </summary>
+            /// <returns></returns>
+            public IServiceProvider CreateServiceProvider()
+            {
+                var services = new ServiceCollection();
+
+                var connectionStringBuilder = new SQLiteConnectionStringBuilder {
+                    DataSource = "test.db"
+                };
+
+                services.AddArcane(b => b.UseEntityFramework<EntityDbContext>(options => options.UseSqlite(connectionStringBuilder.ToString())));
+
+                return services.BuildServiceProvider();
+            }
         }
     }
 }

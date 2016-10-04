@@ -1,4 +1,5 @@
-﻿using ArcaneTests.EntityFramework.Data;
+﻿using Arcane;
+using ArcaneTests.EntityFramework.Data;
 using ArcaneTests.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 using Xunit;
@@ -12,7 +13,7 @@ namespace ArcaneTests.EntityFramework
         [Fact]
         public void Test()
         {
-            _services.AddArcaneEntityFramework(builder =>
+            _services.AddArcane(builder =>
             {
                 //builder.For<AuthorRepository>().Use<EntityDbContext>();
             });

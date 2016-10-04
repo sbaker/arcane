@@ -12,7 +12,7 @@ namespace Arcane
         /// <summary>
         /// When set to true, will suppress cross provider compatable issues. (Note: this is not yet implemented)
         /// </summary>
-        bool SuppressCompatabilityErrors { get; set; }
+        bool SuppressCompatibilityErrors { get; set; }
 
         /// <summary>
         /// When implemented in a derived class, creates a query for the given <typeparamref name="T"/> model representing a table or collection.
@@ -23,7 +23,7 @@ namespace Arcane
         IQuery<T> Query<T>(string name = null) where T : class, new();
 
         /// <summary>
-        /// If <see cref="SuppressCompatabilityErrors"/> is false, will evaluate the current expression for common cross provider issues.
+        /// If <see cref="SuppressCompatibilityErrors"/> is false, will evaluate the current expression for common cross provider issues.
         /// </summary>
         /// <param name="expression">The expression to evaluate.</param>
         void EvaluateExpression(Expression expression);

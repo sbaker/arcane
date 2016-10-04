@@ -1,25 +1,16 @@
-﻿using System.Data.SQLite;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Data.Sqlite;
+﻿using Microsoft.EntityFrameworkCore;
 using ArcaneTests.Models;
 
 namespace ArcaneTests.EntityFramework.Data
 {
     internal class EntityDbContext : DbContext
     {
+        public EntityDbContext(DbContextOptions<EntityDbContext> options) : base(options)
+        {
+        }
+
         public DbSet<Author> Authors { get; set; }
         
         public DbSet<Book> Books { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            var connectionStringBuilder = new SQLiteConnectionStringBuilder {
-                DataSource = "test.db"
-            };
-
-            optionsBuilder.UseSqlite(new SqliteConnection(connectionStringBuilder.ToString()));
-
-            base.OnConfiguring(optionsBuilder);
-        }
     }
 }

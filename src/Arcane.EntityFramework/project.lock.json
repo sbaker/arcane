@@ -618,7 +618,8 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.1",
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
+          "System.Runtime": "4.0.10"
         },
         "compile": {
           "net451/Arcane.dll": {}
@@ -1244,7 +1245,8 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.5.2",
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
+          "System.Runtime": "4.0.10"
         },
         "compile": {
           "net452/Arcane.dll": {}
@@ -2109,7 +2111,8 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.6",
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
+          "System.Runtime": "4.0.20"
         },
         "compile": {
           "net46/Arcane.dll": {}
@@ -3821,7 +3824,8 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
+          "System.Runtime": "4.0.10"
         },
         "compile": {
           "dnx451/Arcane.dll": {}
