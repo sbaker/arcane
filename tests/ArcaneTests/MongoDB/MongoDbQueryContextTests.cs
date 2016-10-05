@@ -9,7 +9,7 @@ namespace ArcaneTests.MongoDB
 {
     internal class MongoDbQueryContextTests : ArcaneBaseTest
     {
-        public MongoDbQueryContextTests()
+        public MongoDbQueryContextTests() : base(null)
         {
             //ContextFactory<IMongoDatabase>.OnContextNeeded = context =>
             //{
@@ -34,7 +34,7 @@ namespace ArcaneTests.MongoDB
                 collection.InsertMany(GetAuthors());
             }
             
-            Context = new MongoDbQueryContext(database);
+            //Context = new MongoDbQueryContext(database);
         }
 
         [Fact]
@@ -59,7 +59,7 @@ namespace ArcaneTests.MongoDB
         }
 
         [Fact]
-        public void GetTheFirst24UsingRepositorySelectAnonomous()
+        public void GetTheFirst24UsingRepositorySelectAnonymous()
         {
             var entities = Repository.GetAll<Author>(a => a.Id <= 24).Select(a => new { a.Name });
             Assert.True(entities.Count() == 24);

@@ -29,11 +29,11 @@
     "dotnet-test-xunit": "1.0.0-rc2-*"
   },
 
-  //"testRunner": "xunit",
+  "testRunner": "xunit",
 
-  //"commands": {
-  //  "test": "xunit.runner.dnx"
-  //},
+  "commands": {
+    "test": "xunit.runner.dnx"
+  },
 
   "frameworks": {
     "dnx451": {

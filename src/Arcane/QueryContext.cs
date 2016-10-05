@@ -1,29 +1,33 @@
 ﻿using System;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using Arcane.Expressions;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Arcane
 {
     /// <summary>
     /// An abstract implementation of <see cref="IQueryContext"/> with some basic functionality.
     /// </summary>
-    public abstract class QueryContext : IQueryContext, ISaveChanges
+    public class QueryContext : IQueryContext, ISaveChanges
     {
         /// <summary>
         /// 
         /// </summary>
-        protected QueryContext()
+        /// <param name="provider">The <see cref="IServiceProvider"/> used to retrieve services.</param>
+        public QueryContext(IServiceProvider provider)
         {
+            Provider = provider;
+            ExpressionEvaluator = provider.GetService<IExpressionEvaluator>();
+
+            var factoryProvider = provider.GetRequiredService<IArcaneQueryFactoryProvider>();
+            ArcaneQueryFactory = factoryProvider.GetQueryFactory(this);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="provider">The <see cref="IServiceProvider"/> used to retreive services.</param>
-        protected QueryContext(IServiceProvider provider)
-        {
-            Provider = provider;
-        }
+        protected IExpressionEvaluator ExpressionEvaluator { get; set; }
 
         /// <summary>
         /// Deconstructs the current instance and allows for disposing of any resources.
@@ -39,6 +43,11 @@ namespace Arcane
         protected IServiceProvider Provider { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        protected IArcaneQueryFactory ArcaneQueryFactory { get; set; }
+
+        /// <summary>
         /// Returns true, if the current instance has been disposed, false otherwise.
         /// </summary>
         public bool IsDisposed { get; private set; }
@@ -46,7 +55,7 @@ namespace Arcane
         /// <summary>
         /// A setting to suppress cross provider compatability issues.
         /// </summary>
-        public bool SuppressCompatabilityErrors { get; set; } = GlobalSettings.SuppressCompatibilityErrors;
+        public bool SuppressCompatibilityErrors { get; set; } = GlobalSettings.SuppressCompatibilityErrors;
 
         /// <summary>
         /// Disposes of the current instance's resources.
@@ -63,31 +72,39 @@ namespace Arcane
         /// <typeparam name="T">The type representing the table or collection.</typeparam>
         /// <param name="name">Optional, parameter is only used in some implementations of the <see cref="IQueryContext"/></param>
         /// <returns></returns>
-        public abstract IQuery<T> Query<T>(string name = null) where T : class, new();
+        public virtual IQuery<T> Query<T>(string name = null) where T : class, new()
+        {
+            return ArcaneQueryFactory.CreateQuery<T>(name);
+        }
 
         /// <summary>
-        /// If <see cref="IQueryContext.SuppressCompatabilityErrors"/> is false, will evaluate the current expression for common cross provider issues.
+        /// If <see cref="IQueryContext.SuppressCompatibilityErrors"/> is false, will evaluate the current expression for common cross provider issues.
         /// </summary>
         /// <param name="expression">The expression to evaluate.</param>
         void IQueryContext.EvaluateExpression(Expression expression)
         {
-            if (!SuppressCompatabilityErrors)
+            EvaluateExpression(expression);
+        }
+
+        /// <summary>
+        /// When implemented in a derived class will evaluate the <paramref name="expression"/> if <see cref="SuppressCompatibilityErrors"/> is false.
+        /// </summary>
+        /// <param name="expression"></param>
+        protected virtual void EvaluateExpression(Expression expression)
+        {
+            if (!SuppressCompatibilityErrors)
             {
-                EvaluateExpression(expression);
+                ExpressionEvaluator?.Evaluate(expression);
             }
         }
 
         /// <summary>
-        /// When implemented in a derived class will evaluate the <paramref name="expression"/> if <see cref="SuppressCompatabilityErrors"/> is false.
-        /// </summary>
-        /// <param name="expression"></param>
-        protected abstract void EvaluateExpression(Expression expression);
-        
-        /// <summary>
         /// Disposes of the current instance's resources.
         /// </summary>
         /// <param name="disposing">True if the object is wrapped in a using, false if the GC is collecting the current instance.</param>
-        protected abstract void DisposeCore(bool disposing);
+        protected virtual void DisposeCore(bool disposing)
+        {
+        }
 
         /// <summary>
         /// An empty implementation of <see cref="ISaveChanges.SaveChanges"/>
@@ -140,66 +157,66 @@ namespace Arcane
         }
     }
 
-    /// <summary>
-    /// An abstract implementation of <see cref="IQueryContext"/> with some basic functionality and a strongly typed inner context.
-    /// </summary>
-    public abstract class QueryContext<TContext> : QueryContext, IQueryContext<TContext>
-    {
-        private TContext _context;
+    ///// <summary>
+    ///// An abstract implementation of <see cref="IQueryContext"/> with some basic functionality and a strongly typed inner context.
+    ///// </summary>
+    //public class QueryContext<TContext> : QueryContext, IQueryContext<TContext>
+    //{
+    //    private TContext _context;
 
-        /// <summary>
-        /// When called from a derived class, initializes a new instance of the <see cref="QueryContext{TContext}"/> class using the provided <paramref name="provider"/> for service resolution.
-        /// </summary>
-        /// <param name="provider">The <see cref="IServiceProvider"/> used to retreive services.</param>
-        protected QueryContext(IServiceProvider provider) : this(provider, (TContext)provider.GetService(typeof(TContext)))
-        {
-        }
+    //    /// <summary>
+    //    /// When called from a derived class, initializes a new instance of the <see cref="QueryContext{TContext}"/> class using the provided <paramref name="provider"/> for service resolution.
+    //    /// </summary>
+    //    /// <param name="provider">The <see cref="IServiceProvider"/> used to retrieve services.</param>
+    //    public QueryContext(IServiceProvider provider) : base(provider)
+    //    {
+    //    }
 
-        /// <summary>
-        /// When called from a derived class, initializes a new instance of the <see cref="QueryContext{TContext}"/> class using the provided <paramref name="context"/>.
-        /// </summary>
-        /// <param name="provider">The <see cref="IServiceProvider"/> used to retreive services.</param>
-        /// <param name="context">The context to wrap.</param>
-        protected QueryContext(IServiceProvider provider, TContext context = default(TContext)) : base(provider)
-        {
-            _context = context;
-        }
+    //    ///// <summary>
+    //    ///// When called from a derived class, initializes a new instance of the <see cref="QueryContext{TContext}"/> class using the provided <paramref name="context"/>.
+    //    ///// </summary>
+    //    ///// <param name="provider">The <see cref="IServiceProvider"/> used to retrieve services.</param>
+    //    ///// <param name="context">The context to wrap.</param>
+    //    //protected QueryContext(IServiceProvider provider, TContext context = default(TContext)) : base(provider)
+    //    //{
+    //    //    _context = context;
+    //    //}
 
-        /// <summary>
-        /// The wrapped <typeparamref name="TContext"/>.
-        /// </summary>
-        protected virtual TContext Context
-        {
-            get
-            {
-                if (_context == null)
-                {
-                    if (ContextFactory<TContext>.OnContextNeeded == null)
-                    {
-                        throw new Exception($"The context was not provided and the factory method:{nameof(ContextFactory<TContext>.OnContextNeeded)} was set on: {typeof(ContextFactory<TContext>)}");
-                    }
+    //    /// <summary>
+    //    /// The wrapped <typeparamref name="TContext"/>.
+    //    /// </summary>
+    //    protected virtual TContext Context
+    //    {
+    //        get
+    //        {
+    //            if (_context == null)
+    //            {
+    //                if (ContextFactory<TContext>.OnContextNeeded == null)
+    //                {
+    //                    throw new Exception($"The context was not provided and the factory method:{nameof(ContextFactory<TContext>.OnContextNeeded)} was set on: {typeof(ContextFactory<TContext>)}");
+    //                }
 
-                    _context = ContextFactory<TContext>.OnContextNeeded(Provider);
-                }
+    //                _context = ContextFactory<TContext>.OnContextNeeded(Provider);
+    //            }
 
-                return _context;
-            }
-            set
-            {
-                _context = value;
-            }
-        }
+    //            return _context;
+    //        }
+    //        set
+    //        {
+    //            _context = value;
+    //        }
+    //    }
 
-        /// <summary>
-        /// Disposes of the current instance's <see cref="Context"/> if it implements IDisposable.
-        /// </summary>
-        /// <param name="disposing">True if the object is wrapped in a using, false if the GC is collecting the current instance.</param>
-        protected override void DisposeCore(bool disposing)
-        {
-            if (disposing)
-            {
-                (_context as IDisposable)?.Dispose();
-            }
-        }
-    }
+    //    /// <summary>
+    //    /// Disposes of the current instance's <see cref="Context"/> if it implements IDisposable.
+    //    /// </summary>
+    //    /// <param name="disposing">True if the object is wrapped in a using, false if the GC is collecting the current instance.</param>
+    //    protected override void DisposeCore(bool disposing)
+    //    {
+    //        if (disposing)
+    //        {
+    //            (_context as IDisposable)?.Dispose();
+    //        }
+    //    }
+    //}
 }

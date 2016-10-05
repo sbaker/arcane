@@ -1,4 +1,4 @@
-﻿{
+{
   "version": "0.0.4-beta001-001",
   "description": "Arcane.EntityFramework is an implementation of Arcane wrapping the EntityFramework's DbContext.",
   "authors": [ "Stephen Baker" ],

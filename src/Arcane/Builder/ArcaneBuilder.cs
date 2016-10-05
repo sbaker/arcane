@@ -1,11 +1,11 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace Arcane
+namespace Arcane.Builder
 {
     /// <summary>
     /// 
     /// </summary>
-    public abstract class ArcaneBuilder : IArcaneBuilder
+    public class ArcaneBuilder : IArcaneBuilder
     {
         private readonly IServiceCollection _services;
 
@@ -13,7 +13,7 @@ namespace Arcane
         /// 
         /// </summary>
         /// <param name="services"></param>
-        protected ArcaneBuilder(IServiceCollection services)
+        public ArcaneBuilder(IServiceCollection services)
         {
             _services = services;
         }
