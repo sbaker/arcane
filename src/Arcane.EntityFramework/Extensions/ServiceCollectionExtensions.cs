@@ -1,5 +1,8 @@
 ﻿using System;
+using Arcane;
 using Arcane.Builder;
+using Arcane.EntityFramework.Factories;
+using Arcane.EntityFramework.Internal;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 
@@ -39,29 +42,10 @@ namespace Microsoft.Extensions.DependencyInjection
         public static IArcaneBuilder UseEntityFramework<TDbContext>(this IArcaneBuilder builder, Action<DbContextOptionsBuilder> optionsBuilder) where TDbContext : DbContext
         {
             builder.Services.AddEntityFramework();
+            builder.Services.AddScoped<IArcaneQueryFactoryProvider, EntityFrameworkArcaneQueryFactoryProvider>();
             builder.Services.AddScoped<IDbContextProvider, DbContextProvider<TDbContext>>();
             builder.Services.AddDbContext<TDbContext>(optionsBuilder);
             return builder;
-        }
-    }
-
-    internal interface IDbContextProvider
-    {
-        DbContext GetContext();
-    }
-
-    internal class DbContextProvider<TDbContext> : IDbContextProvider where TDbContext : DbContext
-    {
-        private readonly IServiceProvider _provider;
-
-        public DbContextProvider(IServiceProvider provider)
-        {
-            _provider = provider;
-        }
-
-        public DbContext GetContext()
-        {
-            return _provider.GetRequiredService<TDbContext>();
         }
     }
 

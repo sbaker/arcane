@@ -19,14 +19,13 @@ namespace ArcaneTests.EntityFramework
 
         private void EnsureTestDatabase()
         {
-            using (var db = Provider.GetService<EntityDbContext>())
-            {
-                if (db.Database.EnsureCreated())
-                {
-                    db.Authors.AddRange(GetAuthors());
+            var db = Provider.GetService<EntityDbContext>();
 
-                    db.SaveChanges();
-                }
+            if (db.Database.EnsureCreated())
+            {
+                db.Authors.AddRange(GetAuthors());
+
+                db.SaveChanges();
             }
         }
 

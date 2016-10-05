@@ -1,14 +1,14 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Arcane.EntityFramework.Internal;
+using Microsoft.EntityFrameworkCore;
 
 namespace Arcane.EntityFramework.Factories
 {
     ///
-    internal class EntityFrameworkArcaneQueryProvider : IArcaneQueryFactoryProvider
+    internal class EntityFrameworkArcaneQueryFactoryProvider : IArcaneQueryFactoryProvider
     {
         private readonly IDbContextProvider _dbContextProvider;
 
-        public EntityFrameworkArcaneQueryProvider(IDbContextProvider dbContextProvider)
+        public EntityFrameworkArcaneQueryFactoryProvider(IDbContextProvider dbContextProvider)
         {
             _dbContextProvider = dbContextProvider;
         }
