@@ -13,23 +13,35 @@
 
   "dependencies": {
     "Arcane": "0.0.4-*",
-    "MongoDB.Driver": "2.2.3"
+    "MongoDB.Driver": "2.3.0"
   },
 
   "commands": { },
 
   "frameworks": {
     "dnx451": {
-      "dependencies": { }
+      "dependencies": {}
     },
     "net451": {
-      "dependencies": { }
+      "dependencies": {}
     },
     "net452": {
-      "dependencies": { }
+      "dependencies": {}
     },
     "net46": {
-      "dependencies": { }
+      "dependencies": {}
+    },
+    "netstandard1.5": {
+      "dependencies": {}
+    },
+    "netstandard1.6": {
+      "dependencies": {}
+    },
+    "dnxcore50": {
+      "dependencies": {}
+    },
+    "netcoreapp1.0": {
+      "imports": "dnxcore50"
     }
   }
 }

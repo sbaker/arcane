@@ -3,7 +3,7 @@
     /// <summary>
     /// 
     /// </summary>
-    public interface IArcaneQueryFactory
+    public interface IQueryFactory
     {
         /// <summary>
         /// 
@@ -21,13 +21,13 @@
     /// <summary>
     /// 
     /// </summary>
-    public abstract class ArcaneQueryFactory : IArcaneQueryFactory
+    public abstract class QueryFactory : IQueryFactory
     {
         /// <summary>
         /// 
         /// </summary>
         /// <param name="context"></param>
-        protected ArcaneQueryFactory(IQueryContext context)
+        protected QueryFactory(IQueryContext context)
         {
             Context = context;
         }

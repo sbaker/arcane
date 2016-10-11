@@ -1,10 +1,6 @@
 ﻿using System;
 using Arcane;
-using Arcane.Builder;
-using Arcane.EntityFramework.Factories;
-using Arcane.EntityFramework.Internal;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Infrastructure;
 
 // ReSharper disable once CheckNamespace
 namespace Microsoft.Extensions.DependencyInjection
@@ -14,38 +10,15 @@ namespace Microsoft.Extensions.DependencyInjection
     /// </summary>
     public static class ServiceCollectionExtensions
     {
-    }
-
-    /// <summary>
-    /// Provides extension methods for configuring EntityFramework on top of Arcane.
-    /// </summary>
-    public static class ArcaneBuilderExtensions
-    {
-        ///// <summary>
-        ///// 
-        ///// </summary>
-        ///// <param name="builder"></param>
-        ///// <param name="connectionString"></param>
-        ///// <returns></returns>
-        //public static IArcaneBuilder UseSqlServer<TDbContext>(this IArcaneBuilder builder, string connectionString) where TDbContext : DbContext
-        //{
-        //    return builder.UseEntityFramework<TDbContext>(b => b.UseSqlServer(connectionString));
-        //}
-
         /// <summary>
         /// 
         /// </summary>
-        /// <typeparam name="TDbContext"></typeparam>
-        /// <param name="builder"></param>
-        /// <param name="optionsBuilder"></param>
+        /// <param name="services"></param>
+        /// <param name="options"></param>
         /// <returns></returns>
-        public static IArcaneBuilder UseEntityFramework<TDbContext>(this IArcaneBuilder builder, Action<DbContextOptionsBuilder> optionsBuilder) where TDbContext : DbContext
+        public static IServiceCollection AddArcaneWithEntityFramework<TDbContext>(this IServiceCollection services, Action<DbContextOptionsBuilder> options) where TDbContext : DbContext
         {
-            builder.Services.AddEntityFramework();
-            builder.Services.AddScoped<IArcaneQueryFactoryProvider, EntityFrameworkArcaneQueryFactoryProvider>();
-            builder.Services.AddScoped<IDbContextProvider, DbContextProvider<TDbContext>>();
-            builder.Services.AddDbContext<TDbContext>(optionsBuilder);
-            return builder;
+            return services.AddArcane(builder => builder.UseEntityFramework<TDbContext>(options));
         }
     }
 

@@ -2,6 +2,7 @@
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Arcane.Expressions;
+using Arcane.Persistence;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Arcane
@@ -9,7 +10,7 @@ namespace Arcane
     /// <summary>
     /// An abstract implementation of <see cref="IQueryContext"/> with some basic functionality.
     /// </summary>
-    public class QueryContext : IQueryContext, ISaveChanges
+    public class QueryContext : IQueryContext
     {
         /// <summary>
         /// 
@@ -20,8 +21,11 @@ namespace Arcane
             Provider = provider;
             ExpressionEvaluator = provider.GetService<IExpressionEvaluator>();
 
-            var factoryProvider = provider.GetRequiredService<IArcaneQueryFactoryProvider>();
+            var factoryProvider = provider.GetRequiredService<IQueryFactoryProvider>();
             ArcaneQueryFactory = factoryProvider.GetQueryFactory(this);
+
+            var dataStoreProvider = provider.GetRequiredService<IDataStoreFactoryProvider>();
+            StoreFactory = dataStoreProvider.GetDataStoreFactory(this);
         }
 
         /// <summary>
@@ -38,14 +42,24 @@ namespace Arcane
         }
 
         /// <summary>
-        /// The ServiceProvider responsible for retreiving dependencies for this QueryContext.
+        /// The ServiceProvider responsible for retrieving dependencies for this QueryContext.
         /// </summary>
-        protected IServiceProvider Provider { get; set; }
+        public IServiceProvider Provider { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        protected IArcaneQueryFactory ArcaneQueryFactory { get; set; }
+        public IDataStoreFactory StoreFactory { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        protected IQueryFactory ArcaneQueryFactory { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        IQueryContext IDataStoreFactory.Context => this;
 
         /// <summary>
         /// Returns true, if the current instance has been disposed, false otherwise.
@@ -53,7 +67,7 @@ namespace Arcane
         public bool IsDisposed { get; private set; }
 
         /// <summary>
-        /// A setting to suppress cross provider compatability issues.
+        /// A setting to suppress cross provider compatibility issues.
         /// </summary>
         public bool SuppressCompatibilityErrors { get; set; } = GlobalSettings.SuppressCompatibilityErrors;
 
@@ -75,6 +89,15 @@ namespace Arcane
         public virtual IQuery<T> Query<T>(string name = null) where T : class, new()
         {
             return ArcaneQueryFactory.CreateQuery<T>(name);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public virtual IDataStore CreateStore()
+        {
+            return StoreFactory.CreateStore();
         }
 
         /// <summary>
@@ -107,24 +130,6 @@ namespace Arcane
         }
 
         /// <summary>
-        /// An empty implementation of <see cref="ISaveChanges.SaveChanges"/>
-        /// </summary>
-        /// <returns></returns>
-        protected virtual int SaveChangesCore()
-        {
-            return 0;
-        }
-        
-        /// <summary>
-        /// Asynchronously calls to the wrapped implementation to persist the changes made.
-        /// </summary>
-        /// <returns>A <see cref="Task"/> for later evaluation.</returns>
-        protected virtual async Task<int> SaveChangesCoreAsync()
-        {
-            return await Task.FromResult(0);
-        }
-
-        /// <summary>
         /// Disposes of the current instance's resources.
         /// </summary>
         /// <param name="disposing">True if the object is wrapped in a using, false if the GC is collecting the current instance.</param>
@@ -137,86 +142,5 @@ namespace Arcane
                 IsDisposed = true;
             }
         }
-
-        /// <summary>
-        /// Calls to the wrapped implementation to persist the changes made.
-        /// </summary>
-        /// <returns></returns>
-        int ISaveChanges.SaveChanges()
-        {
-            return SaveChangesCore();
-        }
-
-        /// <summary>
-        /// Asynchronously calls to the wrapped implementation to persist the changes made.
-        /// </summary>
-        /// <returns>A <see cref="Task"/> for later evaluation.</returns>
-        async Task<int> ISaveChanges.SaveChangesAsync()
-        {
-            return await SaveChangesCoreAsync();
-        }
     }
-
-    ///// <summary>
-    ///// An abstract implementation of <see cref="IQueryContext"/> with some basic functionality and a strongly typed inner context.
-    ///// </summary>
-    //public class QueryContext<TContext> : QueryContext, IQueryContext<TContext>
-    //{
-    //    private TContext _context;
-
-    //    /// <summary>
-    //    /// When called from a derived class, initializes a new instance of the <see cref="QueryContext{TContext}"/> class using the provided <paramref name="provider"/> for service resolution.
-    //    /// </summary>
-    //    /// <param name="provider">The <see cref="IServiceProvider"/> used to retrieve services.</param>
-    //    public QueryContext(IServiceProvider provider) : base(provider)
-    //    {
-    //    }
-
-    //    ///// <summary>
-    //    ///// When called from a derived class, initializes a new instance of the <see cref="QueryContext{TContext}"/> class using the provided <paramref name="context"/>.
-    //    ///// </summary>
-    //    ///// <param name="provider">The <see cref="IServiceProvider"/> used to retrieve services.</param>
-    //    ///// <param name="context">The context to wrap.</param>
-    //    //protected QueryContext(IServiceProvider provider, TContext context = default(TContext)) : base(provider)
-    //    //{
-    //    //    _context = context;
-    //    //}
-
-    //    /// <summary>
-    //    /// The wrapped <typeparamref name="TContext"/>.
-    //    /// </summary>
-    //    protected virtual TContext Context
-    //    {
-    //        get
-    //        {
-    //            if (_context == null)
-    //            {
-    //                if (ContextFactory<TContext>.OnContextNeeded == null)
-    //                {
-    //                    throw new Exception($"The context was not provided and the factory method:{nameof(ContextFactory<TContext>.OnContextNeeded)} was set on: {typeof(ContextFactory<TContext>)}");
-    //                }
-
-    //                _context = ContextFactory<TContext>.OnContextNeeded(Provider);
-    //            }
-
-    //            return _context;
-    //        }
-    //        set
-    //        {
-    //            _context = value;
-    //        }
-    //    }
-
-    //    /// <summary>
-    //    /// Disposes of the current instance's <see cref="Context"/> if it implements IDisposable.
-    //    /// </summary>
-    //    /// <param name="disposing">True if the object is wrapped in a using, false if the GC is collecting the current instance.</param>
-    //    protected override void DisposeCore(bool disposing)
-    //    {
-    //        if (disposing)
-    //        {
-    //            (_context as IDisposable)?.Dispose();
-    //        }
-    //    }
-    //}
 }

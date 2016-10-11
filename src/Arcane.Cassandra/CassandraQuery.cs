@@ -7,10 +7,17 @@ using Cassandra.Data.Linq;
 
 namespace Arcane.Cassandra
 {
-    // This project can output the Class library as a NuGet Package.
-    // To enable this option, right-click on the project and select the Properties menu item. In the Build tab select "Produce outputs on build".
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class CassandraQuery<T> : Query<T>
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="innerQuery"></param>
+        /// <param name="context"></param>
         public CassandraQuery(Table<T> innerQuery, IQueryContext context) : base(innerQuery, context)
         {
             Table = innerQuery;
@@ -18,68 +25,68 @@ namespace Arcane.Cassandra
 
         private Table<T> Table { get; set; }
 
-        /// <summary>
-        /// Adds a new <typeparamref name="T"/> entity to the backing database or collection.
-        /// </summary>
-        /// <param name="entity">The entity to add.</param>
-        protected override void AddCore(T entity)
-        {
-            Table.Insert(entity).Execute();
-        }
+        ///// <summary>
+        ///// Adds a new <typeparamref name="T"/> entity to the backing database or collection.
+        ///// </summary>
+        ///// <param name="entity">The entity to add.</param>
+        //protected override void AddCore(T entity)
+        //{
+        //    Table.Insert(entity).Execute();
+        //}
 
-        /// <summary>
-        /// Adds all the new <typeparamref name="T"/> entities to the backing database or collection.
-        /// </summary>
-        /// <param name="entities">The entities to add.</param>
-        protected override void AddCore(IEnumerable<T> entities)
-        {
-            foreach (var entity in entities)
-            {
-                AddCore(entity);
-            }
-        }
+        ///// <summary>
+        ///// Adds all the new <typeparamref name="T"/> entities to the backing database or collection.
+        ///// </summary>
+        ///// <param name="entities">The entities to add.</param>
+        //protected override void AddCore(IEnumerable<T> entities)
+        //{
+        //    foreach (var entity in entities)
+        //    {
+        //        AddCore(entity);
+        //    }
+        //}
 
-        /// <summary>
-        /// Deletes the <typeparamref name="T"/> entity from the backing database or collection.
-        /// </summary>
-        /// <param name="entity">The entity to delete.</param>
-        protected override void DeleteCore(T entity)
-        {
-            //Table.Delete().Delete(entity).Execute();
-        }
+        ///// <summary>
+        ///// Deletes the <typeparamref name="T"/> entity from the backing database or collection.
+        ///// </summary>
+        ///// <param name="entity">The entity to delete.</param>
+        //protected override void DeleteCore(T entity)
+        //{
+        //    //Table.Delete().Delete(entity).Execute();
+        //}
 
-        /// <summary>
-        /// Deletes all the <typeparamref name="T"/> entities from the backing database or collection.
-        /// </summary>
-        /// <param name="entities">The entities to delete.</param>
-        protected override void DeleteCore(IEnumerable<T> entities)
-        {
-            foreach (var entity in entities)
-            {
-                DeleteCore(entity);
-            }
-        }
+        ///// <summary>
+        ///// Deletes all the <typeparamref name="T"/> entities from the backing database or collection.
+        ///// </summary>
+        ///// <param name="entities">The entities to delete.</param>
+        //protected override void DeleteCore(IEnumerable<T> entities)
+        //{
+        //    foreach (var entity in entities)
+        //    {
+        //        DeleteCore(entity);
+        //    }
+        //}
 
-        /// <summary>
-        /// Updates the <typeparamref name="T"/> entity in the backing database or collection.
-        /// </summary>
-        /// <param name="entity">The entity to update.</param>
-        protected override void UpdateCore(T entity)
-        {
-            Table.Select(e => entity).Update().Execute();
-        }
+        ///// <summary>
+        ///// Updates the <typeparamref name="T"/> entity in the backing database or collection.
+        ///// </summary>
+        ///// <param name="entity">The entity to update.</param>
+        //protected override void UpdateCore(T entity)
+        //{
+        //    Table.Select(e => entity).Update().Execute();
+        //}
 
-        /// <summary>
-        /// Updates all the <typeparamref name="T"/> entities in the backing database or collection.
-        /// </summary>
-        /// <param name="entities">The entities to update.</param>
-        protected override void UpdateCore(IEnumerable<T> entities)
-        {
-            foreach (var entity in entities)
-            {
-                UpdateCore(entity);
-            }
-        }
+        ///// <summary>
+        ///// Updates all the <typeparamref name="T"/> entities in the backing database or collection.
+        ///// </summary>
+        ///// <param name="entities">The entities to update.</param>
+        //protected override void UpdateCore(IEnumerable<T> entities)
+        //{
+        //    foreach (var entity in entities)
+        //    {
+        //        UpdateCore(entity);
+        //    }
+        //}
     }
 
     ///// <summary>

@@ -20,23 +20,30 @@
 
   "frameworks": {
     "dnx451": {
-      "dependencies": { }
+      "dependencies": {}
     },
     "net451": {
-      "dependencies": { }
+      "dependencies": {}
     },
     "net452": {
-      "dependencies": { }
+      "dependencies": {}
     },
     "net46": {
-      "dependencies": { }
+      "dependencies": {}
     },
     "dnxcore50": {
-      "dependencies": { }
+      "dependencies": {}
     },
     "netstandard1.5": {
       "imports": "dnxcore50",
-      "dependencies": { }
+      "dependencies": {}
+    },
+    "netstandard1.6": {
+      "imports": "dnxcore50",
+      "dependencies": {}
+    },
+    "netcoreapp1.0": {
+      "imports": "dnxcore50"
     }
   }
 }

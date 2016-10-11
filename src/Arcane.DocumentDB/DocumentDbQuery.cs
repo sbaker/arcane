@@ -25,67 +25,67 @@ namespace Arcane.DocumentDB
         /// </summary>
         public DatabaseQueryConfig Config { get; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="entity"></param>
-        protected override void AddCore(T entity)
-        {
-            Config.CreateDocument(entity);
-        }
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        ///// <param name="entity"></param>
+        //protected override void AddCore(T entity)
+        //{
+        //    Config.CreateDocument(entity);
+        //}
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="entities"></param>
-        protected override void AddCore(IEnumerable<T> entities)
-        {
-            foreach (var entity in entities)
-            {
-                AddCore(entity);
-            }
-        }
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        ///// <param name="entities"></param>
+        //protected override void AddCore(IEnumerable<T> entities)
+        //{
+        //    foreach (var entity in entities)
+        //    {
+        //        AddCore(entity);
+        //    }
+        //}
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="entity"></param>
-        protected override void DeleteCore(T entity)
-        {
-            Config.DeleteDocument(entity);
-        }
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        ///// <param name="entity"></param>
+        //protected override void DeleteCore(T entity)
+        //{
+        //    Config.DeleteDocument(entity);
+        //}
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="entities"></param>
-        protected override void DeleteCore(IEnumerable<T> entities)
-        {
-            foreach (var entity in entities)
-            {
-                DeleteCore(entity);
-            }
-        }
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        ///// <param name="entities"></param>
+        //protected override void DeleteCore(IEnumerable<T> entities)
+        //{
+        //    foreach (var entity in entities)
+        //    {
+        //        DeleteCore(entity);
+        //    }
+        //}
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="entity"></param>
-        protected override void UpdateCore(T entity)
-        {
-            Config.UpdateDocument(entity);
-        }
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        ///// <param name="entity"></param>
+        //protected override void UpdateCore(T entity)
+        //{
+        //    Config.UpdateDocument(entity);
+        //}
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="entities"></param>
-        protected override void UpdateCore(IEnumerable<T> entities)
-        {
-            foreach (var entity in entities)
-            {
-                UpdateCore(entity);
-            }
-        }
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        ///// <param name="entities"></param>
+        //protected override void UpdateCore(IEnumerable<T> entities)
+        //{
+        //    foreach (var entity in entities)
+        //    {
+        //        UpdateCore(entity);
+        //    }
+        //}
     }
 }

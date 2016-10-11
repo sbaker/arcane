@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Linq.Expressions;
+using Arcane.Persistence;
 using ArcaneTests.Models;
 
 namespace ArcaneTests.Repositories
@@ -11,10 +12,10 @@ namespace ArcaneTests.Repositories
 
         IQueryable<T> GetAll<T>(Expression<Func<T, bool>> predicate) where T : class, IRootEntity<int>, new();
 
-        void Add<T>(T entity) where T : class, IRootEntity<int>, new();
+        void Add<T>(T entity) where T : class, IRootEntity<int>, IFindable<T>, new();
     }
 
-    internal interface IRepository<T> where T : class, IRootEntity<int>, new()
+    internal interface IRepository<T> where T : class, IRootEntity<int>, IFindable<T>, new()
     {
         T Get(int id);
 

@@ -12,7 +12,13 @@ namespace Arcane
         /// </summary>
         /// <returns></returns>
         int SaveChanges();
+    }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    public interface ISaveChangesAsync : ISaveChanges
+    {
         /// <summary>
         /// Asynchronously calls to the wrapped implementation to persist the changes made.
         /// </summary>

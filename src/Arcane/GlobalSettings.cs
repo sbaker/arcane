@@ -14,7 +14,7 @@ namespace Arcane
         public static bool SuppressCompatibilityErrors { get; set; } = true;
 
         /// <summary>
-        /// The <see cref="IServiceProvider"/> used to retreive services.
+        /// The <see cref="IServiceProvider"/> used to retrieve services.
         /// </summary>
         public static IServiceProvider Provider { get; set; }
     }

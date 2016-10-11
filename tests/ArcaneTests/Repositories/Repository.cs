@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using Arcane;
+using Arcane.Persistence;
 using ArcaneTests.Models;
 
 namespace ArcaneTests.Repositories
@@ -26,13 +27,16 @@ namespace ArcaneTests.Repositories
             return Context.Query<T>().Where(predicate);
         }
 
-        public void Add<T>(T entity) where T : class, IRootEntity<int>, new()
+        public void Add<T>(T entity) where T : class, IRootEntity<int>, IFindable<T>, new()
         {
-            Context.Query<T>().Add(entity);
+            using (var dataStore = Context.StoreFactory.CreateStore())
+            {
+                dataStore.Insert(entity);
+            }
         }
     }
 
-    internal class Repository<T> : IRepository<T> where T : class, IRootEntity<int>, new()
+    internal class Repository<T> : IRepository<T> where T : class, IRootEntity<int>, IFindable<T>, new()
     {
         public IQueryContext Context { get; set; }
 
@@ -53,7 +57,10 @@ namespace ArcaneTests.Repositories
 
         public void Add(T entity)
         {
-            Context.Query<T>().Add(entity);
+            using (var dataStore = Context.StoreFactory.CreateStore())
+            {
+                dataStore.Insert(entity);
+            }
         }
     }
 }

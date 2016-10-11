@@ -1,18 +1,29 @@
 ﻿using System;
 using System.Linq;
 using System.Linq.Expressions;
+using Arcane.Persistence;
 
 namespace Arcane
 {
     /// <summary>
     /// Provides an interface for an abstraction around access to <see cref="IQueryable{T}" /> data entity classes.
     /// </summary>
-    public interface IQueryContext : IDisposable
+    public interface IQueryContext : IDataStoreFactory, IDisposable
     {
         /// <summary>
         /// When set to true, will suppress cross provider compatable issues. (Note: this is not yet implemented)
         /// </summary>
         bool SuppressCompatibilityErrors { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        IServiceProvider Provider { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        IDataStoreFactory StoreFactory { get; }
 
         /// <summary>
         /// When implemented in a derived class, creates a query for the given <typeparamref name="T"/> model representing a table or collection.
