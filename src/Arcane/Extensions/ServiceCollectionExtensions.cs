@@ -6,12 +6,12 @@ using Arcane.Persistence.Internal;
 namespace Microsoft.Extensions.DependencyInjection.ArcaneInMemory
 {
     /// <summary>
-    /// 
+    /// Provides an extension method for using in-memory data.
     /// </summary>
     public static class ServiceCollectionExtensions
     {
         /// <summary>
-        /// 
+        /// Registers the services necessary for using in-memory data.
         /// </summary>
         /// <param name="services"></param>
         /// <returns></returns>

@@ -1,7 +1,5 @@
-﻿using System;
-using Arcane;
+﻿using Arcane;
 using Arcane.MongoDB;
-using Arcane.MongoDB.Extensions;
 using MongoDB.Driver;
 
 // ReSharper disable once CheckNamespace

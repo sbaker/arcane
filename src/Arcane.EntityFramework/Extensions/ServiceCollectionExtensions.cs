@@ -11,7 +11,7 @@ namespace Microsoft.Extensions.DependencyInjection
     public static class ServiceCollectionExtensions
     {
         /// <summary>
-        /// 
+        /// Adds Arcane using entity framework as a backing store.
         /// </summary>
         /// <param name="services"></param>
         /// <param name="options"></param>

@@ -3,7 +3,7 @@
 namespace Arcane
 {
     /// <summary>
-    /// Represents a <see cref="IQueryContext"/> that can save changes.
+    /// Represents a persistance layer that can save changes.
     /// </summary>
     public interface ISaveChanges
     {
@@ -15,7 +15,7 @@ namespace Arcane
     }
 
     /// <summary>
-    /// 
+    /// Represents a persistance layer that can save changes.
     /// </summary>
     public interface ISaveChangesAsync : ISaveChanges
     {

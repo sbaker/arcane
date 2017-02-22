@@ -1,35 +1,35 @@
 ﻿{
-  "version": "0.0.4-beta001-001",
-  "description": "An implementation of Arcane for DocumentDB.",
-  "authors": [ "Stephen Baker" ],
-  "buildOptions": {
-    "xmlDoc": true
-  },
-  "packOptions": {
-    "tags": [ "IQueryProvider", "IQueryable<T>", "DocumentDB" ],
-    "projectUrl": "https://github.com/sbaker/arcane",
-    "licenseUrl": ""
-  },
-
-  "dependencies": {
-    "Arcane": "0.0.4-*",
-    "Microsoft.Azure.DocumentDB": "1.7.1"
-  },
-
-  "commands": { },
-
-  "frameworks": {
-    "dnx451": {
-      "dependencies": { }
+    "version": "0.0.4-beta001-001",
+    "description": "An implementation of Arcane for DocumentDB.",
+    "authors": [ "Stephen Baker" ],
+    "buildOptions": {
+        "xmlDoc": true
     },
-    "net451": {
-      "dependencies": { }
+    "packOptions": {
+        "tags": [ "IQueryProvider", "IQueryable<T>", "DocumentDB" ],
+        "projectUrl": "https://github.com/sbaker/arcane",
+        "licenseUrl": ""
     },
-    "net452": {
-      "dependencies": { }
+
+    "dependencies": {
+        "Arcane": { "target": "project" },
+        "Microsoft.Azure.DocumentDB": "1.7.1"
     },
-    "net46": {
-      "dependencies": { }
+
+    "commands": {},
+
+    "frameworks": {
+        "dnx451": {
+            "dependencies": {}
+        },
+        "net451": {
+            "dependencies": {}
+        },
+        "net452": {
+            "dependencies": {}
+        },
+        "net46": {
+            "dependencies": {}
+        }
     }
-  }
 }

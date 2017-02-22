@@ -4,8 +4,15 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace ArcaneTests
 {
-    public class Program
+    /// <summary>
+    /// Program
+    /// </summary>
+    public static class Program
     {
+        /// <summary>
+        /// main
+        /// </summary>
+        /// <param name="args"></param>
         public static void Main(string[] args)
         {
             var tests = new ArcaneTests.EntityFramework.EntityFrameworkQueryContextTests();

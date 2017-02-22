@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Arcane.Persistence.Internal
+﻿namespace Arcane.Persistence.Internal
 {
     internal class InMemoryQueryFactoryProvider : QueryFactoryProvider
     {

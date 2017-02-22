@@ -5,7 +5,8 @@ using Arcane.Persistence;
 using Microsoft.Extensions.DependencyInjection;
 using MongoDB.Driver;
 
-namespace Arcane.MongoDB.Extensions
+// ReSharper disable once CheckNamespace
+namespace Arcane.MongoDB
 {
     /// <summary>
     /// 

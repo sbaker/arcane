@@ -6,21 +6,21 @@
     public abstract class SaveOnDisposeDataStore : IDataStore
     {
         /// <summary>
-        /// 
+        /// Inserts or marks the <paramref name="entity"/> as new.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="entity"></param>
         public abstract void Insert<T>(T entity) where T : class, IFindable<T>;
 
         /// <summary>
-        /// 
+        /// Updates or marks the <paramref name="entity"/> as modified.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="entity"></param>
         public abstract void Update<T>(T entity) where T : class, IFindable<T>;
 
         /// <summary>
-        /// 
+        /// Deletes or marks the <paramref name="entity"/> for deletion.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="entity"></param>

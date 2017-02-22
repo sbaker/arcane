@@ -46,22 +46,13 @@ namespace Arcane.AspNetCore.Samples.Data
 
     public class Author : DataStoreEntity<int, Author>
     {
-        //public int Id { get; set; }
-
         public string Name { get; set; }
 
         public List<Book> Books { get; set; }
-        
-        //public Expression<Func<Author, bool>> GetExpression()
-        //{
-        //    return t => t.Id == Id;
-        //}
     }
 
     public class Book : DataStoreEntity<int, Book>
     {
-        //public int Id { get; set; }
-
         public int AuthorId { get; set; }
 
         public Author Author { get; set; }
@@ -69,10 +60,5 @@ namespace Arcane.AspNetCore.Samples.Data
         public string Name { get; set; }
 
         public DateTime PublishedDate { get; set; }
-        
-        //public Expression<Func<Author, bool>> GetExpression()
-        //{
-        //    return t => t.Id == Id;
-        //}
     }
 }

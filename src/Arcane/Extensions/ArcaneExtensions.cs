@@ -11,7 +11,7 @@ namespace Arcane
     public static class ArcaneExtensions
     {
         /// <summary>
-        /// 
+        /// Registers the base Arcane functionality to the <see cref="IServiceCollection"/>.
         /// </summary>
         /// <param name="services"></param>
         /// <param name="builderAction"></param>

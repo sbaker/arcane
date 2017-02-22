@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq.Expressions;
-using System.Threading.Tasks;
 using Arcane.Expressions;
 using Arcane.Persistence;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,7 +12,7 @@ namespace Arcane
     public class QueryContext : IQueryContext
     {
         /// <summary>
-        /// 
+        /// Initializes a new instance of the <see cref="QueryContext"/> class using the provided <see cref="IServiceProvider"/>.
         /// </summary>
         /// <param name="provider">The <see cref="IServiceProvider"/> used to retrieve services.</param>
         public QueryContext(IServiceProvider provider)
@@ -29,7 +28,7 @@ namespace Arcane
         }
 
         /// <summary>
-        /// 
+        /// The <see cref="IExpressionEvaluator"/> used for evaluating the current <see cref="Expression"/> tree.
         /// </summary>
         protected IExpressionEvaluator ExpressionEvaluator { get; set; }
 
@@ -47,17 +46,17 @@ namespace Arcane
         public IServiceProvider Provider { get; }
 
         /// <summary>
-        /// 
+        /// The <see cref="IDataStoreFactory"/> used for creating <see cref="IDataStore"/>s.
         /// </summary>
         public IDataStoreFactory StoreFactory { get; }
 
         /// <summary>
-        /// 
+        /// The <see cref="IQueryFactory"/> used for creating <see cref="IQuery{T}"/>s.
         /// </summary>
         protected IQueryFactory ArcaneQueryFactory { get; set; }
 
         /// <summary>
-        /// 
+        /// The current <see cref="IQueryContext"/> instance or "this".
         /// </summary>
         IQueryContext IDataStoreFactory.Context => this;
 
@@ -92,7 +91,7 @@ namespace Arcane
         }
 
         /// <summary>
-        /// 
+        /// Creates an <see cref="IDataStore"/> for non-read operations.
         /// </summary>
         /// <returns></returns>
         public virtual IDataStore CreateStore()
