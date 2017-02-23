@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using Arcane.Persistence;
+using Arcane.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace Arcane.AspNetCore.Samples.Data

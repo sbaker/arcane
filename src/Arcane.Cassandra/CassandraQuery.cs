@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using Cassandra.Data.Linq;
 
 namespace Arcane.Cassandra
 {

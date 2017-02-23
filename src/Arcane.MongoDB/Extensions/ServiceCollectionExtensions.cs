@@ -18,7 +18,7 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <returns></returns>
         public static IServiceCollection AddArcaneWithMongoDB(this IServiceCollection services, string connectionString)
         {
-            return services.AddArcane(builder => builder.UseMongoDB(connectionString));
+            return services.AddArcane(builder => builder.AddMongoDB(connectionString));
         }
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <returns></returns>
         public static IServiceCollection AddArcaneWithMongoDB(this IServiceCollection services, MongoUrl mongoUrl)
         {
-            return services.AddArcane(builder => builder.UseMongoDB(mongoUrl));
+            return services.AddArcane(builder => builder.AddMongoDB(mongoUrl));
         }
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <returns></returns>
         public static IServiceCollection AddArcaneWithMongoDB<TNamingConvention>(this IServiceCollection services, string connectionString) where TNamingConvention : class, IMongoCollectionNamingConvention
         {
-            return services.AddArcane(builder => builder.UseMongoDB<TNamingConvention>(connectionString));
+            return services.AddArcane(builder => builder.AddMongoDB<TNamingConvention>(connectionString));
         }
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <returns></returns>
         public static IServiceCollection AddArcaneWithMongoDB<TNamingConvention>(this IServiceCollection services, MongoUrl mongoUrl) where TNamingConvention : class, IMongoCollectionNamingConvention
         {
-            return services.AddArcane(builder => builder.UseMongoDB<TNamingConvention>(mongoUrl));
+            return services.AddArcane(builder => builder.AddMongoDB<TNamingConvention>(mongoUrl));
         }
     }
 }

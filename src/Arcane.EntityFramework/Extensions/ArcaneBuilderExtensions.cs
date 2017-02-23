@@ -1,10 +1,10 @@
 ﻿using System;
 using Arcane;
-using Arcane.Builder;
+using Arcane.Configuration;
+using Arcane.Data;
+using Arcane.Data.EntityFramework;
 using Arcane.EntityFramework;
 using Arcane.EntityFramework.Internal;
-using Arcane.EntityFramework.Persistence;
-using Arcane.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 
@@ -23,7 +23,7 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <param name="builder"></param>
         /// <param name="optionsBuilder"></param>
         /// <returns></returns>
-        public static IArcaneBuilder UseEntityFramework<TDbContext>(this IArcaneBuilder builder, Action<DbContextOptionsBuilder> optionsBuilder) where TDbContext : DbContext
+        public static IArcaneBuilder AddEntityFramework<TDbContext>(this IArcaneBuilder builder, Action<DbContextOptionsBuilder> optionsBuilder) where TDbContext : DbContext
         {
             builder.Services.AddEntityFramework();
             builder.Services.AddScoped<IDataStoreFactoryProvider, EntityFrameworkDataStoreFactoryProvider>();

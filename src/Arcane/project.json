@@ -2,71 +2,65 @@
     "version": "0.0.4-beta001-001",
     "description": "Arcane is an abstraction layer on top of an IQueryProvider to allow for decoupling of the code from the actual ORM providing the actual data.",
     "authors": [ "Stephen Baker" ],
+
     "buildOptions": {
         "xmlDoc": true
     },
+
     "packOptions": {
         "tags": [ "IQueryProvider", "IQueryable<T>", "Linq" ],
         "projectUrl": "https://github.com/sbaker/arcane",
         "licenseUrl": ""
     },
+
     "dependencies": {
-        "NETStandard.Library": "1.6.1",
         "Microsoft.Extensions.DependencyInjection.Abstractions": "1.1.0",
+        "Microsoft.Extensions.Logging.Abstractions": "1.1.0",
+        "NETStandard.Library": "1.6.1",
         "System.ComponentModel": "4.3.0",
         "System.Linq.Expressions": "4.3.0",
         "System.Linq.Queryable": "4.3.0"
     },
+
     "commands": {},
+
     "frameworks": {
         "dnx451": {
-            "dependencies": {
-            }
+            "dependencies": {}
         },
         "net451": {
-            "dependencies": {
-            }
+            "dependencies": {}
         },
         "net452": {
-            "dependencies": {
-            }
+            "dependencies": {}
         },
         "net46": {
-            "dependencies": {
-            }
+            "dependencies": {}
         },
         "netstandard1.1": {
-            "dependencies": {
-            }
+            "dependencies": {}
         },
         "netstandard1.2": {
-            "dependencies": {
-            }
+            "dependencies": {}
         },
         "netstandard1.3": {
-            "dependencies": {
-            }
+            "dependencies": {}
         },
         "netstandard1.4": {
-            "dependencies": {
-            }
+            "dependencies": {}
         },
         "netstandard1.5": {
-            "dependencies": {
-            }
+            "dependencies": {}
         },
         "netstandard1.6": {
-            "dependencies": {
-            }
+            "dependencies": {}
         },
         "dnxcore50": {
-            "dependencies": {
-            }
+            "dependencies": {}
         },
         "netcoreapp1.0": {
             "imports": "dnxcore50",
-            "dependencies": {
-            }
+            "dependencies": {}
         }
     }
 }

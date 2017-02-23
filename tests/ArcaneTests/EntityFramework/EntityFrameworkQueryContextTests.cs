@@ -93,7 +93,7 @@ namespace ArcaneTests.EntityFramework
                     DataSource = "test.db"
                 };
 
-                services.AddArcane(b => b.UseEntityFramework<EntityDbContext>(options => options.UseSqlite(connectionStringBuilder.ToString())));
+                services.AddArcane(b => b.AddEntityFramework<EntityDbContext>(options => options.UseSqlite(connectionStringBuilder.ToString())));
 
                 return services.BuildServiceProvider();
             }

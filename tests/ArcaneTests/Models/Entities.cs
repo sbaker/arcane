@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Linq.Expressions;
-using Arcane.Persistence;
+using Arcane.Data;
 using Newtonsoft.Json;
 
 namespace ArcaneTests.Models
@@ -21,10 +21,7 @@ namespace ArcaneTests.Models
         public Collection<Book> Books { get; set; }
 
         public DateTime CreatedDate { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
+        
         public Expression<Func<Author, bool>> GetExpression()
         {
             return a => a.Id == Id;
@@ -38,10 +35,7 @@ namespace ArcaneTests.Models
         public string Name { get; set; }
 
         public DateTime PublishDate { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
+        
         public Expression<Func<Book, bool>> GetExpression()
         {
             return a => a.Id == Id;

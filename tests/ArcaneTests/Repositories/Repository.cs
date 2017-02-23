@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using Arcane;
-using Arcane.Persistence;
+using Arcane.Data;
 using ArcaneTests.Models;
 
 namespace ArcaneTests.Repositories
@@ -29,7 +28,7 @@ namespace ArcaneTests.Repositories
 
         public void Add<T>(T entity) where T : class, IRootEntity<int>, IFindable<T>, new()
         {
-            using (var dataStore = Context.StoreFactory.CreateStore())
+            using (var dataStore = Context.CreateStore())
             {
                 dataStore.Insert(entity);
             }
@@ -57,7 +56,7 @@ namespace ArcaneTests.Repositories
 
         public void Add(T entity)
         {
-            using (var dataStore = Context.StoreFactory.CreateStore())
+            using (var dataStore = Context.CreateStore())
             {
                 dataStore.Insert(entity);
             }

@@ -1,7 +1,8 @@
-﻿using Arcane.Persistence;
+﻿using Arcane.MongoDB;
 using MongoDB.Driver;
 
-namespace Arcane.MongoDB.Persistence
+// ReSharper disable once CheckNamespace
+namespace Arcane.Data.MongoDB
 {
     internal class MongoDBDataStoreFactory : DataStoreFactory
     {

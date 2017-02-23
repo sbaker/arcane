@@ -18,7 +18,7 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <returns></returns>
         public static IServiceCollection AddArcaneWithEntityFramework<TDbContext>(this IServiceCollection services, Action<DbContextOptionsBuilder> options) where TDbContext : DbContext
         {
-            return services.AddArcane(builder => builder.UseEntityFramework<TDbContext>(options));
+            return services.AddArcane(builder => builder.AddEntityFramework<TDbContext>(options));
         }
     }
 

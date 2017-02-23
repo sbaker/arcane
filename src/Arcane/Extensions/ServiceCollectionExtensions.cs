@@ -1,6 +1,6 @@
 ﻿using Arcane;
-using Arcane.Persistence;
-using Arcane.Persistence.Internal;
+using Arcane.Data;
+using Arcane.Data.Internal;
 
 // ReSharper disable once CheckNamespace
 namespace Microsoft.Extensions.DependencyInjection.ArcaneInMemory

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Linq.Expressions;
-using Arcane.Persistence;
+using Arcane.Data;
 using ArcaneTests.Models;
 
 namespace ArcaneTests.Repositories

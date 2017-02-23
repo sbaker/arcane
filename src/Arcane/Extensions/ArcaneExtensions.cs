@@ -1,5 +1,5 @@
 ﻿using System;
-using Arcane.Builder;
+using Arcane.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 // ReSharper disable once CheckNamespace
