@@ -1,0 +1,14 @@
+﻿{
+  "version": "0.0.4-beta001-001",
+
+  "dependencies": {
+    "NETStandard.Library": "1.6.1",
+    "Arcane": { "target": "project" }
+  },
+
+  "frameworks": {
+    "netstandard1.6": {
+      "imports": "dnxcore50"
+    }
+  }
+}
