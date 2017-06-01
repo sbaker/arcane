@@ -1,31 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿//using System;
+//using System.Linq.Expressions;
+//using MongoDB.Driver;
 
-namespace Arcane.MongoDB
-{
-    // This project can output the Class library as a NuGet Package.
-    // To enable this option, right-click on the project and select the Properties menu item. In the Build tab select "Produce outputs on build".
-    public class MongoDbQueryContext : IQueryContext
-    {
-        public MongoDbQueryContext()
-        {
-        }
+//namespace Arcane.MongoDB
+//{
+//    /// <summary>
+//    /// 
+//    /// </summary>
+//    public class MongoDbQueryContext : QueryContext<IMongoDatabase>
+//    {
+//        /// <summary>
+//        /// 
+//        /// </summary>
+//        /// <param name="database"></param>
+//        public MongoDbQueryContext(IMongoDatabase database) : base(null, database)
+//        {
+//        }
 
-        public IQuery<T> Query<T>() where T : class, new()
-        {
-            throw new NotImplementedException();
-        }
+//        /// <summary>
+//        /// When implemented in a derived class, creates a query for the given <typeparamref name="T"/> model representing a table or collection.
+//        /// </summary>
+//        /// <typeparam name="T">The type representing the table or collection.</typeparam>
+//        /// <param name="name">Optional, parameter is only used in some implementations of the <see cref="IQueryContext"/></param>
+//        /// <returns></returns>
+//        public override IQuery<T> Query<T>(string name = null)
+//        {
+//            return new MongoDbQuery<T>(Context.GetCollection<T>(name ?? $"{typeof(T).Name}s"), this);
+//        }
 
-        public void SaveChanges()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<int> SaveChangesAsync()
-        {
-            throw new NotImplementedException();
-        }
-    }
-}
+//        /// <summary>
+//        /// When implemented in a derived class will evaluate the <paramref name="expression"/> if <see cref="QueryContext.SuppressCompatibilityErrors"/> is false.
+//        /// </summary>
+//        /// <param name="expression"></param>
+//        protected override void EvaluateExpression(Expression expression)
+//        {
+//            throw new NotImplementedException();
+//        }
+//    }
+//}

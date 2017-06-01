@@ -1,56 +1,27 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
+﻿using System.Linq;
 
 namespace Arcane
 {
-    public interface IQuery<T> : IQueryable<T>, IOrderedQueryable<T>
+    /// <summary>
+    /// An interface that represents a wrapped <see cref="IQueryable{T}"/>
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public interface IQuery<out T> : IOrderedQueryable<T>, IQueryContextReference
     {
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        //IDataStoreFactory StoreFactory { get; set; }
     }
 
-    public class Query<T> : IQuery<T>
+    /// <summary>
+    /// Contains an <see cref="IQueryContext"/> reference that this instance is associated with.
+    /// </summary>
+    public interface IQueryContextReference
     {
-        public Query(IQueryable<T> innerQuery)
-        {
-            InnerQuery = innerQuery;
-        }
-
-        protected IQueryable<T> InnerQuery { get; }
-
-        Type IQueryable.ElementType
-        {
-            get
-            {
-                return InnerQuery.ElementType;
-            }
-        }
-
-        Expression IQueryable.Expression
-        {
-            get
-            {
-                return InnerQuery.Expression;
-            }
-        }
-
-        IQueryProvider IQueryable.Provider
-        {
-            get
-            {
-                return InnerQuery.Provider;
-            }
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return ((IQuery<T>)this).GetEnumerator();
-        }
-
-        IEnumerator<T> IEnumerable<T>.GetEnumerator()
-        {
-            return InnerQuery.GetEnumerator();
-        }
+        /// <summary>
+        /// The <see cref="IQueryContext"/> this instance is associated with.
+        /// </summary>
+        IQueryContext Context { get; }
     }
 }

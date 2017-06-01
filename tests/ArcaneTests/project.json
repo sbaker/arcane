@@ -2,26 +2,42 @@
   "version": "1.0.0-*",
   "description": "",
   "authors": [ "" ],
-  "tags": [ "" ],
-  "projectUrl": "",
-  "licenseUrl": "",
-  "dependencies": {
-    "Arcane": "1.0.0-*",
-    "Arcane.DocumentDB": "1.0.0-*",
-    "Arcane.EntityFramework": "1.0.0-*",
-    "Arcane.LiteDb": "1.0.0-*",
-    "Arcane.MongoDB": "1.0.0-*",
-    "xunit": "2.1.0",
-    "xunit.runner.dnx": "2.1.0-rc1-build204"
+  "buildOptions": {
+    "xmlDoc": true,
+    "emitEntryPoint": true
   },
+  "packOptions": {
+    "tags": [ "" ],
+    "projectUrl": "",
+    "licenseUrl": ""
+  },
+
+  //"runtimes": {
+  //  "win8-x86": { }
+  //},
+
+  "dependencies": {
+    "System.Data.SQLite": "1.0.101",
+    "Arcane": { "target" : "project" },
+    "Arcane.DocumentDB": "0.0.4-*",
+    "Arcane.EntityFramework": "0.0.4-*",
+    "Arcane.MongoDB": "0.0.4-*",
+    "Microsoft.EntityFrameworkCore": "1.1.0",
+    "Microsoft.EntityFrameworkCore.Sqlite": "1.1.0",
+    "xunit": "2.1.0-*",
+    "xunit.runner.dnx": "2.1.0-*",
+    "dotnet-test-xunit": "1.0.0-rc2-*"
+  },
+
+  "testRunner": "xunit",
+
   "commands": {
     "test": "xunit.runner.dnx"
   },
+
   "frameworks": {
     "dnx451": {
-      "dependencies": {
-        "EntityFramework.Core": "7.0.0-rc1-final"
-      }
+      "dependencies": {}
     }
   }
 }
