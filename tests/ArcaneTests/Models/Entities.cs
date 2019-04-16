@@ -6,12 +6,12 @@ using Newtonsoft.Json;
 
 namespace ArcaneTests.Models
 {
-    internal interface IRootEntity<T> where T : struct
+    public interface IRootEntity<T> where T : struct
     {
         T Id { get; set; }
     }
 
-    internal class Author : IRootEntity<int>, IFindable<Author>
+    public class Author : IRootEntity<int>, IFindable<Author>
     {
         [JsonProperty("id")]
         public int Id { get; set; }
@@ -28,7 +28,7 @@ namespace ArcaneTests.Models
         }
     }
 
-    internal class Book : IRootEntity<int>, IFindable<Book>
+    public class Book : IRootEntity<int>, IFindable<Book>
     {
         public int Id { get; set; }
 

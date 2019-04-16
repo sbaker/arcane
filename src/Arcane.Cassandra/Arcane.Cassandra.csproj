@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>An implementation of Arcane for Cassandra.</Description>
+    <VersionPrefix>0.0.4-beta001-001</VersionPrefix>
+    <Authors>Stephen Baker</Authors>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyName>Arcane.Cassandra</AssemblyName>
+    <PackageId>Arcane.Cassandra</PackageId>
+    <PackageTags>IQueryProvider;IQueryable&lt;T&gt;</PackageTags>
+    <PackageProjectUrl>https://github.com/sbaker/arcane</PackageProjectUrl>
+    <NetStandardImplicitPackageVersion>2.0.0</NetStandardImplicitPackageVersion>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Arcane\Arcane.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CassandraCSharpDriver" Version="3.4.0" />
+  </ItemGroup>
+
+</Project>

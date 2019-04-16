@@ -6,7 +6,7 @@ using ArcaneTests.Models;
 
 namespace ArcaneTests.Repositories
 {
-    internal interface IRepository
+    public interface IRepository
     {
         T Get<T>(int id) where T : class, IRootEntity<int>, new();
 
@@ -15,7 +15,7 @@ namespace ArcaneTests.Repositories
         void Add<T>(T entity) where T : class, IRootEntity<int>, IFindable<T>, new();
     }
 
-    internal interface IRepository<T> where T : class, IRootEntity<int>, IFindable<T>, new()
+    public interface IRepository<T> where T : class, IRootEntity<int>, IFindable<T>, new()
     {
         T Get(int id);
 

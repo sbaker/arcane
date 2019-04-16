@@ -1,5 +1,4 @@
-﻿using Arcane.Data;
-using Cassandra;
+﻿using Cassandra;
 
 // ReSharper disable once CheckNamespace
 namespace Arcane.Data.Cassandra

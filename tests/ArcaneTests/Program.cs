@@ -9,14 +9,14 @@ namespace ArcaneTests
     /// </summary>
     public static class Program
     {
-        /// <summary>
-        /// main
-        /// </summary>
-        /// <param name="args"></param>
-        public static void Main(string[] args)
-        {
-            var tests = new ArcaneTests.EntityFramework.EntityFrameworkQueryContextTests();
-            tests.GetTheFirst24Authors();
-        }
+        ///// <summary>
+        ///// main
+        ///// </summary>
+        ///// <param name="args"></param>
+        //public static void Main(string[] args)
+        //{
+        //    var tests = new ArcaneTests.EntityFramework.EntityFrameworkQueryContextTests();
+        //    tests.GetTheFirst24Authors();
+        //}
     }
 }
