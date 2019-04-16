@@ -9,7 +9,7 @@ namespace ArcaneTests
 {
     // This project can output the Class library as a NuGet Package.
     // To enable this option, right-click on the project and select the Properties menu item. In the Build tab select "Produce outputs on build".
-    internal abstract class ArcaneBaseTest
+    public abstract class ArcaneBaseTest
     {
         protected const int Total = 100;
         protected static readonly DateTime Date = new DateTime(2016, 6, 30, 0, 0, 0, DateTimeKind.Utc);

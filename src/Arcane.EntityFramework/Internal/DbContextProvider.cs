@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Arcane.EntityFramework.Internal
 {
-    internal class DbContextProvider<TDbContext> : IDbContextProvider where TDbContext : DbContext
+    internal class DbContextProvider<TDbContext> : IDbContextProvider<TDbContext> where TDbContext : DbContext
     {
         private readonly IServiceProvider _provider;
 
@@ -13,9 +13,14 @@ namespace Arcane.EntityFramework.Internal
             _provider = provider;
         }
 
-        public DbContext GetContext()
+        public TDbContext GetDbContext()
         {
             return _provider.GetRequiredService<TDbContext>();
+        }
+
+        public DbContext GetContext()
+        {
+            return GetDbContext();
         }
     }
 }
