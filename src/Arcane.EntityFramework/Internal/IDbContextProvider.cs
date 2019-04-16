@@ -6,4 +6,9 @@ namespace Arcane.EntityFramework.Internal
     {
         DbContext GetContext();
     }
+
+    internal interface IDbContextProvider<out TDbContext> : IDbContextProvider where TDbContext : DbContext
+    {
+        TDbContext GetDbContext();
+    }
 }

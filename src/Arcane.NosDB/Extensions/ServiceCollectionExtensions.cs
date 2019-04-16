@@ -15,7 +15,7 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <param name="services"></param>
         /// <param name="connectionString"></param>
         /// <returns></returns>
-        public static IServiceCollection AddArcaneWithCassandra(this IServiceCollection services, string connectionString)
+        public static IServiceCollection AddArcaneWithNosDB(this IServiceCollection services, string connectionString)
         {
             return services.AddArcane(builder => builder.AddNosDB(connectionString));
         }

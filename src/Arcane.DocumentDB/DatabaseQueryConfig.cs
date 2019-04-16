@@ -73,12 +73,12 @@ namespace Arcane.DocumentDB
         
         internal IQueryable<T> CreateDocumentQuery<T>(Uri documentUri, FeedOptions feedOptions = null)
         {
-            return Client.CreateDocumentQuery<T>(documentUri, feedOptions);
+            return Client.CreateDocumentQuery<T>(documentUri.OriginalString, feedOptions);
         }
 
         internal T CreateDocument<T>(T document)
         {
-            Client.CreateDocumentAsync(GetId<T>(), document, RequestOptions, EnableAutoIdGeneration).Wait();
+            Client.CreateDocumentAsync(GetId<T>().OriginalString, document, RequestOptions, EnableAutoIdGeneration).Wait();
             return document;
         }
 

@@ -25,9 +25,10 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <returns></returns>
         public static IArcaneBuilder AddEntityFramework<TDbContext>(this IArcaneBuilder builder, Action<DbContextOptionsBuilder> optionsBuilder) where TDbContext : DbContext
         {
-            builder.Services.AddEntityFramework();
+            //builder.Services.AddEntityFramework();
             builder.Services.AddScoped<IDataStoreFactoryProvider, EntityFrameworkDataStoreFactoryProvider>();
             builder.Services.AddScoped<IQueryFactoryProvider, EntityFrameworkQueryFactoryProvider>();
+            builder.Services.AddScoped<IDbContextProvider<TDbContext>, DbContextProvider<TDbContext>>();
             builder.Services.AddScoped<IDbContextProvider, DbContextProvider<TDbContext>>();
             builder.Services.AddDbContext<TDbContext>(optionsBuilder);
             return builder;

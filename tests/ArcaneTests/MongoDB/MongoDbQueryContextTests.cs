@@ -7,7 +7,7 @@ using Xunit;
 
 namespace ArcaneTests.MongoDB
 {
-    internal class MongoDbQueryContextTests : ArcaneBaseTest
+    public class MongoDbQueryContextTests : ArcaneBaseTest
     {
         public MongoDbQueryContextTests() : base(null)
         {

@@ -1,36 +1,31 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Arcane", "src\Arcane\Arcane.xproj", "{9EBC0185-7DCD-4A29-AEF6-2F6D07B3102E}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{12D818B2-7AAC-4B29-A034-7A63B2E409AA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{4189C934-168E-4AC0-95F6-B4946A2DC24B}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ArcaneTests", "tests\ArcaneTests\ArcaneTests.xproj", "{F0548096-57F5-4CA9-ABC6-7B4D0D5F7AB1}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Arcane.MongoDB", "src\Arcane.MongoDB\Arcane.MongoDB.xproj", "{E3A8F833-980A-4AE2-9373-CFFB083836F8}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Arcane.DocumentDB", "src\Arcane.DocumentDB\Arcane.DocumentDB.xproj", "{7CB746D7-2AB8-44DD-A3EB-5C90E9DEF801}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A29D0DB9-551C-457A-91D6-FE8779634E07}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-	EndProjectSection
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Arcane.EntityFramework", "src\Arcane.EntityFramework\Arcane.EntityFramework.xproj", "{89609C98-26FB-4BAF-9D0A-C8344BC2D6C2}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Arcane.Cassandra", "src\Arcane.Cassandra\Arcane.Cassandra.xproj", "{CB17ED70-56EC-40F4-8C74-4280E344F213}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Arcane.AspNetCore.Samples", "samples\Arcane.AspNetCore.Samples\Arcane.AspNetCore.Samples.xproj", "{10FE1838-10A5-403F-9AD3-0BCC5727685D}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{44FC70AA-B0BD-4700-9DED-E6A4C3A298C3}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Arcane.NosDB", "src\Arcane.NosDB\Arcane.NosDB.xproj", "{EBDA087F-0C23-4CCA-859E-DC1251562151}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arcane", "src\Arcane\Arcane.csproj", "{9EBC0185-7DCD-4A29-AEF6-2F6D07B3102E}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Arcane.RaptorDB", "src\Arcane.RaptorDB\Arcane.RaptorDB.xproj", "{EECF41BF-DD2C-4536-8317-286AD05A492E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArcaneTests", "tests\ArcaneTests\ArcaneTests.csproj", "{F0548096-57F5-4CA9-ABC6-7B4D0D5F7AB1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arcane.MongoDB", "src\Arcane.MongoDB\Arcane.MongoDB.csproj", "{E3A8F833-980A-4AE2-9373-CFFB083836F8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arcane.DocumentDB", "src\Arcane.DocumentDB\Arcane.DocumentDB.csproj", "{7CB746D7-2AB8-44DD-A3EB-5C90E9DEF801}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arcane.EntityFramework", "src\Arcane.EntityFramework\Arcane.EntityFramework.csproj", "{89609C98-26FB-4BAF-9D0A-C8344BC2D6C2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arcane.Cassandra", "src\Arcane.Cassandra\Arcane.Cassandra.csproj", "{CB17ED70-56EC-40F4-8C74-4280E344F213}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arcane.AspNetCore.Samples", "samples\Arcane.AspNetCore.Samples\Arcane.AspNetCore.Samples.csproj", "{10FE1838-10A5-403F-9AD3-0BCC5727685D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arcane.NosDB", "src\Arcane.NosDB\Arcane.NosDB.csproj", "{EBDA087F-0C23-4CCA-859E-DC1251562151}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arcane.RaptorDB", "src\Arcane.RaptorDB\Arcane.RaptorDB.csproj", "{EECF41BF-DD2C-4536-8317-286AD05A492E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -88,5 +83,8 @@ Global
 		{10FE1838-10A5-403F-9AD3-0BCC5727685D} = {44FC70AA-B0BD-4700-9DED-E6A4C3A298C3}
 		{EBDA087F-0C23-4CCA-859E-DC1251562151} = {12D818B2-7AAC-4B29-A034-7A63B2E409AA}
 		{EECF41BF-DD2C-4536-8317-286AD05A492E} = {12D818B2-7AAC-4B29-A034-7A63B2E409AA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6EBBA8F8-5FDF-4CE5-9CC2-F471DFEAA965}
 	EndGlobalSection
 EndGlobal

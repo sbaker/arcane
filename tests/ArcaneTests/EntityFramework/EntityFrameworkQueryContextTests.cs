@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data.SQLite;
 using Arcane;
 using ArcaneTests.EntityFramework.Data;
 using ArcaneTests.Models;
@@ -10,7 +9,7 @@ using Xunit;
 
 namespace ArcaneTests.EntityFramework
 {
-    internal class EntityFrameworkQueryContextTests : ArcaneBaseTest
+    public class EntityFrameworkQueryContextTests : ArcaneBaseTest
     {
         public EntityFrameworkQueryContextTests() : base(new ServiceProviderFactory())
         {
@@ -89,11 +88,11 @@ namespace ArcaneTests.EntityFramework
             {
                 var services = new ServiceCollection();
 
-                var connectionStringBuilder = new SQLiteConnectionStringBuilder {
-                    DataSource = "test.db"
-                };
+                //var connectionStringBuilder = new SQLiteConnectionStringBuilder {
+                //    DataSource = "test.db"
+                //};
 
-                services.AddArcane(b => b.AddEntityFramework<EntityDbContext>(options => options.UseSqlite(connectionStringBuilder.ToString())));
+                //services.AddArcane(b => b.AddEntityFramework<EntityDbContext>(options => options.UseSqlite(connectionStringBuilder.ToString())));
 
                 return services.BuildServiceProvider();
             }
