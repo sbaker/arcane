@@ -18,7 +18,7 @@ namespace Arcane
         /// <summary>
         /// 
         /// </summary>
-        IServiceProvider Provider { get; }
+        IServiceProvider ServiceProvider { get; }
 
         /// <summary>
         /// 

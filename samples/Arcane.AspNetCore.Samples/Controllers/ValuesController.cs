@@ -4,12 +4,22 @@ using System.Linq;
 using System.Threading.Tasks;
 using Arcane.AspNetCore.Samples.Data;
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Bson;
 
 namespace Arcane.AspNetCore.Samples.Controllers
 {
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
+        public class MapLocation
+        {
+            public ObjectId _id { get; set; }
+            public decimal lat { get; set; }
+            public decimal lng { get; set; }
+            public string name { get; set; }
+        }
+
+
         private readonly IQueryContext _context;
 
         public ValuesController(IQueryContext context)

@@ -34,25 +34,25 @@ namespace Arcane.AspNetCore.Samples
             // Add framework services.
             services.AddMvc();
             //services.AddArcaneWithInMemoryData();
+            //services.AddArcaneWithMongoDB("mongodb://localhost/arcanesamples");
             services.AddArcaneWithEntityFramework<AuthorsDbContext>(
                 options => options.UseSqlite(new SqliteConnectionStringBuilder
                 {
                     DataSource = "Test.db"
                 }.ToString())
             );
-            //services.AddArcaneWithMongoDB("mongodb://localhost/arcanesamples");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IServiceProvider provider, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            using (var context = provider.GetService<AuthorsDbContext>())
-            {
-                context.Database.EnsureCreated();
-            }
+            //using (var context = app.ApplicationServices.CreateScope().ServiceProvider.GetService<AuthorsDbContext>())
+            //{
+            //    context.Database.EnsureCreated();
+            //}
 
             app.UseMvc();
         }

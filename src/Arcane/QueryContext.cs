@@ -17,7 +17,7 @@ namespace Arcane
         /// <param name="provider">The <see cref="IServiceProvider"/> used to retrieve services.</param>
         public QueryContext(IServiceProvider provider)
         {
-            Provider = provider;
+            ServiceProvider = provider;
             ExpressionEvaluator = provider.GetService<IExpressionEvaluator>();
 
             var factoryProvider = provider.GetRequiredService<IQueryFactoryProvider>();
@@ -43,7 +43,7 @@ namespace Arcane
         /// <summary>
         /// The ServiceProvider responsible for retrieving dependencies for this QueryContext.
         /// </summary>
-        public IServiceProvider Provider { get; }
+        public IServiceProvider ServiceProvider { get; }
 
         /// <summary>
         /// The <see cref="IDataStoreFactory"/> used for creating <see cref="IDataStore"/>s.

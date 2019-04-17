@@ -19,8 +19,8 @@ namespace Arcane
         /// <param name="context">The context that created this instance.</param>
         public ArcaneQueryable(IQueryable<T> innerQuery, IQueryContext context)
         {
-            InnerQuery = innerQuery;
-            Context = context;
+            InnerQuery = innerQuery ?? throw new ArgumentNullException(nameof(innerQuery));
+            Context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
         #region IQueryable implementation

@@ -185,3 +185,4 @@ UpgradeLog*.htm
 FakesAssemblies/
 project.lock.json
 /.vs
+**/*.db-journal
