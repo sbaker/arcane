@@ -18,7 +18,7 @@ namespace Arcane.Data.EntityFramework
         /// <returns></returns>
         public override IDataStoreFactory GetDataStoreFactory(IQueryContext context)
         {
-            return new EntityFrameworkDataStoreFactory(_dbContextProvider.GetContext(), context);
+            return new EntityFrameworkDataStoreFactory(_dbContextProvider.GetBaseDbContext(), context);
         }
     }
 }

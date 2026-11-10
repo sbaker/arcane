@@ -21,7 +21,7 @@ namespace Arcane.EntityFramework
         /// <returns></returns>
         public override IQueryFactory GetQueryFactory(IQueryContext context)
         {
-            return new EntityFrameworkQueryFactory(_dbContextProvider.GetContext(), context);
+            return new EntityFrameworkQueryFactory(_dbContextProvider.GetBaseDbContext(), context);
         }
     }
 }

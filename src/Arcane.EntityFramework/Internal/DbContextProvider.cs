@@ -18,7 +18,7 @@ namespace Arcane.EntityFramework.Internal
             return _provider.GetRequiredService<TDbContext>();
         }
 
-        public DbContext GetContext()
+        public DbContext GetBaseDbContext()
         {
             return GetDbContext();
         }
